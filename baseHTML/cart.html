@@ -34,7 +34,9 @@
     <link rel="stylesheet" href="css/style.css">
     <!--HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries-->
     <!--WARNING: Respond.js doesn't work if you view the page via file://-->
-    <!--[if lt IE 9]><script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script><script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script><![endif]-->
+    <!--[if lt IE 9]><script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+  <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script><![endif]-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   </head>
   <!--[if IE 7]><body class="ie7 lt-ie8 lt-ie9 lt-ie10"><![endif]-->
   <!--[if IE 8]><body class="ie8 lt-ie9 lt-ie10"><![endif]-->
@@ -219,57 +221,57 @@
             <table class="table ps-cart__table">
               <thead>
                 <tr>
-                  <th>All Products</th>
-                  <th>Price</th>
-                  <th>Quantity</th>
-                  <th>Total</th>
+                  <th>Tất cả sản phẩm</th>
+                  <th>Giá</th>
+                  <th>Số lượng</th>
+                  <th>Thành tiền</th>
                   <th></th>
                 </tr>
               </thead>
               <tbody>
-                <tr>
+                <tr class="product1" id="product1">
                   <td><a class="ps-product__preview" href="product-detail.html"><img class="mr-15" src="images/product/cart-preview/1.jpg" alt=""> air jordan One mid</a></td>
-                  <td>$150</td>
+                  <td class ="price1">4000000</td>
                   <td>
                     <div class="form-group--number">
                       <button class="minus"><span>-</span></button>
-                      <input class="form-control" type="text" value="2">
+                      <input class="form-control input" type="text" value="1">
                       <button class="plus"><span>+</span></button>
                     </div>
                   </td>
-                  <td>$300</td>
+                  <td class ="price">4000000</td>
                   <td>
-                    <div class="ps-remove"></div>
+                    <div class="ps-remove 1"></div>
                   </td>
                 </tr>
-                <tr>
+                <tr class="product2">
                   <td><a class="ps-product__preview" href="product-detail.html"><img class="mr-15" src="images/product/cart-preview/2.jpg" alt=""> The Crusty Croissant</a></td>
-                  <td>$150</td>
+                  <td class ="price1">2000000</td>
                   <td>
                     <div class="form-group--number">
                       <button class="minus"><span>-</span></button>
-                      <input class="form-control" type="text" value="2">
+                      <input class="form-control input" type="text" value="1">
                       <button class="plus"><span>+</span></button>
                     </div>
                   </td>
-                  <td>$300</td>
+                  <td class ="price">2000000</td>
                   <td>
-                    <div class="ps-remove"></div>
+                    <div class="ps-remove 2"></div>
                   </td>
                 </tr>
-                <tr>
+                <tr class="product3">
                   <td><a class="ps-product__preview" href="product-detail.html"><img class="mr-15" src="images/product/cart-preview/3.jpg" alt="">The Rolling Pin</a></td>
-                  <td>$150</td>
+                  <td class ="price1">3000000</td>
                   <td>
                     <div class="form-group--number">
                       <button class="minus"><span>-</span></button>
-                      <input class="form-control" type="text" value="2">
+                      <input class="form-control input" type="text" value="1">
                       <button class="plus"><span>+</span></button>
                     </div>
                   </td>
-                  <td>$300</td>
+                  <td class ="price">3000000</td>
                   <td>
-                    <div class="ps-remove"></div>
+                    <div class="ps-remove 3"></div>
                   </td>
                 </tr>
               </tbody>
@@ -282,11 +284,11 @@
                   </div>
                 </div>
                 <div class="form-group">
-                  <button class="ps-btn ps-btn--gray">Continue Shopping</button>
+                  <button onclick="window.location.href='product-listing.html'" class="ps-btn ps-btn--gray">Tiếp tục mua sắm</button>
                 </div>
               </div>
               <div class="ps-cart__total">
-                <h3>Total Price: <span> 2599.00 $</span></h3><a class="ps-btn" href="checkout.html">Process to checkout<i class="ps-icon-next"></i></a>
+                <h3>Tổng cộng: <span id="total"> 9 000 000</span></h3><a class="ps-btn" href="checkout.html">Thanh toán<i class="ps-icon-next"></i></a>
               </div>
             </div>
           </div>
@@ -408,6 +410,72 @@
         </div>
       </div>
     </main>
+    <!-- quantity -->
+    <script>
+      $(document).ready(function(){
+        $('.plus').click(function () {
+         var i= $(this).parent().find('.input').val()
+          var c= parseInt(i,10)
+          $(this).parent().find('.input').val(c+1)
+          var u = $(this).parent().parent().parent().find('.price1').text()
+          var u1 = parseInt(u,10)
+          var u3 = $(this).parent().parent().parent().find('.price').text()
+          var u4 = parseInt(u3,10)
+          $(this).parent().parent().parent().find('.price').text(u4+u1)
+          var total = document.getElementsByClassName('product1').find('.price').text()
+          var t  = parseInt(total,10)
+          var total1 = document.getElementsByClassName('product2').find('.price').text()
+          var t1  = parseInt(total1,10)
+          var total2 = document.getElementsByClassName('product3').find('.price').text()
+          var t2  = parseInt(total2,10)
+          console.log('t')
+          $(document).getElementById('total').html(t+t1+t2)
+
+        });
+
+        $('.minus').on('click', function () {
+          var i= $(this).parent().find('.input').val()
+          var c= parseInt(i,10)
+          if (c-1 >= 1)  $(this).parent().find('.input').val(c-1)
+          var u = $(this).parent().parent().parent().find('.price1').text()
+          var u1 = parseInt(u,10)
+          var u3 = $(this).parent().parent().parent().find('.price').text()
+          var u4 = parseInt(u3,10)
+          if (c-1 >= 1)  $(this).parent().parent().parent().find('.price').text(u4-u1)
+
+        });
+      });
+
+    </script>
+
+    <!--quantity-->
+    <script>
+      $(document).ready(function (c) {
+        $('.ps-remove.1').on('click', function (c) {
+          $('.product1').fadeOut('slow', function (c) {
+            $('.product1').remove();
+          });
+        });
+      });
+    </script>
+    <script>
+      $(document).ready(function (c) {
+        $('.ps-remove.2').on('click', function (c) {
+          $('.product2').fadeOut('slow', function (c) {
+            $('.product2').remove();
+          });
+        });
+      });
+    </script>
+    <script>
+      $(document).ready(function (c) {
+        $('.ps-remove.3').on('click', function (c) {
+          $('.product3').fadeOut('slow', function (c) {
+            $('.product3').remove();
+          });
+        });
+      });
+    </script>
     <!-- JS Library-->
     <script type="text/javascript" src="plugins/jquery/dist/jquery.min.js"></script>
     <script type="text/javascript" src="plugins/bootstrap/dist/js/bootstrap.min.js"></script>
