@@ -20,6 +20,7 @@
     <link rel="stylesheet" href="plugins/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="plugins/ps-icon/style.css">
     <!-- CSS Library-->
+    <link rel="stylesheet" type="text/css" href="css/index.css">
     <link rel="stylesheet" href="plugins/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="plugins/owl-carousel/assets/owl.carousel.css">
     <link rel="stylesheet" href="plugins/jquery-bar-rating/dist/themes/fontawesome-stars.css">
@@ -51,12 +52,9 @@
                   <p>6 QL1A, Khu Phó 1, Dĩ An, Bình Dương-  Hotline: 0385190234 </p>
                 </div>
                 <div class="col-lg-6 col-md-4 col-sm-6 col-xs-12 ">
-                   <div class="header__actions"><a href="login.html">Đăng nhập & Đăng ký</a>
-                    <div class="btn-group ps-dropdown"><a class="dropdown-toggle" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Ngôn ngữ<i class="fa fa-angle-down"></i></a>
-                      <ul class="dropdown-menu">
-                        <li><a href="#">Việt Nam</a></li>
-                      </ul>
-                    </div>
+                    <div class="header__actions"><a href="register.html">Đăng ký</a>
+                    <div class="header__actions"><a href="login.html">Đăng nhập</a>
+                    
                   </div>
                 </div>
           </div>
@@ -90,7 +88,7 @@
           </div>
           <div class="navigation__column right">
             <form class="ps-search--header" action="do_action" method="post">
-              <input class="form-control" type="text" placeholder="Search Product…">
+              <input class="form-control" type="text" placeholder="Tìm kiếm sản phẩm...">
               <button><i class="ps-icon-search"></i></button>
             </form>
             <div class="ps-cart"><a class="ps-cart__toggle" href="#"><i class="ps-icon-shopping-cart"></i></a>
@@ -141,10 +139,10 @@
       <div class="ps-banner">
         <div class="rev_slider fullscreenbanner" id="home-banner">
           <ul>
-            <li class="ps-banner" data-index="rs-2972" data-transition="random" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off" data-rotate="0"><img class="rev-slidebg" src="images/slider/1950.jpg" alt="" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="5" data-no-retina>
+            <li class="ps-banner" data-index="rs-2972" data-transition="random" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off" data-rotate="0"><img class="rev-slidebg" src="images/slider/1920_750.jpg" alt="" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="5" data-no-retina>
              
             </li>
-            <li class="ps-banner ps-banner--white" data-index="rs-100" data-transition="random" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off" data-rotate="0"><img class="rev-slidebg" src="images/slider/3840_.jpg" alt="" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="5" data-no-retina>
+            <li class="ps-banner ps-banner--white" data-index="rs-100" data-transition="random" data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off" data-rotate="0"><img class="rev-slidebg" src="images/slider/3840_1500.jpg" alt="" data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="5" data-no-retina>
 
             </li>
           </ul>
@@ -162,9 +160,6 @@
               <li><a href="#" data-filter=".Dell">Dell <sup>1</sup></a></li>
               <li><a href="#" data-filter=".Hp">Hp <sup>4</sup></a></li>
               <li><a href="#" data-filter=".Macbook">Macbook <sup>4</sup></a></li>
-              <li><a href="#" data-filter=".Samsung">Samsung <sup>4</sup></a></li>
-              <li><a href="#" data-filter=".Toshiba">Toshiba <sup>4</sup></a></li>
-
             </ul>
           </div>
           <!-- chứa sp-->
@@ -192,7 +187,7 @@
                           </select>
                         </div>
                         <div class="ps-shoe__detail"><a class="ps-shoe__name" href="#">Acer Nitro AN515 55 70AX i7 10750H (NH.Q7NSV.001)</a>
-                          <p> RAM:8G-SSD:512GB<br/> 28.000.000đ</p>
+                          <p> RAM:8G-SSD:512GB<br/><strong class="price">28 000 000đ</strong> </p>
                         </div>
                       </div>
                     </div>
@@ -217,7 +212,7 @@
                           </select>
                         </div>
                         <div class="ps-shoe__detail"><a class="ps-shoe__name" href="#">Laptop HP 348 G7 i3 8130U (1A0Z1PA)</a>
-                           <p> RAM:4G-SSD:512GB<br/>11.370.000đ</p>
+                           <p> RAM:4G-SSD:512GB<br/><strong class="price">11 370 000đ</strong></p>
                         </div>
                       </div>
                     </div>
@@ -242,7 +237,7 @@
                           </select>
                         </div>
                         <div class="ps-shoe__detail"><a class="ps-shoe__name" href="#">Laptop Dell Inspiron 5593 i5 1035G1</a>
-                          <p> RAM:8G-SSD:256GB<br/>17.890.000đ</p>
+                          <p> RAM:8G-SSD:256GB<br/><strong class="price">17 890 000đ</strong></p>
                         </div>
                       </div>
                     </div>
@@ -268,7 +263,7 @@
                           </select>
                         </div>
                         <div class="ps-shoe__detail"><a class="ps-shoe__name" href="#">Laptop Lenovo IdeaPad S340 14IIL i5 1035G1</a>
-                           <p> RAM:8G-SSD:512GB<br/>13.390.000đ</p>
+                           <p> RAM:8G-SSD:512GB<br/><strong class="price">13.390.000đ</strong></p>
                         </div>
                       </div>
                     </div>
@@ -295,7 +290,7 @@
                           </select>
                         </div>
                         <div class="ps-shoe__detail"><a class="ps-shoe__name" href="#">Laptop Asus VivoBook A412FA i3 10110U</a>
-                          <p> RAM:4GB-SSD:512GB<br/> 12.430.000đ</p>
+                          <p> RAM:4GB-SSD:512GB<br/> <strong class="price">12 430 000đ</strong></p>
                         </div>
                       </div>
                     </div>
@@ -322,7 +317,7 @@
                           </select>
                         </div>
                         <div class="ps-shoe__detail"><a class="ps-shoe__name" href="#">Laptop Apple MacBook Air 2020 i5 1.1GHz</a>
-                           <p> RAM:8GB-SSD:256GB<br/> 31.990.000đ</p>
+                           <p> RAM:8GB-SSD:256GB<br/><strong class="price">31 990 000đ</strong> </p>
                         </div>
                       </div>
                     </div>
@@ -347,7 +342,7 @@
                           </select>
                         </div>
                         <div class="ps-shoe__detail"><a class="ps-shoe__name" href="#">Laptop HP 348 G7 i5 10210U</a>
-                             <p> RAM:8GB-SSD:512GB<br/> 15.170.000đ</p>
+                             <p> RAM:8GB-SSD:512GB<br/> <strong class="price">15 170 000đ</strong></p>
                         </div>
                       </div>
                     </div>
@@ -371,7 +366,7 @@
                           </select>
                         </div>
                         <div class="ps-shoe__detail"><a class="ps-shoe__name" href="#">Laptop HP Envy 13 aq1057TX i7 10510U</a>
-                          <p> RAM:8GB-SSD:512GB<br/> 29.990.000đ</p>
+                          <p> RAM:8GB-SSD:512GB<br/> <strong class="price">29 990 000 </strong></p>
                         </div>
                       </div>
                     </div>
@@ -457,7 +452,7 @@
                       </select>
                     </div>
                     <div class="ps-shoe__detail"><a class="ps-shoe__name" href="product-detai.html">Laptop Asus VivoBook X509MA N5030</a>
-                      <p>RAM:4GB - HDD:1000GB<br/>11.090.000đ</p>
+                      <p>RAM:4GB - HDD:1000GB<br/>11 090 000đ</p>
                     </div>
                   </div>
                 </div>
@@ -483,7 +478,7 @@
                     <div class="ps-shoe__detail"><a class="ps-shoe__name" href="product-detai.html">Laptop HP 348 G7 i3 8130U</a>
                       <p >
                         RAM:4G-SSD:256GB<br/>
-                        8.990.000đ-<del> 13.890.000đ</del></p>
+                        8 990 000 đ  <del> 13 890 000 đ</del></p>
                     </div>
                   </div>
                 </div>
@@ -505,7 +500,7 @@
                           </select>
                         </div>
                         <div class="ps-shoe__detail"><a class="ps-shoe__name" href="#">Laptop HP 348 G7 i5 10210U</a>
-                             <p> RAM:8GB-SSD:512GB<br/> 15.170.000đ</p>
+                             <p> RAM:8GB-SSD:512GB<br/> 15 170 000 đ</p>
                         </div>
                   </div>
                 </div>
@@ -527,16 +522,18 @@
                           </select>
                         </div>
                         <div class="ps-shoe__detail"><a class="ps-shoe__name" href="#">Laptop Asus VivoBook A412FA i3 10110U</a>
-                          <p> RAM:4GB-SSD:512GB<br/> 12.430.000đ</p>
+                          <p> RAM:4GB-SSD:512GB<br/> 12 430 000đ</p>
                         </div>
                   </div>
                 </div>
               </div>
+
               <div class="ps-shoes--carousel">
                 <div class="ps-shoe">
                   <div class="ps-shoe__thumbnail">
                     <div class="ps-badge"><span>New</span></div><a class="ps-shoe__favorite" href="#"><i class="ps-icon-heart"></i></a><img src="images/shoe/5.jpg" alt=""><a class="ps-shoe__overlay" href="product-detail.html"></a>
                   </div>
+                  <br/><br/>
                   <div class="ps-shoe__content">
                     <div class="ps-shoe__variants">
                       <div class="ps-shoe__variant normal"><img src="images/shoe/2.jpg" alt=""><img src="images/shoe/3.jpg" alt=""><img src="images/shoe/4.jpg" alt=""><img src="images/shoe/5.jpg" alt=""></div>
@@ -548,19 +545,22 @@
                         <option value="2">5</option>
                       </select>
                     </div>
-                    <div class="ps-shoe__detail"><a class="ps-shoe__name" href="product-detai.html">Air Jordan 7 Retro</a>
-                      <p class="ps-shoe__categories"><a href="#">Men shoes</a>,<a href="#"> Nike</a>,<a href="#"> Jordan</a></p><span class="ps-shoe__price"> £ 120</span>
+                    <div class="ps-shoe__detail"><a class="ps-shoe__name" href="product-detai.html">Laptop ASUS VIVOBOOK A412FA</a>
+                      <p>RAM:8GB - SSD:256GB<br/>14 999 999 đ  <del> 16 000 000 đ </del>
+                      </p>
                     </div>
                   </div>
                 </div>
               </div>
               <div class="ps-shoes--carousel">
                 <div class="ps-shoe">
-                  <div class="ps-shoe__thumbnail"><a class="ps-shoe__favorite" href="#"><i class="ps-icon-heart"></i></a><img src="images/shoe/6.jpg" alt=""><a class="ps-shoe__overlay" href="product-detail.html"></a>
+                  <div class="ps-shoe__thumbnail"><a class="ps-shoe__favorite" href="#"><i class="ps-icon-heart"></i></a><img src="images/shoe/acer2/1.jpg" alt=""><a class="ps-shoe__overlay" href="product-detail.html"></a>
                   </div>
+                  <br/>
+                  <br/>
                   <div class="ps-shoe__content">
                     <div class="ps-shoe__variants">
-                      <div class="ps-shoe__variant normal"><img src="images/shoe/2.jpg" alt=""><img src="images/shoe/3.jpg" alt=""><img src="images/shoe/4.jpg" alt=""><img src="images/shoe/5.jpg" alt=""></div>
+                      <div class="ps-shoe__variant normal"><img src="images/shoe/acer2/1.jpg" alt=""><img src="images/shoe/acer2/2.jpg" alt=""><img src="images/shoe/acer2/3.jpg" alt=""><img src="images/shoe/acer2/4.jpg" alt=""><img src="images/shoe/acer2/5.jpg" alt=""><img src="images/shoe/acer2/6.jpg" alt=""><img src="images/shoe/acer2/7.jpg" alt=""></div>
                       <select class="ps-rating ps-shoe__rating">
                         <option value="1">1</option>
                         <option value="1">2</option>
@@ -569,8 +569,10 @@
                         <option value="2">5</option>
                       </select>
                     </div>
-                    <div class="ps-shoe__detail"><a class="ps-shoe__name" href="product-detai.html">Air Jordan 7 Retro</a>
-                      <p class="ps-shoe__categories"><a href="#">Men shoes</a>,<a href="#"> Nike</a>,<a href="#"> Jordan</a></p><span class="ps-shoe__price"> £ 120</span>
+                    <div class="ps-shoe__detail"><a class="ps-shoe__name" href="product-detai.html">Laptop Acer Aspire 3 A315 54K 37B0 i3 8130U</a>
+                      <p>RAM:4GB - SSD:256GB<br/>
+                        9 990 000 đ
+                      </p>
                     </div>
                   </div>
                 </div>
