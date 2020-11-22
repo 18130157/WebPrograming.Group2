@@ -23,6 +23,8 @@
     <link rel="stylesheet" href="plugins/revolution/css/navigation.css">
     <!-- Custom-->
     <link rel="stylesheet" href="css/style.css">
+    <link href="https://use.fontawesome.com/releases/v5.0.4/css/all.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="./register/register.css">
 </head>
 
 <body>
@@ -35,8 +37,6 @@
                         <p>6 QL1A, Khu Phó 1, Dĩ An, Bình Dương- Hotline: 0385190234 </p>
                     </div>
                     <div class="col-lg-6 col-md-4 col-sm-6 col-xs-12 ">
-                            <div class="header__actions"><a href="login.html">Đăng nhập</a>
-                            </div>
                     </div>
                 </div>
             </div>
@@ -51,8 +51,8 @@
                                 <i class="fas fa-home"></i>
                                 <a href="index.html">TRANG CHỦ</a>
                             </li>
-                            <li class="menu-item"><a href="#">GIỚI THIỆU</a> </li>
-                            <li class="menu-item menu-item-has-children dropdown"><a href="#">SẢN PHẨM</a>
+                            <li class="menu-item"><a href="./about.html">GIỚI THIỆU</a> </li>
+                            <li class="menu-item menu-item-has-children dropdown"><a href="./product-listing.html">SẢN PHẨM</a>
                                 <ul class="sub-menu">
                                     <li class="menu-item"><a>Acer</a></li>
                                     <li class="menu-item"><a>Asus</a></li>
@@ -62,7 +62,7 @@
                                     <li class="menu-item"><a>Macbook</a></li>
                                 </ul>
                             </li>
-                            <li class="menu-item"><a href="#">Liên Hệ</a></li>
+                            <li class="menu-item"><a href="./contact-us.html">Liên Hệ</a></li>
                         </ul>
                     </div>
                     <div class="navigation__column right">
@@ -114,6 +114,51 @@
                 miễn phí với mọi đơn hàng tại cửa hàng Laptop NLU</p>
         </div>
     </div>
+    <div id="form">
+        <form action="" class="registerform" onsubmit="return validForm()">
+            <div class="input">
+                <input type="text"  id="user">
+                <div class="placeholder" id="place-user">Tên đăng nhập</div>
+            </div>
+            <div class="input">
+                <input type="password"  id="pass">
+                <div class="placeholder" id="place-pass">Mật khẩu</div>
+                <div class="pass fas fa-eye" id="eye"></div>
+            </div>
+            <div class="input">
+                <input type="password"  id="repass">
+                <div class="placeholder" id="place-repass">Nhập lại mật khẩu</div>
+            </div>
+            <div class="input">
+                <input type="text"  id="name">
+                <div class="placeholder" id="place-name">Tên của bạn</div>
+            </div>
+            <div class="input">
+                <input type="number"  id="phone">
+                <div class="placeholder" id="place-phone">Số điện thoại</div>
+            </div>
+            <div class="input">
+                <input type="text"  id="email">
+                <div class="placeholder" id="place-email">Email</div>
+            </div>
+            <div class="input">
+                <textarea  id="txtaddress" oninput="auto_grow(this)"></textarea>
+                <div class="placeholder" id="place-txtaddress">Địa chỉ</div>
+            </div>
+            <div class="input-group">
+                <input id="gender-male" type="radio" name="gender" value="male" />
+                <label for="gender-male">Nam</label>
+                <input id="gender-female" type="radio" name="gender" value="female" />
+                <label for="gender-female">Nữ</label>
+            </div>
+            <div class="input">
+                <input type="date"  id="datepicker">
+                <div class="placeholder" id="place-datepicker">Ngày sinh</div>
+            </div>
+            <button id="btndk">Đăng ký</button>
+            <p class="text-center">Bạn đã có tài khoản? <a href="./login.html" id="linkdn">Đăng nhập</a></p>
+        </form>
+    </div>
     <!-- Footer -->
     <div class="ps-footer bg--cover" data-background="images/background/parallax.jpg">
         <div class="ps-footer__content">
@@ -121,7 +166,7 @@
                 <div class="row">
                     <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 ">
                         <aside class="ps-widget--footer ps-widget--info">
-                            <header><a class="ps-logo" href="index.html"><img src="images/logo-white.png" alt=""></a>
+                            <header><a class="ps-logo" href="index.html"><img src="images/logo2.png" alt=""></a>
                                 <h3 class="ps-widget__title">Địa chỉ:</h3>
                             </header>
                             <footer>
@@ -241,6 +286,7 @@
     <script type="text/javascript" src="js/main.js"></script>
     <script type="text/javascript" src="plugins/revolution/js/extensions/revolution.extension.kenburn.min.js"></script>
     <script type="text/javascript" src="plugins/revolution/js/extensions/revolution.extension.migration.min.js"></script>
+    <script type="text/javascript" src="./register/register.js"></script>
 </body>
 
 </html>
