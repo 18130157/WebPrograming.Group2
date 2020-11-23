@@ -53,6 +53,15 @@
            5.2 margin
            5.3 padding
 */
+
+
+.ps-footer__copyright {
+  padding: 0;
+  border-top: 1px solid #b3b3b3;
+}
+.thanhtoan{
+  border-top: 1px solid #3a3a3a;
+}
 .masonry-wrapper .grid-item .grid-item__inner, .setting .grid-item .grid-item__inner {
   position: relative; }
 
@@ -5237,10 +5246,11 @@ textarea.form-control {
     background-color: rgba(0, 0, 0, 0.85);
     z-index: 0; }
   .ps-footer__content {
-    padding: 100px 0; }
+    padding: 20px 0px; }
   .ps-footer__copyright {
-    padding: 40px 0;
-    border-top: 1px solid #b3b3b3; }
+
+    padding: 0;
+    border-top: 1px solid #b3b3b3;}
     .ps-footer__copyright p {
       margin-bottom: 0;
       font-family: "Archivo Narrow", sans-serif;
