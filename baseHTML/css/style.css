@@ -3393,15 +3393,16 @@ textarea.form-control {
 .ps-table--compare table.table {
   border: 1px solid #e1e1e1; }
   .ps-table--compare table.table tbody > tr > td {
-    padding: 20px 30px;
+    padding: 10px 10px;
     border: 1px solid #e1e1e1;
-    font-weight: 500 !important;
+    font-size: 16px;
+    font-weight: 400 !important;
     color: #000;
-    text-transform: uppercase; }
+    /*text-transform: uppercase;*/ }
     .ps-table--compare table.table tbody > tr > td:first-child {
       background-color: #f5f5f5;
       border-color: #e1e1e1;
-      text-transform: uppercase;
+      /*text-transform: uppercase;*/
       color: #000;
       font-size: 18px;
       font-weight: 700;
