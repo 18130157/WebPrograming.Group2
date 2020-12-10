@@ -965,7 +965,7 @@ body {
   font-family: "Montserrat", sans-serif;
   font-size: 14px;
   line-height: 30px;
-  color: #7d8997; }
+  color: #3a3a3a; }
   .ps-list--line a:before {
     position: absolute;
     top: 50%;
@@ -2260,7 +2260,7 @@ textarea.form-control {
       font-size: 20px;
       font-weight: 700;
       line-height: 1.8em;
-      color: #fff;
+      color: #3a3a3a;
       text-transform: uppercase; }
 
 .ps-widget--info > header .ps-logo {
@@ -2268,10 +2268,10 @@ textarea.form-control {
   max-width: 120px;
   display: inline-block; }
 
-.ps-widget--info p {
+.ps-widget--info p ,a {
   font-family: "Montserrat", sans-serif;
   font-weight: 400;
-  color: #999; }
+  color: #3a3a3a; }
   .ps-widget--info p strong {
     margin-bottom: 20px;
     font-weight: 700; }
@@ -2294,7 +2294,7 @@ textarea.form-control {
   font-size: 16px;
   font-weight: 700;
   line-height: 1.8em;
-  color: #fff;
+  color: #3a3a3a;
   text-transform: uppercase; }
 
 .ps-widget--sidebar {
@@ -5244,7 +5244,7 @@ textarea.form-control {
     width: 100%;
     height: 100%;
     z-index: 10;
-    background-color: rgba(0, 0, 0, 0.85);
+    background-color: #eeeeee;
     z-index: 0; }
   .ps-footer__content {
     padding: 20px 0px; }
@@ -5257,7 +5257,7 @@ textarea.form-control {
       font-family: "Archivo Narrow", sans-serif;
       font-size: 16px;
       font-weight: 400;
-      color: #999999;
+      color: #3a3a3a;
       line-height: 25px;
       letter-spacing: .05em; }
       .ps-footer__copyright p a {

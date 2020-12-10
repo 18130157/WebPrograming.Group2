@@ -57,6 +57,10 @@
             background-size: cover;
 
         }
+        #eye{
+            position: relative;
+            transform: translate(450px,-32px);
+        }
 
     </style>
 </head>
@@ -176,7 +180,8 @@
                                 </div>
                                 <div class="form-group">
                                     <label>Mật khẩu:</label>
-                                    <input class="au-input au-input--full" type="password" name="password" placeholder="Nhập mật khẩu">
+                                    <input class="au-input au-input--full" id="pass" type="password" name="password" placeholder="Nhập mật khẩu">
+                                    <div class="pass fas fa-eye" id="eye"></div>
                                 </div>
                                 <div class="login-checkbox">
                                     <label>
@@ -308,6 +313,7 @@
     <script src="./login/animsition.min.js"></script>
     <script type="text/javascript" src="js/main.js"></script>
     <script type="text/javascript" src="js/mainlogin.js"></script>
+    <script type="text/javascript" src="./register/register.js"></script>
 </body>
 
 </html>
