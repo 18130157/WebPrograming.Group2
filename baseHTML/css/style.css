@@ -4767,6 +4767,10 @@ a {
     color: #2ac27d;
 }
 
+.price {
+    color: #c1000c;
+}
+
 .ps-table--compare table.table tbody>tr>td .status {
     font-size: 18px;
     font-weight: 500;
