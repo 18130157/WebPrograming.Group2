@@ -3,3 +3,11 @@ baseHTML/resources
 baseHTML/vendor
 baseHTML/debug.log
 baseHTML/Admin-master/vendor
+
+IntelliJ-workspace/.idea/workspace.xml
+IntelliJ-workspace/src/main/webapp/plugins
+IntelliJ-workspace/src/main/webapp/resources
+IntelliJ-workspace/src/main/webapp/vendor
+IntelliJ-workspace/src/main/webapp/debug.log
+IntelliJ-workspace/src/main/webapp/Admin-master/vendor
+IntelliJ-workspace/src/main/webapp/Admin-master/debug.log
