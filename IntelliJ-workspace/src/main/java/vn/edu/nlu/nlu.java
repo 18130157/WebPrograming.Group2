@@ -1,4 +1,4 @@
-package vnd.edu.nlu;
+package vn.edu.nlu;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
