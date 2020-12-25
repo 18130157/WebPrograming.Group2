@@ -70,15 +70,13 @@
     </key>
   </component>
   <component name="RunManager">
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -166,6 +164,7 @@
       <updated>1608800704114</updated>
       <workItem from="1608800705617" duration="2937000" />
       <workItem from="1608811957358" duration="1010000" />
+      <workItem from="1608889181329" duration="346000" />
     </task>
     <servers />
   </component>
