@@ -70,17 +70,6 @@
     </key>
   </component>
   <component name="RunManager">
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="Tomcat 8.5.60" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 8.5.60" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
       <option name="UPDATING_POLICY" value="restart-server" />
       <deployment>
@@ -164,7 +153,9 @@
       <updated>1608800704114</updated>
       <workItem from="1608800705617" duration="2937000" />
       <workItem from="1608811957358" duration="1010000" />
-      <workItem from="1608889181329" duration="832000" />
+      <workItem from="1608889181329" duration="1429000" />
+      <workItem from="1608895698910" duration="46000" />
+      <workItem from="1608972132962" duration="13000" />
     </task>
     <servers />
   </component>
