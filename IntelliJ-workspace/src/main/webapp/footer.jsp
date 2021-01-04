@@ -16,7 +16,7 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <link href="apple-touch-icon.png" rel="apple-touch-icon">
     
-    <title>LaptopNLU-Login</title>
+    <title>LaptopNLU-footer</title>
     <!-- Fonts-->
     <link href="https://fonts.googleapis.com/css?family=Archivo+Narrow:300,400,700%7CMontserrat:300,400,500,600,700,800,900" rel="stylesheet">
     <link rel="stylesheet" href="plugins/font-awesome/css/font-awesome.min.css">
@@ -70,68 +70,81 @@
 <!--[if IE 9]><body class="ie9 lt-ie10"><![endif]-->
 
 <body class="ps-loading animsition">
-   <jsp:include page="header.jsp"></jsp:include>
-    <div class="header-services">
-        <div class="ps-services owl-slider" data-owl-auto="true" data-owl-loop="true" data-owl-speed="7000" data-owl-gap="0" data-owl-nav="true" data-owl-dots="false" data-owl-item="1" data-owl-item-xs="1" data-owl-item-sm="1" data-owl-item-md="1" data-owl-item-lg="1" data-owl-duration="1000" data-owl-mousedrag="on">
-            <p class="ps-service"><i class="ps-icon-delivery"></i><strong>Giao hàng miễn phí</strong>: Nhận giao hàng
-                miễn phí với mọi đơn hàng tại cửa hàng Laptop NLU</p>
-            <p class="ps-service"><i class="ps-icon-delivery"></i><strong>Giao hàng miễn phí</strong>: Nhận giao hàng
-                miễn phí với mọi đơn hàng tại cửa hàng Laptop NLU</p>
-            <p class="ps-service"><i class="ps-icon-delivery"></i><strong>Giao hàng miễn phí</strong>: Nhận giao hàng
-                miễn phí với mọi đơn hàng tại cửa hàng Laptop NLU</p>
-        </div>
-    </div>
-    <div class="page-wrapper">
-        <div class="page-content--bge5">
-            <div class="container">
-                <div class="login-wrap">
-                    <div class="login-content">
-                        <div class="login-logo">
-                            <a href="#">
-                                <img src="images/logo1.png" alt="laptopnlu">
-                            </a>
-                        </div>
-                        <div class="login-form">
-                            <form action="" method="post">
-                                <div class="form-group">
-                                    <label>Tên tài khoản:</label>
-                                    <input class="au-input au-input--full" type="username" name="username" placeholder="Nhập tên tài khoản">
-                                </div>
-                                <div class="form-group">
-                                    <label>Mật khẩu:</label>
-                                    <input class="au-input au-input--full" id="pass" type="password" name="password" placeholder="Nhập mật khẩu">
-                                    <div class="pass fas fa-eye" id="eye"></div>
-                                </div>
-                                <div class="login-checkbox">
-                                    <label>
-                                        <input type="checkbox" name="remember">Ghi nhớ tôi
-                                    </label>
-                                    <label>
-                                        <a href="./forget-pass.html">Quên mật khẩu?</a>
-                                    </label>
-                                </div>
-                                <button class="au-btn au-btn--block au-btn--green m-b-20" type="button" onclick="dieu_huong()" >Đăng nhập</button>
-                                <div class="social-login-content">
-                                    <div class="social-button">
-                                        <button class="au-btn au-btn--block au-btn--blue m-b-20" style="color: white;">Đăng nhập với facebook</button>
-                                        <button class="au-btn au-btn--block au-btn--blue2">Đăng nhập với twitter</button>
-                                    </div>
-                                </div>
-                            </form>
-                            <div class="register-link">
-                                <p>
-                                    Bạn không có tài khoản?
-                                    <a href="./register.html">Đăng kí ở đây</a>
-                                </p>
-                            </div>
-                        </div>
+    <!-- Footer -->
+    <div class="ps-footer bg--cover">
+        <div class="ps-footer__content">
+            <div class="ps-container">
+                <div class="row" style="margin: auto">
+                    <aside class="col-lg-12 ">
+                        <img src="images/logolap1.png" alt="" style="width: 1800px;height: 80px">
+                    </aside>
+                    <div class="col-lg-2 ">
                     </div>
+
+                    <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 ">
+
+                        <aside class="ps-widget--footer ps-widget--info">
+                            <header>
+                                <h3 class="ps-widget__title">Địa chỉ:</h3>
+                            </header>
+                            <footer>
+                                <p><strong>Số 996 QL1A, Khu Phố 1, Dĩ An, Bình Dương</strong></p>
+                                <p>Email: <a href='mailto:support@store.com'>laptopnlu@gmail.com</a></p>
+                                <p>Phone: 09999999999</p>
+                                <p>Fax: 123456789</p>
+                            </footer>
+                        </aside>
+                    </div>
+
+                    <div class="col-lg-3 col-md-2 col-sm-4 col-xs-12 ">
+                        <aside class="ps-widget--footer ps-widget--link">
+                            <header>
+                                <h3 class="ps-widget__title">LIÊN KẾT</h3>
+                            </header>
+                            <footer>
+                                <ul class="ps-list--link">
+                                    <li><a href="#">TRANG CHỦ</a></li>
+                                    <li><a href="#">GIỚI THIỆU</a></li>
+                                    <li><a href="#">SẢN PHẨM</a></li>
+                                    <li><a href="#">LIÊN HỆ</a></li>
+                                </ul>
+                            </footer>
+                        </aside>
+                    </div>
+                    <div class="col-lg-3 col-md-2 col-sm-4 col-xs-12 ">
+                        <aside class="ps-widget--footer ps-widget--link">
+                            <header>
+                                <h3 class="ps-widget__title">KẾT NỐI VỚI CHÚNG TÔI</h3>
+                            </header>
+                            <footer>
+                                <ul class="ps-list--line">
+                                    <li><a href="#"><i class="fa fa-facebook"></i>  Kết nối Facebook</a></li>
+                                    <li><a href="#"><i class="fa fa-google-plus"></i>  Kết nối G+</a></li>
+                                    <li><a href="#"><i class="fa fa-twitter"></i>  Trao đổi Twitter</a></li>
+                                    <li><a href="#"><i class="fa fa-instagram"></i>  Kết nối Instagram</a></li>
+                                </ul>
+                            </footer>
+                        </aside>
+                    </div>
+                    <aside class="col-lg-12 row thanhtoan">
+
+                        <p class="col-lg-3">Các hình thức thanh toán hỗ trợ:</p>
+                        <img class="col-lg-9" src="images/thanhtoan2.png" alt="" style="width: 1000px;height: 50px">
+                    </aside>
+                </div>
+            </div>
+        </div>
+        <div class="ps-footer__copyright">
+            <div class="ps-container">
+                <div class="row">
+                    <div class="col-lg-12 col-md-6 col-sm-6 col-xs-12 " >
+                        <p style="text-align: center">&copy; <a href="#">LAPTOPNLU</a>. Design by <a href="#"> Group 02-LTWEB</a></p>
+                    </div>
+
                 </div>
             </div>
         </div>
     </div>
-    <!-- Footer -->
-   <jsp:include page="footer.jsp"></jsp:include>
     <!-- JS Library-->
     <script type="text/javascript" src="plugins/jquery/dist/jquery.min.js"></script>
     <script type="text/javascript" src="plugins/bootstrap/dist/js/bootstrap.min.js"></script>
