@@ -11,7 +11,7 @@ public class ConnectDB {
     public static PreparedStatement connect(String sql) throws  ClassNotFoundException, SQLException {
         if (conn == null || conn.isClosed()) {
             Class.forName("com.mysql.jdbc.Driver");
-            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/labtop_shop?useUnicode=true&characterEncoding=utf-8",
+            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/laptop_shop?useUnicode=true&characterEncoding=utf-8",
                     "root", "");
             return conn.prepareStatement(sql);
         } else
