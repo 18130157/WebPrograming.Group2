@@ -11,7 +11,7 @@
  Target Server Version : 100417
  File Encoding         : 65001
 
- Date: 03/01/2021 14:06:21
+ Date: 04/01/2021 11:33:16
 */
 
 SET NAMES utf8mb4;
@@ -329,7 +329,7 @@ CREATE TABLE `kichthuoc`  (
 INSERT INTO `kichthuoc` VALUES (1, 'Dài 296 mm - Rộng 196 mm - Dày 14.8 mm', 1.27, 'Vỏ kim loại');
 INSERT INTO `kichthuoc` VALUES (2, 'Dài 324.1 mm - Rộng 237.7 mm - Dày 18.0 mm', 1.564, 'Vỏ kim loại');
 INSERT INTO `kichthuoc` VALUES (3, 'Dài 326 mm - Dài 230 mm - Dày 17.9 mm', 1.5, 'Vỏ kim loại');
-INSERT INTO `kichthuoc` VALUES (4, '	Dài 306.5 mm- Rộng 194.6 mm - Dày 16.9 mm', 1.236, 'Vỏ kim loại nguyên khối');
+INSERT INTO `kichthuoc` VALUES (4, 'Dài 306.5 mm- Rộng 194.6 mm - Dày 16.9 mm', 1.236, 'Vỏ kim loại nguyên khối');
 INSERT INTO `kichthuoc` VALUES (5, 'Dài 376 mm - Rộng 246 mm - Dày 22.5 mm', 1.77, 'Vỏ nhựa');
 INSERT INTO `kichthuoc` VALUES (6, 'Dài 324 mm - Rộng 224 mm - Dày 19.7 mm', 1.65, '	Vỏ nhựa');
 INSERT INTO `kichthuoc` VALUES (7, 'Dài 361.1 mm - Rộng 249 mm - Dày 20.3 mm', 1.9, 'Vỏ nhựa');
@@ -507,7 +507,7 @@ CREATE TABLE `user`  (
   `Type` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL COMMENT 'Ví dụ: Root, Admin, Customer',
   `Sex` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL COMMENT 'Giới tính',
   `Dob` date NULL DEFAULT NULL COMMENT 'Ngày sinh',
-  `CreatedDate` date NULL DEFAULT NULL COMMENT 'Ngày tạo',
+  `CreatedDate` date NULL DEFAULT curdate COMMENT 'Ngày tạo',
   `Avatar` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL COMMENT 'Link ảnh đại diện',
   `Key` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL,
   `KeyTime` datetime(0) NULL DEFAULT NULL,
