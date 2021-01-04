@@ -146,6 +146,7 @@
             miễn phí với mọi đơn hàng tại cửa hàng Laptop NLU</p>
         <p class="ps-service"><i class="ps-icon-delivery"></i><strong>Giao hàng miễn phí</strong>: Nhận giao hàng
             miễn phí với mọi đơn hàng tại cửa hàng Laptop NLU</p>
+        
     </div>
 </div>
 <div class="page-wrapper">
