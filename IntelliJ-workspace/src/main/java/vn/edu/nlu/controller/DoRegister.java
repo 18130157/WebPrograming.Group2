@@ -39,9 +39,9 @@ public class DoRegister extends HttpServlet {
 //            HttpSession session = request.getSession();
 //            session.setAttribute("User", user);
             RegisterEntity.insertCustomer(user);
-            response.sendRedirect("login.jsp");
+            response.sendRedirect("/ProjectGroup02/login.jsp");
         } else
-            request.getRequestDispatcher("register.jsp").forward(request, response);
+            request.getRequestDispatcher("/ProjectGroup02/register.jsp").forward(request, response);
 
 
     }
