@@ -507,7 +507,7 @@ CREATE TABLE `user`  (
   `Type` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL COMMENT 'Ví dụ: Root, Admin, Customer',
   `Sex` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL COMMENT 'Giới tính',
   `Dob` date NULL DEFAULT NULL COMMENT 'Ngày sinh',
-  `CreatedDate` date NULL DEFAULT curdate COMMENT 'Ngày tạo',
+  `CreatedDate` date NULL COMMENT 'Ngày tạo',
   `Avatar` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL COMMENT 'Link ảnh đại diện',
   `Key` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL,
   `KeyTime` datetime(0) NULL DEFAULT NULL,
