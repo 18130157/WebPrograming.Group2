@@ -2,6 +2,7 @@
 /plugins
 /resources
 /vendor
-/target
+IntelliJ-workspace/target
 *.log
 IntelliJ-workspace/.idea/workspace.xml
+
