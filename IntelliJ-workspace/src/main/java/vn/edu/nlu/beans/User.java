@@ -41,6 +41,7 @@ public class User {
         this.password = password;
     }
 
+    // for admin
     public User(String username, String password, String address, String name, String phone, String email, String sex, Date dob) {
         this.username = username;
         this.password = password;
@@ -51,6 +52,20 @@ public class User {
         this.sex = sex;
         this.dob = dob;
     }
+    // for admin
+
+    public User(String username, String password, String address, String phone, String email, String type, String avatar) {
+        this.username = username;
+        this.password = password;
+        this.address = address;
+        this.phone = phone;
+        this.email = email;
+        this.type = type;
+        this.avatar = avatar;
+    }
+
+
+
 
     public String getUsername() {
         return username;
