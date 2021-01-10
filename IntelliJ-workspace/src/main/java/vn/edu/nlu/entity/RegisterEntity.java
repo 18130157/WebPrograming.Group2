@@ -94,4 +94,24 @@ public class RegisterEntity {
             throwables.printStackTrace();
         }
     }
+    // thêm admin vào database
+    public static void insertAdmin(User userAmin) {
+        String sql = "INSERT INTO user (Username, Password, Email, Phone, Address, Avatar, Type) VALUES (?,?,?,?,?,?,?)";
+        PreparedStatement ps = null;
+        try {
+            ps = ConnectDB.connect(sql);
+            ps.setString(1, userAmin.getUsername());
+            ps.setString(2, userAmin.getPassword());
+            ps.setString(3, userAmin.getEmail());
+            ps.setString(4, userAmin.getPhone());
+            ps.setString(5, userAmin.getAddress());
+            ps.setString(6, userAmin.getAvatar());
+            ps.setString(7, userAmin.getType());
+            ps.executeUpdate();
+            ps.close();
+        } catch (ClassNotFoundException|SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
 }

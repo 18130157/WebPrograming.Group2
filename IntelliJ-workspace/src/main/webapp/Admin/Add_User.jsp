@@ -299,20 +299,20 @@
             <div class="section__content section__content--p30">
                 <div class="container-fluid">
                     <div class="row">
-
                         <div class="col-lg-10" style="margin: auto">
                             <div class="card">
                                 <div class="card-header"  style="text-align: center">
                                     <strong style="font-size: 25PX;text-align: center">THÊM TÀI KHOẢN ADMIN</strong>
                                 </div>
                                 <div class="card-body card-block">
-                                    <form action="" method="post" class="form-horizontal">
+                                    <form action="DoRegisterForAdmin" method="post" class="form-horizontal">
                                         <div class="row form-group">
                                             <div class="col col-md-3">
                                                 <label for="hf-username" class=" form-control-label">Tên đăng nhập:</label>
                                             </div>
                                             <div class="col-12 col-md-9">
-                                                <input type="email" id="hf-username" name="hf-username" placeholder="Nhập tên..." class="form-control">
+
+                                                <input name="nameLogin"  id="hf-username"  placeholder="Nhập tên..." class="form-control">
 
                                             </div>
                                         </div>
@@ -321,7 +321,8 @@
                                                 <label for="hf-password" class=" form-control-label">Password</label>
                                             </div>
                                             <div class="col-12 col-md-9">
-                                                <input type="password" id="hf-password" name="hf-password" placeholder="Nhập Password..." class="form-control">
+
+                                                <input name="password" type="password" id="hf-password"  placeholder="Nhập Password..." class="form-control">
 
                                             </div>
                                         </div>
@@ -330,7 +331,8 @@
                                                 <label for="hf-password2" class=" form-control-label">Nhập lại password</label>
                                             </div>
                                             <div class="col-12 col-md-9">
-                                                <input type="password" id="hf-password2" name="hf-password2" placeholder="Nhập lại Password..." class="form-control">
+
+                                                <input name="rePassword" type="password" id="hf-password2"  placeholder="Nhập lại Password..." class="form-control">
 
                                             </div>
                                         </div>
@@ -339,7 +341,8 @@
                                                 <label for="hf-email" class=" form-control-label">Email</label>
                                             </div>
                                             <div class="col-12 col-md-9">
-                                                <input type="email" id="hf-email" name="hf-email" placeholder="Nhập Email..." class="form-control">
+
+                                                <input name="email" type="email" id="hf-email" placeholder="Nhập Email..." class="form-control">
 
                                             </div>
                                         </div>
@@ -348,7 +351,8 @@
                                                 <label for="hf-phone" class=" form-control-label" title="Số điện thoại">SĐT</label>
                                             </div>
                                             <div class="col-12 col-md-9">
-                                                <input type="text" id="hf-phone" name="hf-phone" placeholder="Nhập SĐT..." class="form-control">
+
+                                                <input name="phone" type="number" id="hf-phone"  placeholder="Nhập SĐT..." class="form-control">
 
                                             </div>
                                         </div>
@@ -357,7 +361,8 @@
                                                 <label for="hf-address" class=" form-control-label">Địa chỉ:</label>
                                             </div>
                                             <div class="col-12 col-md-9">
-                                                <input type="text" id="hf-address" name="hf-email" placeholder="Nhập địa chỉ..." class="form-control">
+
+                                                <input name="address" type="text" id="hf-address" placeholder="Nhập địa chỉ..." class="form-control">
 
                                             </div>
                                         </div>
@@ -366,31 +371,38 @@
                                                 <label for="select" class=" form-control-label">Quyền hạn:</label>
                                             </div>
                                             <div class="col-12 col-md-9">
-                                                <select name="select" id="select" class="form-control">
-                                                    <option value="0">Root</option>
-                                                    <option value="1">Normal</option>
+
+                                                <select name="chon" id="select" class="form-control">
+                                                    <option value="Root">Root</option>
+                                                    <option value="Normal">Normal</option>
                                                 </select>
+
                                             </div>
                                         </div>
                                         <div class="row form-group">
                                             <div class="col col-md-3">
-                                                <label for="file-input" class=" form-control-label">Chọn ảnh:</label>
+                                                <label for="file-input" class="form-control-label">Chọn ảnh:</label>
                                             </div>
                                             <div class="col-12 col-md-9">
-                                                <input type="file" id="file-input" name="file-input"
+
+                                                <input name="avatar" type="file" id="file-input"
                                                        class="form-control-file">
+
+                                            </div>
+                                        </div>
+                                        <div class="card-footer" style="font-size: 25PX;text-align: center">
+                                            <div class="card-footer" style="font-size: 25PX;text-align: center">
+                                                <button type="submit" class="btn btn-primary btn-sm">
+                                                    <i class="fa fa-dot-circle-o"></i> Thêm TK
+                                                </button>
+                                                <button type="reset" class="btn btn-danger btn-sm">
+                                                    <i class="fa fa-ban"></i> Reset
+                                                </button>
                                             </div>
                                         </div>
                                     </form>
                                 </div>
-                                <div class="card-footer" style="font-size: 25PX;text-align: center">
-                                    <button type="submit" class="btn btn-primary btn-sm">
-                                        <i class="fa fa-dot-circle-o"></i> Thêm TK
-                                    </button>
-                                    <button type="reset" class="btn btn-danger btn-sm">
-                                        <i class="fa fa-ban"></i> Reset
-                                    </button>
-                                </div>
+
                             </div>
 
                         </div>
