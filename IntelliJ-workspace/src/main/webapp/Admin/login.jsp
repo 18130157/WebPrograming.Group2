@@ -36,7 +36,7 @@
     <link href="css/theme.css" rel="stylesheet" media="all">
 <style>
     body {
-        background:  url('a/tc.png') ;
+        background:  url("a/tc.png") ;
         background-position: center center;
         background-size: cover;
     }
