@@ -62,7 +62,12 @@
                                 <img src="images/icon/avatar-01.jpg" alt="John Doe" />
                             </div>
                             <div class="content">
-                                <a class="js-acc-btn" href="#">Ana Nguyễn</a>
+                                <a class="js-acc-btn" href="#">
+                                    <%
+                                    User u= (User) session.getAttribute("USER");
+                                    %>
+                                    <%= u!= null?u.getUsername():""%>
+                                </a>
                             </div>
                             <div class="account-dropdown js-dropdown">
                                 <div class="info clearfix">
@@ -73,9 +78,9 @@
                                     </div>
                                     <div class="content">
                                         <h5 class="name">
-                                            <a href="#">Ana Nguyễn</a>
+                                            <a href="#"><%= u!=null?u.getType()+":"+u.getUsername():""%></a>
                                         </h5>
-                                        <span class="email">ananguyen@gamil.com</span>
+                                        <span class="email"><%= u!=null?u.getEmail():""%></span>
                                     </div>
                                 </div>
                                 <div class="account-dropdown__body">
@@ -93,7 +98,7 @@
                                     </div>
                                 </div>
                                 <div class="account-dropdown__footer">
-                                    <a href="#">
+                                    <a href="DoLogoutAM">
                                         <i class="zmdi zmdi-power"></i>Đăng xuất</a>
                                 </div>
                             </div>
