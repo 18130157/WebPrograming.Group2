@@ -94,7 +94,7 @@
                     <div class="ps-shoe mb-30">
                       <div class="ps-shoe__thumbnail">
                         <div class="ps-badge"><span>Mới</span></div>
-                        <div class="ps-badge ps-badge--sale ps-badge--2nd"><span>-35%</span></div><img src="images/shoe/acer/1.jpg" alt=""><a class="ps-shoe__overlay" href="product-detail.html"></a>
+                        <div class="ps-badge ps-badge--sale ps-badge--2nd"><span>-35%</span></div><img src="images/shoe/acer/1.jpg" alt=""><a class="ps-shoe__overlay" href="product-detail.jsp"></a>
                       </div>
                       <br/><br/><br/>
                       <div class="ps-shoe__content">
@@ -119,7 +119,7 @@
                 <div class="grid-item nike">
                   <div class="grid-item__content-wrapper">
                     <div class="ps-shoe mb-30">
-                      <div class="ps-shoe__thumbnail"><img src="images/shoe/hp/1.jpg" alt=""><a class="ps-shoe__overlay" href="product-detail.html"></a>
+                      <div class="ps-shoe__thumbnail"><img src="images/shoe/hp/1.jpg" alt=""><a class="ps-shoe__overlay" href="product-detail.jsp"></a>
                       </div>
                       <br/><br/>
                       <div class="ps-shoe__content">
@@ -144,7 +144,7 @@
                 <div class="grid-item adidas">
                   <div class="grid-item__content-wrapper">
                     <div class="ps-shoe mb-30">
-                      <div class="ps-shoe__thumbnail"><img src="images/shoe/dell/1.jpg" alt=""><a class="ps-shoe__overlay" href="product-detail.html"></a>
+                      <div class="ps-shoe__thumbnail"><img src="images/shoe/dell/1.jpg" alt=""><a class="ps-shoe__overlay" href="product-detail.jsp"></a>
                       </div>
                       <br/><br/>
                       <div class="ps-shoe__content">
@@ -170,7 +170,7 @@
                   <div class="grid-item__content-wrapper">
                     <div class="ps-shoe mb-30">
                       <div class="ps-shoe__thumbnail">
-                        <div class="ps-badge ps-badge--sale"><span>-35%</span></div><img src="images/shoe/Lenovo/1.jpg" alt=""><a class="ps-shoe__overlay" href="product-detail.html"></a>
+                        <div class="ps-badge ps-badge--sale"><span>-35%</span></div><img src="images/shoe/Lenovo/1.jpg" alt=""><a class="ps-shoe__overlay" href="product-detail.jsp"></a>
                       </div>
                       <br/><br/>
                       <div class="ps-shoe__content">
@@ -198,7 +198,7 @@
                   <div class="grid-item__content-wrapper">
                     <div class="ps-shoe mb-30">
                        <br/>
-                      <div class="ps-shoe__thumbnail"><img src="images/shoe/asus/1.jpg" alt=""><a class="ps-shoe__overlay" href="product-detail.html"></a>
+                      <div class="ps-shoe__thumbnail"><img src="images/shoe/asus/1.jpg" alt=""><a class="ps-shoe__overlay" href="product-detail.jsp"></a>
                       </div>
                       <br/><br/>
                       <div class="ps-shoe__content">
@@ -225,7 +225,7 @@
                   <div class="grid-item__content-wrapper">
                     <div class="ps-shoe mb-30">
                       <br/>
-                      <div class="ps-shoe__thumbnail"><img src="images/shoe/Macbook/1.jpg" alt=""><a class="ps-shoe__overlay" href="product-detail.html"></a>
+                      <div class="ps-shoe__thumbnail"><img src="images/shoe/Macbook/1.jpg" alt=""><a class="ps-shoe__overlay" href="product-detail.jsp"></a>
                       </div>
                       <br/><br/>
                       <div class="ps-shoe__content">
@@ -250,7 +250,7 @@
                   <div class="grid-item__content-wrapper">
                     <div class="ps-shoe mb-30">
                       <br/>
-                      <div class="ps-shoe__thumbnail"><img src="images/shoe/hp2/1.jpg" alt=""><a class="ps-shoe__overlay" href="product-detail.html"></a>
+                      <div class="ps-shoe__thumbnail"><img src="images/shoe/hp2/1.jpg" alt=""><a class="ps-shoe__overlay" href="product-detail.jsp"></a>
                       </div>
                       <br/><br/>
                       <div class="ps-shoe__content">
@@ -274,7 +274,7 @@
                 <div class="grid-item kids">
                   <div class="grid-item__content-wrapper">
                     <div class="ps-shoe mb-30">
-                      <div class="ps-shoe__thumbnail"><img src="images/shoe/hp3/1.jpg" alt=""><a class="ps-shoe__overlay" href="product-detail.html"></a>
+                      <div class="ps-shoe__thumbnail"><img src="images/shoe/hp3/1.jpg" alt=""><a class="ps-shoe__overlay" href="product-detail.jsp"></a>
                       </div>
                       <br/><br/>
                       <div class="ps-shoe__content">
@@ -301,8 +301,8 @@
         </div>
       </div>
       <div class="ps-section--offer">
-        <div class="ps-column"><a class="ps-offer" href="product-listing.html"><img src="images/banner/banner1.png" alt=""></a></div>
-        <div class="ps-column"><a class="ps-offer" href="product-listing.html"><img src="images/banner/banner2.png" alt=""></a></div>
+        <div class="ps-column"><a class="ps-offer" href="product-listing.jsp"><img src="images/banner/banner1.png" alt=""></a></div>
+        <div class="ps-column"><a class="ps-offer" href="product-listing.jsp"><img src="images/banner/banner2.png" alt=""></a></div>
       </div>
       <div class="ps-section--sale-off ps-section pt-80 pb-40">
         <div class="ps-container">
@@ -360,7 +360,7 @@
               <div class="ps-shoes--carousel">
                 <div class="ps-shoe">
                   <div class="ps-shoe__thumbnail">
-                    <div class="ps-badge"><span>Mới</span></div><img src="images/shoe/BanChayNhat/asus/1.jpg" alt=""><a class="ps-shoe__overlay" href="product-detail.html"></a>
+                    <div class="ps-badge"><span>Mới</span></div><img src="images/shoe/BanChayNhat/asus/1.jpg" alt=""><a class="ps-shoe__overlay" href="product-detail.jsp"></a>
                   </div>
                   <br/><br/>
                   <div class="ps-shoe__content">
@@ -374,7 +374,7 @@
                         <option value="2">5</option>
                       </select>
                     </div>
-                    <div class="ps-shoe__detail"><a class="ps-shoe__name" href="product-detai.html">Laptop Asus VivoBook X509MA N5030</a>
+                    <div class="ps-shoe__detail"><a class="ps-shoe__name" href="product-detai.jsp">Laptop Asus VivoBook X509MA N5030</a>
                       <p>RAM:4GB - HDD:1000GB<br/><strong class="ps-product__price">11 090 000đ</strong></p>
                     </div>
                   </div>
@@ -384,7 +384,7 @@
                 <div class="ps-shoe">
                   <div class="ps-shoe__thumbnail">
                     <div class="ps-badge"><span>Mới</span></div>
-                    <div class="ps-badge ps-badge--sale ps-badge--2nd"><span>-35%</span></div><img src="images/shoe/BanChayNhat/hp/1.jpg" alt=""><a class="ps-shoe__overlay" href="product-detail.html"></a>
+                    <div class="ps-badge ps-badge--sale ps-badge--2nd"><span>-35%</span></div><img src="images/shoe/BanChayNhat/hp/1.jpg" alt=""><a class="ps-shoe__overlay" href="product-detail.jsp "></a>
                   </div>
                   <br/><br>
                   <div class="ps-shoe__content">
@@ -398,7 +398,7 @@
                         <option value="2">5</option>
                       </select>
                     </div>
-                    <div class="ps-shoe__detail"><a class="ps-shoe__name" href="product-detai.html">Laptop HP 348 G7 i3 8130U</a>
+                    <div class="ps-shoe__detail"><a class="ps-shoe__name" href="product-detai.jsp">Laptop HP 348 G7 i3 8130U</a>
                       <p >
                         RAM:4G-SSD:256GB<br/><del> 12 890 000 đ</del><strong class="ps-product__price"> 8 990 000 đ </strong>
                        </p>
@@ -408,7 +408,7 @@
               </div>
               <div class="ps-shoes--carousel">
                 <div class="ps-shoe">
-                 <div class="ps-shoe__thumbnail"><img src="images/shoe/hp2/1.jpg" alt=""><a class="ps-shoe__overlay" href="product-detail.html"></a>
+                 <div class="ps-shoe__thumbnail"><img src="images/shoe/hp2/1.jpg" alt=""><a class="ps-shoe__overlay" href="product-detail.jsp"></a>
                       </div>
                       <br/><br/>
                       <div class="ps-shoe__content">
@@ -430,7 +430,7 @@
               </div>
               <div class="ps-shoes--carousel">
                 <div class="ps-shoe">
-                  <div class="ps-shoe__thumbnail"><img src="images/shoe/asus/1.jpg" alt=""><a class="ps-shoe__overlay" href="product-detail.html"></a>
+                  <div class="ps-shoe__thumbnail"><img src="images/shoe/asus/1.jpg" alt=""><a class="ps-shoe__overlay" href="product-detail.jsp"></a>
                       </div>
                       <br/><br/>
                       <div class="ps-shoe__content">
@@ -454,7 +454,7 @@
               <div class="ps-shoes--carousel">
                 <div class="ps-shoe">
                   <div class="ps-shoe__thumbnail">
-                    <div class="ps-badge"><span>Mới</span></div><img src="images/shoe/5.jpg" alt=""><a class="ps-shoe__overlay" href="product-detail.html"></a>
+                    <div class="ps-badge"><span>Mới</span></div><img src="images/shoe/5.jpg" alt=""><a class="ps-shoe__overlay" href="product-detail.jsp"></a>
                   </div>
                   <br/><br/>
                   <div class="ps-shoe__content">
@@ -468,7 +468,7 @@
                         <option value="2">5</option>
                       </select>
                     </div>
-                    <div class="ps-shoe__detail"><a class="ps-shoe__name" href="product-detai.html">Laptop ASUS VIVOBOOK A412FA</a>
+                    <div class="ps-shoe__detail"><a class="ps-shoe__name" href="product-detai.jsp">Laptop ASUS VIVOBOOK A412FA</a>
                       <p>RAM:8GB - SSD:256GB<br/><del> 16 000 000 đ </del><strong class="ps-product__price">14 999 000đ  </strong>
                       </p>
                     </div>
@@ -477,7 +477,7 @@
               </div>
               <div class="ps-shoes--carousel">
                 <div class="ps-shoe">
-                  <div class="ps-shoe__thumbnail"><img src="images/shoe/acer/1.jpg" alt=""><a class="ps-shoe__overlay" href="product-detail.html"></a>
+                  <div class="ps-shoe__thumbnail"><img src="images/shoe/acer/1.jpg" alt=""><a class="ps-shoe__overlay" href="product-detail.jsp"></a>
                   </div>
                   <br/>
                   <br/>
@@ -492,7 +492,7 @@
                         <option value="2">5</option>
                       </select>
                     </div>
-                    <div class="ps-shoe__detail"><a class="ps-shoe__name" href="product-detai.html">Laptop Acer Aspire 3 A315 54K 37B0 i3 8130U</a>
+                    <div class="ps-shoe__detail"><a class="ps-shoe__name" href="product-detai.jsp">Laptop Acer Aspire 3 A315 54K 37B0 i3 8130U</a>
                       <p>RAM:4GB - SSD:256GB<br/>
                        <strong class="ps-product__price">9 990 000 đ</strong>
                       </p>
