@@ -174,11 +174,7 @@
     <script type="text/javascript" src="js/mainlogin.js"></script>
     <script type="text/javascript" src="./register/register.js"></script>
 
-    <script>
-         function dieu_huong(){
-            location.assign("index_AfterLogin.html");
-        }
-    </script>
+
 
 </body>
 
