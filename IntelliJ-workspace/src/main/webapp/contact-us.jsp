@@ -7,12 +7,9 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
     <title>LaptopNLU-ContactUs</title>
 </head>
 <body class="ps-loading">
-
 <jsp:include page="header.jsp"></jsp:include>
 <div class="header-services">
     <div class="ps-services owl-slider" data-owl-auto="true" data-owl-loop="true" data-owl-speed="7000" data-owl-gap="0"
@@ -64,7 +61,5 @@
     <!-- Footer -->
    <jsp:include page="footer.jsp"></jsp:include>
 </main>
-<!-- Custom scripts-->
-<script type="text/javascript" src="js/main.js"></script>
 </body>
 </html>

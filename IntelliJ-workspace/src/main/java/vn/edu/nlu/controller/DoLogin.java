@@ -33,13 +33,14 @@ public class DoLogin extends HttpServlet {
             } else {
                 HttpSession session = request.getSession();
                 session.setAttribute("USER", user);
+
                 response.sendRedirect("Admin/index.jsp");
             }
 
         } else {
+            request.setAttribute("loi","Sai thông tin vui lòng nhập lại!");
             request.getRequestDispatcher("login.jsp").forward(request, response);
         }
     }
 
 }
-

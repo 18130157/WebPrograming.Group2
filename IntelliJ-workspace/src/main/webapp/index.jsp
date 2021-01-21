@@ -11,7 +11,7 @@
     <title>LaptopNLU-Homepage</title>
 
     <!-- Custom-->
-    <link rel="stylesheet" href="css/style.css">
+<%--    <link rel="stylesheet" href="css/style.css">--%>
     <style type="text/css">
         .rev_slider_wrapper,
         .rev_slider,
@@ -659,6 +659,6 @@
 
 </main>
 <!-- Custom scripts-->
-<script type="text/javascript" src="js/main.js"></script>
+<%--<script type="text/javascript" src="js/main.js"></script>--%>
 </body>
 </html>

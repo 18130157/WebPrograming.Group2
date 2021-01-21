@@ -4,11 +4,9 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>LaptopNLU - Product Detail</title>
     <style>
 
@@ -22,7 +20,6 @@
             font-weight: bolder;
             color: #c1000c;
         }
-
         .ps-product--detail .ps-product__info .name_product,
         .ps-product--detail .ps-product__info .header_overview,
         .ps-product--detail .ps-product__info .header_count {
@@ -73,7 +70,7 @@
     </style>
 </head>
 <body class="ps-loading">
-<jsp:include page="header.jsp"></jsp:include>
+    <jsp:include page="header.jsp"></jsp:include>
 <div class="header-services">
     <div class="ps-services owl-slider" data-owl-auto="true" data-owl-loop="true" data-owl-speed="7000" data-owl-gap="0"
          data-owl-nav="true" data-owl-dots="false" data-owl-item="1" data-owl-item-xs="1" data-owl-item-sm="1"
@@ -364,8 +361,7 @@
                                 <input style="width: 500px" class="form-control" type="text"
                                        placeholder="Nhập tên đi nào...">
                                 <br/>
-                                <div class="ps-product__shopping"><a class="ps-btn mb-10" href="compare.html">SO
-                                    SÁNH</a>
+                                <div class="ps-product__shopping"><a class="ps-btn mb-10" href="compare.html">SO SÁNH</a>
 
                                 </div>
 
@@ -476,7 +472,7 @@
                                                     <del>25.490.000đ</del>
                                                     <strong class="price">23.490.000đ</strong></p>
                                             </div>
-                                            <a class="compare" href="compare.html">SO SÁNH</a>
+                                            <a class="compare"href="compare.html">SO SÁNH</a>
                                         </div>
                                     </div>
                                 </div>
@@ -681,11 +677,8 @@
             </div>
         </div>
     </div>
-
     <!-- Footer -->
     <jsp:include page="footer.jsp"></jsp:include>
 </main>
-<!-- Custom scripts-->
-<script type="text/javascript" src="js/main.js"></script>
 </body>
 </html>

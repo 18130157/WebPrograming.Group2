@@ -4,36 +4,29 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>LaptopNLU-Login</title>
     <!-- Main CSS-->
     <link href="login/main.css" rel="stylesheet" media="all">
     <style>
         .page-wrapper {
-            background: url('a/tc.png');
+            background:  url('a/tc.png') ;
             background-position: center center;
             background-size: cover;
-
         }
-
-        #eye {
+        #eye{
             position: relative;
-            transform: translate(450px, -32px);
+            transform: translate(450px,-32px);
         }
 
     </style>
 </head>
-
-<body class="ps-loading animsition">
+<body class="ps-loading">
 <jsp:include page="header.jsp"></jsp:include>
 <div class="header-services">
-    <div class="ps-services owl-slider" data-owl-auto="true" data-owl-loop="true" data-owl-speed="7000" data-owl-gap="0"
-         data-owl-nav="true" data-owl-dots="false" data-owl-item="1" data-owl-item-xs="1" data-owl-item-sm="1"
-         data-owl-item-md="1" data-owl-item-lg="1" data-owl-duration="1000" data-owl-mousedrag="on">
+    <div class="ps-services owl-slider" data-owl-auto="true" data-owl-loop="true" data-owl-speed="7000" data-owl-gap="0" data-owl-nav="true" data-owl-dots="false" data-owl-item="1" data-owl-item-xs="1" data-owl-item-sm="1" data-owl-item-md="1" data-owl-item-lg="1" data-owl-duration="1000" data-owl-mousedrag="on">
         <p class="ps-service"><i class="ps-icon-delivery"></i><strong>Giao hàng miễn phí</strong>: Nhận giao hàng
             miễn phí với mọi đơn hàng tại cửa hàng Laptop NLU</p>
         <p class="ps-service"><i class="ps-icon-delivery"></i><strong>Giao hàng miễn phí</strong>: Nhận giao hàng
@@ -56,24 +49,24 @@
                         <form action="DoLogin" method="post">
                             <div class="form-group">
                                 <label>Tên tài khoản:</label>
-                                <input name="username" class="au-input au-input--full" type="text"
-                                       placeholder="Nhập tên tài khoản">
+                                <input name="username" class="au-input au-input--full" type="text"  placeholder="Nhập tên tài khoản">
                             </div>
                             <div class="form-group">
                                 <label>Mật khẩu:</label>
-                                <input name="password" class="au-input au-input--full" id="pass" type="text"
-                                       placeholder="Nhập mật khẩu">
+                                <input name="password"  class="au-input au-input--full" id="pass" type="text" placeholder="Nhập mật khẩu">
                                 <div class="pass fas fa-eye" id="eye"></div>
+                                <p style="color:red;padding-top: 3px; font-weight: bold;"><%=request.getAttribute("loi")!= null?request.getAttribute("loi"):""%>
+                                </p>
                             </div>
                             <div class="login-checkbox">
                                 <label>
-                                    <input name="remember" type="checkbox">Ghi nhớ tôi
+                                    <input name="remember" type="checkbox" >Ghi nhớ tôi
                                 </label>
                                 <label>
                                     <a href="forget-pass.jsp">Quên mật khẩu?</a>
                                 </label>
                             </div>
-                            <button class="au-btn au-btn--block au-btn--green m-b-20">Đăng nhập</button>
+                            <button class="au-btn au-btn--block au-btn--green m-b-20" >Đăng nhập</button>
                             <%--                                <div class="social-login-content">--%>
                             <%--                                    <div class="social-button">--%>
                             <%--                                        <button class="au-btn au-btn--block au-btn--blue m-b-20" style="color: white;">Đăng nhập với facebook</button>--%>
@@ -96,11 +89,7 @@
 <!-- Footer -->
 <jsp:include page="footer.jsp"></jsp:include>
 <!-- Custom scripts-->
-<script type="text/javascript" src="js/main.js"></script>
-<script type="text/javascript" src="js/mainlogin.js"></script>
-<script type="text/javascript" src="./register/register.js"></script>
-
-
+<script src="./login/animsition.min.js"></script>
 </body>
 
 </html>

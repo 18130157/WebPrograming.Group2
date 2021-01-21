@@ -9,8 +9,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>LaptopNLU - Compare</title>
-    <!-- Custom-->
-    <link rel="stylesheet" href="css/style.css">
     <style>
         .ps-cart__table .colapse {
             display: none;
@@ -22,7 +20,7 @@
         }
 
         #tog {
-            margin: 600px;
+            margin: 500px;
             color: #2ac27d;
             font-weight: bolder;
             font-size: 18px;
@@ -32,7 +30,6 @@
     </style>
 </head>
 <body class="ps-loading">
-
 <jsp:include page="header.jsp"></jsp:include>
 <div class="header-services">
     <div class="ps-services owl-slider" data-owl-auto="true" data-owl-loop="true" data-owl-speed="7000" data-owl-gap="0"
@@ -316,9 +313,6 @@
             document.getElementById("tog").innerHTML = "Ẩn bớt"
         else document.getElementById("tog").innerHTML = "Xem chi tiết"
     };
-
 </script>
-<!-- Custom scripts-->
-<script type="text/javascript" src="js/main.js"></script>
 </body>
 </html>
