@@ -18,7 +18,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <link href="apple-touch-icon.png" rel="apple-touch-icon">
-    
+
     <title>LaptopNLU - Product Detail</title>
     <!-- Fonts-->
     <link href="https://fonts.googleapis.com/css?family=Archivo+Narrow:300,400,700%7CMontserrat:300,400,500,600,700,800,900"
@@ -405,7 +405,7 @@
                                 <div class="ps-product__shopping"><a class="ps-btn mb-10" href="compare.html">SO SÁNH</a>
 
                                 </div>
-                                
+
                             </div>
 
                             <h4 style="padding: 50px 50px">Một số sản phẩm gợi ý so sánh</h4>

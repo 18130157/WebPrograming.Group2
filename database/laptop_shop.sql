@@ -11,7 +11,7 @@
  Target Server Version : 100417
  File Encoding         : 65001
 
- Date: 04/01/2021 11:33:16
+ Date: 21/01/2021 06:50:07
 */
 
 SET NAMES utf8mb4;
@@ -69,7 +69,7 @@ CREATE TABLE `bonho`  (
   `RAMToiDa` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL COMMENT 'Ghi rõ: ví dụ \"32 GB\" hoặc \"Không hỗ trợ nâng cấp\"',
   `OCung` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT 'Đang cập nhật',
   PRIMARY KEY (`ID`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 9 CHARACTER SET = utf8 COLLATE = utf8_unicode_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 10 CHARACTER SET = utf8 COLLATE = utf8_unicode_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of bonho
@@ -82,6 +82,7 @@ INSERT INTO `bonho` VALUES (5, 4, 'DDR4 (On board +1 khe)', 2133, '8 GB', 'HDD: 
 INSERT INTO `bonho` VALUES (6, 4, 'DDR4 (2 khe)', 2666, '16 GB', 'HDD: 1 TB SATA3 , Hỗ trợ khe cắm SSD M.2 SATA3');
 INSERT INTO `bonho` VALUES (7, 4, 'DDR4 (2 khe)', 2666, '32 GB', 'HDD: 1 TB SATA3 , Hỗ trợ khe cắm SSD M.2 PCIe');
 INSERT INTO `bonho` VALUES (8, 4, 'DDR4 (2 khe)', 2666, '16 GB', 'SSD 256GB NVMe PCIe');
+INSERT INTO `bonho` VALUES (9, 16, 'LPDDR4 (On board)', 3733, 'Không hỗ trợ nâng cấp', '1TB SSD M.2 PCIe');
 
 -- ----------------------------
 -- Table structure for cart
@@ -131,7 +132,7 @@ CREATE TABLE `congketnoi`  (
   `TinhNangKhac` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT 'Đang cập nhật' COMMENT 'Các giá trị phân cách nhau bằng ;',
   `DenBanPhim` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT 'Không' COMMENT '\"Không\" hoặc \"Có\"',
   PRIMARY KEY (`ID`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 9 CHARACTER SET = utf8 COLLATE = utf8_unicode_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 10 CHARACTER SET = utf8 COLLATE = utf8_unicode_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of congketnoi
@@ -144,6 +145,7 @@ INSERT INTO `congketnoi` VALUES (5, '2 x USB 3.1; HDMI; LAN (RJ45); USB 2.0', 'W
 INSERT INTO `congketnoi` VALUES (6, '2 x USB 3.1; HDMI; USB Type-C', '	Bluetooth 4.2, Wi-Fi 802.11 a/b/g/n/ac', 'SD', 'Không', 'Không', '	HD webcam', 'Bút cảm ứng số', 'Không');
 INSERT INTO `congketnoi` VALUES (7, '2 x USB 3.1; HDMI; LAN (RJ45); USB 2.0; USB Type-C', 'Bluetooth 4.1, Wi-Fi 802.11 a/b/g/n/ac', 'SD', 'Không', 'Không', 'HD webcam', 'Bảo mật vân tay', 'Có');
 INSERT INTO `congketnoi` VALUES (8, '2 x USB 3.1; HDMI; LAN (RJ45); USB 2.0', 'Bluetooth, Wi-Fi 802.11 a/b/g/n/ac', 'SD', 'Không', 'Không', 'HD webcam', 'Bảo mật vân tay', 'Không');
+INSERT INTO `congketnoi` VALUES (9, 'USB 3.1, 2 x Thunderbolt 3 (USB-C)', '	Wi-Fi 6 - 802.11ax, Bluetooth v5.0', 'Không', 'Không', 'Không', 'Fixed Focus CMOS camera', 'Bảo mật vân tay', 'Có');
 
 -- ----------------------------
 -- Table structure for cpu
@@ -219,7 +221,7 @@ CREATE TABLE `dohoa_amthanh`  (
   `CardDoHoa` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT 'Đang cập nhật' COMMENT 'Ví dụ: Intel UHD Graphics',
   `CNamthanh` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT 'Đang cập nhật',
   PRIMARY KEY (`ID`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 9 CHARACTER SET = utf8 COLLATE = utf8_unicode_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 10 CHARACTER SET = utf8 COLLATE = utf8_unicode_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of dohoa_amthanh
@@ -232,6 +234,7 @@ INSERT INTO `dohoa_amthanh` VALUES (5, 'Card đồ họa tích hợp', 'Intel® 
 INSERT INTO `dohoa_amthanh` VALUES (6, 'Card đồ họa tích hợp', 'Intel® UHD Graphics 620', 'Realtek High Definition Audio');
 INSERT INTO `dohoa_amthanh` VALUES (7, '	Card đồ họa tích hợp', 'Intel® UHD Graphics 620', 'Waves MaxxAudio');
 INSERT INTO `dohoa_amthanh` VALUES (8, 'Card đồ họa tích hợp', 'Intel UHD Graphics', 'Realtek High Definition Audio');
+INSERT INTO `dohoa_amthanh` VALUES (9, 'Card đồ họa tích hợp', 'Intel Iris Plus Graphics', 'Rotating Sound Bar with Dolby Atmos® Speaker System');
 
 -- ----------------------------
 -- Table structure for donhang
@@ -264,7 +267,7 @@ CREATE TABLE `gia`  (
   `MaSP` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   `STT` int(11) NOT NULL COMMENT 'Số thứ tự thay đổi',
   `Gia` bigint(20) NULL DEFAULT NULL,
-  `NgayApDung` date NULL DEFAULT NULL,
+  `NgayApDung` date NULL DEFAULT curdate,
   `NgayKetThuc` date NULL DEFAULT NULL,
   PRIMARY KEY (`MaSP`, `STT`) USING BTREE,
   CONSTRAINT `gia_ibfk_1` FOREIGN KEY (`MaSP`) REFERENCES `product` (`ID`) ON DELETE RESTRICT ON UPDATE RESTRICT
@@ -273,6 +276,15 @@ CREATE TABLE `gia`  (
 -- ----------------------------
 -- Records of gia
 -- ----------------------------
+INSERT INTO `gia` VALUES ('0N90H1', 1, 57990000, '2021-01-21', NULL);
+INSERT INTO `gia` VALUES ('1A1A6PA', 1, 18290000, '2021-01-21', NULL);
+INSERT INTO `gia` VALUES ('20SL00MFVN', 1, 16490000, '2021-01-21', NULL);
+INSERT INTO `gia` VALUES ('2K0B7PA', 1, 31490000, '2021-01-21', NULL);
+INSERT INTO `gia` VALUES ('4ME68PA', 1, 10690000, '2021-01-21', NULL);
+INSERT INTO `gia` VALUES ('6ZF24PA', 1, 12490000, '2021-01-21', NULL);
+INSERT INTO `gia` VALUES ('70175950', 1, 15990000, '2021-01-21', NULL);
+INSERT INTO `gia` VALUES ('70223127', 1, 10990000, '2021-01-21', NULL);
+INSERT INTO `gia` VALUES ('81Q9007KVN', 1, 49990000, '2021-01-21', NULL);
 
 -- ----------------------------
 -- Table structure for hedieuhanh
@@ -299,17 +311,26 @@ DROP TABLE IF EXISTS `khuyenmai`;
 CREATE TABLE `khuyenmai`  (
   `MaKM` int(11) NOT NULL AUTO_INCREMENT,
   `MaSP` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL,
-  `MucGiamGia` float NULL DEFAULT NULL,
-  `NgayApDung` date NULL DEFAULT NULL,
+  `MucGiamGia` float NULL DEFAULT 0,
+  `NgayApDung` date NULL DEFAULT curdate,
   `NgayKetThuc` date NULL DEFAULT NULL,
   PRIMARY KEY (`MaKM`) USING BTREE,
   INDEX `MaSP`(`MaSP`) USING BTREE,
   CONSTRAINT `khuyenmai_ibfk_1` FOREIGN KEY (`MaSP`) REFERENCES `product` (`ID`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_unicode_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 10 CHARACTER SET = utf8 COLLATE = utf8_unicode_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of khuyenmai
 -- ----------------------------
+INSERT INTO `khuyenmai` VALUES (1, '0N90H1', 0, '2021-01-21', NULL);
+INSERT INTO `khuyenmai` VALUES (2, '1A1A6PA', 0, '2021-01-21', NULL);
+INSERT INTO `khuyenmai` VALUES (3, '20SL00MFVN', 300000, '2021-01-21', NULL);
+INSERT INTO `khuyenmai` VALUES (4, '2K0B7PA', 0, '2021-01-21', NULL);
+INSERT INTO `khuyenmai` VALUES (5, '4ME68PA', 0, '2021-01-21', NULL);
+INSERT INTO `khuyenmai` VALUES (6, '6ZF24PA', 0, '2021-01-21', NULL);
+INSERT INTO `khuyenmai` VALUES (7, '70175950', 200000, '2021-01-21', NULL);
+INSERT INTO `khuyenmai` VALUES (8, '70223127', 100000, '2021-01-21', NULL);
+INSERT INTO `khuyenmai` VALUES (9, '81Q9007KVN', 0, '2021-01-21', NULL);
 
 -- ----------------------------
 -- Table structure for kichthuoc
@@ -321,7 +342,7 @@ CREATE TABLE `kichthuoc`  (
   `TrongLuong` float NULL DEFAULT NULL COMMENT 'Đơn vị kg',
   `ChatLieu` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT 'Đang cập nhật',
   PRIMARY KEY (`ID`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 9 CHARACTER SET = utf8 COLLATE = utf8_unicode_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 10 CHARACTER SET = utf8 COLLATE = utf8_unicode_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of kichthuoc
@@ -334,6 +355,7 @@ INSERT INTO `kichthuoc` VALUES (5, 'Dài 376 mm - Rộng 246 mm - Dày 22.5 mm',
 INSERT INTO `kichthuoc` VALUES (6, 'Dài 324 mm - Rộng 224 mm - Dày 19.7 mm', 1.65, '	Vỏ nhựa');
 INSERT INTO `kichthuoc` VALUES (7, 'Dài 361.1 mm - Rộng 249 mm - Dày 20.3 mm', 1.9, 'Vỏ nhựa');
 INSERT INTO `kichthuoc` VALUES (8, 'Dài 339 mm - Rộng 242 mm - Dày 21 mm', 1.66, 'Vỏ nhựa');
+INSERT INTO `kichthuoc` VALUES (9, 'Dài 320.3 mm - Rộng 215.6 mm - Dày 15.7 mm', 1.35, 'Vỏ kim loại nguyên khối');
 
 -- ----------------------------
 -- Table structure for lienhe
@@ -363,7 +385,7 @@ CREATE TABLE `manhinh`  (
   `CongNghe` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT 'Đang cập nhật' COMMENT 'Nếu có nhiều giá trị thì phân cách nhau bằng ;                 \r\n\r\nVí dụ: 60Hz; LED Backlight;  Chống chói Anti-Glare',
   `CamUng` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT 'Không' COMMENT '\"Không\" hoặc \"Có\"',
   PRIMARY KEY (`ID`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 9 CHARACTER SET = utf8 COLLATE = utf8_unicode_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 10 CHARACTER SET = utf8 COLLATE = utf8_unicode_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of manhinh
@@ -376,6 +398,7 @@ INSERT INTO `manhinh` VALUES (5, 15.6, 'Full HD (1920 x 1080)', 'HD BrightView L
 INSERT INTO `manhinh` VALUES (6, 14, 'Full HD (1920 x 1080)', '60Hz, LED', 'Có');
 INSERT INTO `manhinh` VALUES (7, 15.6, 'Full HD (1920 x 1080)', '60Hz; Tấm nền IPS; LED Backlight - AntiGlare', 'Không');
 INSERT INTO `manhinh` VALUES (8, 14, 'Full HD (1920 x 1080)', '60Hz, Chống chói Anti Glare; LED Backlit', 'Không');
+INSERT INTO `manhinh` VALUES (9, 14, '4K/UHD (3840 x 2160)', 'Tấm nền IPS; HDR Vesa400; LED Backlit', 'Có');
 
 -- ----------------------------
 -- Table structure for nhacungcap
@@ -461,18 +484,18 @@ CREATE TABLE `product`  (
 -- ----------------------------
 -- Records of product
 -- ----------------------------
-INSERT INTO `product` VALUES ('0N90H1', 'DKD', 'Dell XPS 13 9300 i7 1065G7', 'Laptop Dell XPS 13 9300 i7 (0N90H1) chắc chắn là một sự đột phá của Dell về thiết kế lẫn hiệu năng. Với một thiết kế gọn nhẹ, hiệu năng mạnh mẽ với chip Intel Core i7 và RAM 16 GB, Dell XPS 13 9300 tự tin đáp ứng tốt các nhu cầu làm việc và giải trí.', 99, 0, 'Dell', '2020', '2021-01-27', 12, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 'http://localhost:8080/ProjectGroup02/images/shoe/dell/0N90H1/main.jpg');
+INSERT INTO `product` VALUES ('0N90H1', 'New; NoiBat', 'Dell XPS 13 9300 i7 1065G7', 'Laptop Dell XPS 13 9300 i7 (0N90H1) chắc chắn là một sự đột phá của Dell về thiết kế lẫn hiệu năng. Với một thiết kế gọn nhẹ, hiệu năng mạnh mẽ với chip Intel Core i7 và RAM 16 GB, Dell XPS 13 9300 tự tin đáp ứng tốt các nhu cầu làm việc và giải trí.', 99, 0, 'Dell', '2020', '2021-01-27', 12, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 'http://localhost:8080/ProjectGroup02/images/shoe/dell/0N90H1/main.jpg');
 INSERT INTO `product` VALUES ('1A1A6PA', 'DKD', 'HP ProBook 445 G7 R5 4500U', 'Laptop HP ProBook 445 G7 (1A1A6PA) là chiếc laptop với giá thành tầm trung cấu hình mạnh mẽ AMD Ryzen 5 sẽ đáp ứng hầu hết các nhu cầu văn phòng và giải trí thông thường. Thiết kế sang trọng tinh tế cùng với SSD siêu nhanh giúp bạn sẵn sàng xử lý công việ', 99, 0, 'HP', '2020', NULL, 12, 0, 4, 2, 2, 2, 2, 2, 2, 2, 2, 'http://localhost:8080/ProjectGroup02/images/shoe/hp/1A1A6PA/main.jpg');
-INSERT INTO `product` VALUES ('20SL00MFVN', 'DKD', 'Lenovo ThinkBook 14IIL i5 1035G1', 'Laptop Lenovo ThinkBook 14 IIL i5 (20SL00MFVN) phù hợp với doanh nhân, người làm văn phòng cần một chiếc máy tính mỏng nhẹ nhưng vẫn có cấu hình mạnh mẽ và khả năng bảo mật an toàn.', 99, 0, 'Lenovo', '2020', NULL, 12, 0, 4, 3, 3, 3, 3, 3, 3, 2, 3, 'http://localhost:8080/ProjectGroup02/images/shoe/lenovo/20SL00MFVN/main.jpg');
+INSERT INTO `product` VALUES ('20SL00MFVN', 'DKD', 'Lenovo ThinkBook 14IIL i5 1035G1', 'Laptop Lenovo ThinkBook 14 IIL i5 (20SL00MFVN) phù hợp với doanh nhân, người làm văn phòng cần một chiếc máy tính mỏng nhẹ nhưng vẫn có cấu hình mạnh mẽ và khả năng bảo mật an toàn.', 99, 0, 'Lenovo', '2020', NULL, 12, 0, 4, 3, 3, 3, 3, 3, 3, 2, 3, 'http://localhost:8080/ProjectGroup02/images/shoe/Lenovo/20SL00MFVN/main.jpg');
 INSERT INTO `product` VALUES ('2K0B7PA', 'DKD', 'HP Envy 13 ba1031TU i7 1165G7', 'Laptop HP Envy 13-ba1031TU i7 1165G7 (2K0B7PA) là chiếc laptop mới ra mắt năm 2020 có cấu hình mạnh mẽ với chip Intel Core i7 thế hệ thứ 11. Mẫu laptop mỏng nhẹ, thời trang này hứa hẹn sẽ đáp ứng tốt nhu cầu sử dụng laptop cho dân văn phòng nhờ thiết kế n', 99, 0, 'HP', '2020', NULL, 12, 0, 4, 4, 4, 4, 4, 4, 4, 4, 2, 'http://localhost:8080/ProjectGroup02/images/shoe/hp/2K0B7PA/main.jpg');
 INSERT INTO `product` VALUES ('4ME68PA', 'DKD', 'HP 15 da0054TU i3 7020U', 'Laptop HP 15 da0054TU là phiên bản máy tính xách tay với cấu hình được trang bị vi xử lý chip Intel Core i3 Kabylake thế hệ 7 đem đến hiệu năng ổn định khi thao tác các tác vụ cơ bản, phù hợp cho công việc văn phòng, học tập.', 99, 0, 'HP', '2019', NULL, 12, 33, 3, 5, 5, 5, 5, 5, 5, 2, 2, 'http://localhost:8080/ProjectGroup02/images/shoe/hp/4ME68PA/main.jpg');
 INSERT INTO `product` VALUES ('6ZF24PA', 'DKD', 'HP Pavilion x360 dh0103TU i3 8145U', 'Laptop HP Pavilion x360 dh0103TU có cấu hình không quá mạnh tuy nhiên nó mang lại hiệu năng ổn định, xử lý tốt các nhu cầu học tập và công việc văn phòng thường ngày. Thiết kế gập hơn 180 độ, màn hình cảm ứng đa điểm là lợi thế của chiếc laptop này bởi bạ', 99, 0, 'HP', '2019', NULL, 12, 12, 2, 6, 6, 6, 6, 6, 6, 2, 2, 'http://localhost:8080/ProjectGroup02/images/shoe/hp/6ZF24PA/main.jpg');
 INSERT INTO `product` VALUES ('70175950', 'DKD', 'Dell Vostro 5581 i5 8265U', 'Dell Vostro 5581- 93S1GT2 là chiếc máy tính văn phòng đáng sở hữu với mức giá tốt. Máy sở hữu thiết kế đơn giản nhưng không kém phần sang trọng cùng một cấu hình mạnh mẽ đáp ứng tốt nhu cầu văn phòng và giải trí thường ngày.', 99, 0, 'Dell', '2018', NULL, 12, 11, 1, 7, 7, 7, 7, 7, 7, 1, 2, 'http://localhost:8080/ProjectGroup02/images/shoe/dell/70175950/main.jpg');
 INSERT INTO `product` VALUES ('70223127', 'DKD', 'Dell Vostro 3491 i3 1005G1', 'Laptop Dell Vostro 3491 i3 (70223127) là chiếc máy tính xách tay văn phòng được thiết kế nhỏ gọn, dễ dịch chuyển, cấu hình máy không mạnh nhưng đủ đáp ứng nhu cầu học tập, văn phòng cơ bản, trình duyệt web và làm việc đa nhiệm.', 99, 0, 'Dell', '2020', NULL, 12, 0, 4, 8, 8, 8, 8, 8, 8, 2, 2, 'http://localhost:8080/ProjectGroup02/images/shoe/dell/70223127/main.jpg');
-INSERT INTO `product` VALUES ('81Q9007KVN', 'DKD', 'Lenovo Yoga C940 14IIL i7 1065G7', NULL, 99, 0, 'Lenovo', 'Đang cập nhật', NULL, 12, 0, 4, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'http://localhost:8080/ProjectGroup02/images/shoe/lenovo/81Q9007KVN/main.jpg');
-INSERT INTO `product` VALUES ('81TK007RVN', 'DKD', 'Lenovo IdeaPad C340 14IML i5 10210U', NULL, 99, 0, 'Lenovo', 'Đang cập nhật', NULL, 12, 0, 4, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'http://localhost:8080/ProjectGroup02/images/shoe/lenovo/81TK007RVN/main.jpg');
-INSERT INTO `product` VALUES ('81W8001XVN', 'DKD', 'Lenovo IdeaPad S145 15IIL i3 1005G1', NULL, 99, 0, 'Lenovo', 'Đang cập nhật', NULL, 12, 0, 4, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'http://localhost:8080/ProjectGroup02/images/shoe/lenovo/81W8001XVN/main.jpg');
-INSERT INTO `product` VALUES ('82AU0051VN', 'DKD', 'Lenovo Legion 5 15IMH05 i7 10750H', NULL, 99, 0, 'Lenovo', 'Đang cập nhật', NULL, 12, 0, 4, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'http://localhost:8080/ProjectGroup02/images/shoe/lenovo/82AU0051VN/main.jpg');
+INSERT INTO `product` VALUES ('81Q9007KVN', 'DKD', 'Lenovo Yoga C940 14IIL i7 1065G7', 'Laptop Lenovo Yoga C940 14IIL i7 (81Q9007KVN) là phiên bản laptop doanh nhân cao cấp sang trọng. Máy có cấu hình khỏe với chip Core i7 thế hệ 10, ổ cứng SSD 1024 GB cực ấn tượng cùng một thiết kế siêu mỏng nhẹ tiện dụng.', 99, 0, 'Lenovo', '2019', NULL, 12, 0, 4, 1, 9, 9, 9, 9, 9, 2, 1, 'http://localhost:8080/ProjectGroup02/images/shoe/Lenovo/81Q9007KVN/main.jpg');
+INSERT INTO `product` VALUES ('81TK007RVN', 'DKD', 'Lenovo IdeaPad C340 14IML i5 10210U', NULL, 99, 0, 'Lenovo', 'Đang cập nhật', NULL, 12, 0, 4, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'http://localhost:8080/ProjectGroup02/images/shoe/Lenovo/81TK007RVN/main.jpg');
+INSERT INTO `product` VALUES ('81W8001XVN', 'DKD', 'Lenovo IdeaPad S145 15IIL i3 1005G1', NULL, 99, 0, 'Lenovo', 'Đang cập nhật', NULL, 12, 0, 4, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'http://localhost:8080/ProjectGroup02/images/shoe/Lenovo/81W8001XVN/main.jpg');
+INSERT INTO `product` VALUES ('82AU0051VN', 'DKD', 'Lenovo Legion 5 15IMH05 i7 10750H', NULL, 99, 0, 'Lenovo', 'Đang cập nhật', NULL, 12, 0, 4, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'http://localhost:8080/ProjectGroup02/images/shoe/Lenovo/82AU0051VN/main.jpg');
 INSERT INTO `product` VALUES ('8VK71AV', 'DKD', 'HP Zbook Firefly 14 G7 i7 10510U', NULL, 99, 0, 'HP', 'Đang cập nhật', NULL, 12, 0, 4, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'http://localhost:8080/ProjectGroup02/images/shoe/hp/8VK71AV/main.jpg');
 INSERT INTO `product` VALUES ('AL858T', 'DKD', 'Asus VivoBook Gaming F571GT i7 9750H', NULL, 99, 0, 'Asus', 'Đang cập nhật', NULL, 24, 0, 4, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'http://localhost:8080/ProjectGroup02/images/shoe/asus/AL858T/main.jpg');
 INSERT INTO `product` VALUES ('BM0616R', 'DKD', 'Asus ExpertBook B9450F i7 10510U', NULL, 99, 0, 'Asus', 'Đang cập nhật', NULL, 24, 0, 4, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'http://localhost:8080/ProjectGroup02/images/shoe/asus/BM0616R/main.jpg');
@@ -500,14 +523,14 @@ CREATE TABLE `user`  (
   `Username` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   `Password` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL,
   `Address` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL,
-  `State` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL COMMENT 'Trạng thái, ví dụ \"active\", \"disable\"',
+  `State` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT 'active' COMMENT 'Trạng thái, ví dụ \"active\", \"disable\"',
   `Name` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL,
   `Phone` varchar(16) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL,
   `Email` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL,
   `Type` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL COMMENT 'Ví dụ: Root, Admin, Customer',
   `Sex` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL COMMENT 'Giới tính',
   `Dob` date NULL DEFAULT NULL COMMENT 'Ngày sinh',
-  `CreatedDate` date NULL COMMENT 'Ngày tạo',
+  `CreatedDate` date NULL DEFAULT curdate COMMENT 'Ngày tạo',
   `Avatar` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL COMMENT 'Link ảnh đại diện',
   `Key` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL,
   `KeyTime` datetime(0) NULL DEFAULT NULL,
@@ -519,23 +542,77 @@ CREATE TABLE `user`  (
 -- ----------------------------
 
 -- ----------------------------
--- View structure for v_giasp
+-- View structure for v_gia
 -- ----------------------------
-DROP VIEW IF EXISTS `v_giasp`;
-CREATE ALGORITHM = UNDEFINED SQL SECURITY DEFINER VIEW `v_giasp` AS SELECT
-	product.ID, 
-	MAX(gia.STT)
+DROP VIEW IF EXISTS `v_gia`;
+CREATE ALGORITHM = UNDEFINED SQL SECURITY DEFINER VIEW `v_gia` AS SELECT
+	gia.MaSP, 
+	gia.Gia
 FROM
-	product
-	INNER JOIN
 	gia
+	INNER JOIN
+	v_maxsttgia
 	ON 
-		product.ID = gia.MaSP ;
+		gia.MaSP = v_maxsttgia.MaSP AND
+		gia.STT = v_maxsttgia.`MAX(gia.STT)` ;
 
 -- ----------------------------
--- View structure for v_product-listing
+-- View structure for v_khuyenmai
 -- ----------------------------
-DROP VIEW IF EXISTS `v_product-listing`;
-CREATE ALGORITHM = UNDEFINED SQL SECURITY DEFINER VIEW `v_product-listing` AS select `product`.`ID` AS `ID`,`product`.`Ten` AS `Ten`,`product`.`SoSaoDanhGia` AS `SoSaoDanhGia`,`product`.`MainImg` AS `MainImg`,`bonho`.`RAM` AS `RAM`,`bonho`.`OCung` AS `OCung`,`gia`.`Gia` AS `Gia`,`khuyenmai`.`MucGiamGia` AS `MucGiamGia` from ((((`product` join `bonho` on(`product`.`MaBoNho` = `bonho`.`ID`)) join `gia` on(`product`.`ID` = `gia`.`MaSP`)) join `khuyenmai` on(`product`.`ID` = `khuyenmai`.`MaSP`)) join `v_giasp` on(`product`.`ID` = `v_giasp`.`ID` and `gia`.`STT` = `v_giasp`.`MAX(gia.STT)`)) group by `product`.`ID`,`product`.`Ten`,`product`.`SoSaoDanhGia`,`product`.`MainImg`,`bonho`.`RAM`,`bonho`.`OCung`,`gia`.`Gia`,`khuyenmai`.`MucGiamGia`;
+DROP VIEW IF EXISTS `v_khuyenmai`;
+CREATE ALGORITHM = UNDEFINED SQL SECURITY DEFINER VIEW `v_khuyenmai` AS SELECT
+	khuyenmai.MaSP, 
+	khuyenmai.MucGiamGia
+FROM
+	khuyenmai
+	INNER JOIN
+	v_maxmakm
+	ON 
+		khuyenmai.MaSP = v_maxmakm.MaSP AND
+		khuyenmai.MaKM = v_maxmakm.`MAX(khuyenmai.MaKM)` ;
+
+-- ----------------------------
+-- View structure for v_listing
+-- ----------------------------
+DROP VIEW IF EXISTS `v_listing`;
+CREATE ALGORITHM = UNDEFINED SQL SECURITY DEFINER VIEW `v_listing` AS SELECT
+	product.ID,
+	product.Ten,
+	product.SoSaoDanhGia,
+	product.MainImg,
+	bonho.RAM,
+	bonho.OCung,
+	v_khuyenmai.MucGiamGia,
+	v_gia.Gia,
+	product.TrangThai 
+FROM
+	product
+	INNER JOIN bonho ON product.MaBoNho = bonho.ID
+	INNER JOIN v_khuyenmai ON product.ID = v_khuyenmai.MaSP
+	INNER JOIN v_gia ON product.ID = v_gia.MaSP ;
+
+-- ----------------------------
+-- View structure for v_maxmakm
+-- ----------------------------
+DROP VIEW IF EXISTS `v_maxmakm`;
+CREATE ALGORITHM = UNDEFINED SQL SECURITY DEFINER VIEW `v_maxmakm` AS SELECT
+	khuyenmai.MaSP, 
+	MAX(khuyenmai.MaKM)
+FROM
+	khuyenmai
+GROUP BY
+	khuyenmai.MaSP ;
+
+-- ----------------------------
+-- View structure for v_maxsttgia
+-- ----------------------------
+DROP VIEW IF EXISTS `v_maxsttgia`;
+CREATE ALGORITHM = UNDEFINED SQL SECURITY DEFINER VIEW `v_maxsttgia` AS SELECT
+	gia.MaSP, 
+	MAX(gia.STT)
+FROM
+	gia
+GROUP BY
+	gia.MaSP ;
 
 SET FOREIGN_KEY_CHECKS = 1;

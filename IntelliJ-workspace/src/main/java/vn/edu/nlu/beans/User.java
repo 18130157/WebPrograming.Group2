@@ -1,8 +1,9 @@
 package vn.edu.nlu.beans;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class User {
+public class User implements Serializable {
     private String username;
     private String password;
     private String address;
