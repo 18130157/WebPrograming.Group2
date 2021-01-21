@@ -103,10 +103,10 @@
                             </header>
                             <footer>
                                 <ul class="ps-list--link">
-                                    <li><a href="#">TRANG CHỦ</a></li>
-                                    <li><a href="#">GIỚI THIỆU</a></li>
-                                    <li><a href="#">SẢN PHẨM</a></li>
-                                    <li><a href="#">LIÊN HỆ</a></li>
+                                    <li><a href="index.jsp">TRANG CHỦ</a></li>
+                                    <li><a href="about.jsp">GIỚI THIỆU</a></li>
+                                    <li><a href="product-listing.jsp">SẢN PHẨM</a></li>
+                                    <li><a href="contact-us.jsp">LIÊN HỆ</a></li>
                                 </ul>
                             </footer>
                         </aside>
@@ -118,10 +118,8 @@
                             </header>
                             <footer>
                                 <ul class="ps-list--line">
-                                    <li><a href="#"><i class="fa fa-facebook"></i>  Kết nối Facebook</a></li>
-                                    <li><a href="#"><i class="fa fa-google-plus"></i>  Kết nối G+</a></li>
-                                    <li><a href="#"><i class="fa fa-twitter"></i>  Trao đổi Twitter</a></li>
-                                    <li><a href="#"><i class="fa fa-instagram"></i>  Kết nối Instagram</a></li>
+                                    <li><a href="https://www.facebook.com/HoangVi1992K"><i class="fa fa-facebook"></i>  Kết nối Facebook</a></li>
+                                    <li><a href="https://mail.google.com/mail/u/0/#inbox"><i class="fa fa-google-plus"></i>  Kết nối G+</a></li>
                                 </ul>
                             </footer>
                         </aside>

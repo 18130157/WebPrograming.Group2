@@ -1,11 +1,9 @@
 <%@ page import="vn.edu.nlu.beans.User" %>
-<%@ page import="javax.swing.text.html.HTML" %>
-<%@ page import="org.apache.taglibs.standard.tag.el.core.OutTag" %>
+
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
-
 <!DOCTYPE html>
 <!--[if IE 7]><html class="ie ie7"><![endif]-->
 <!--[if IE 8]><html class="ie ie8"><![endif]-->
@@ -19,7 +17,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <link href="apple-touch-icon.png" rel="apple-touch-icon">
-    
+
     <title>LaptopNLU-header</title>
     <!-- Fonts-->
     <link href="https://fonts.googleapis.com/css?family=Archivo+Narrow:300,400,700%7CMontserrat:300,400,500,600,700,800,900" rel="stylesheet">
@@ -95,7 +93,6 @@
                     <div class="header__actions">
                         <a href="login.jsp" >
                             <%=u!=null?"Chào mừng "+ u.getUsername():"ĐĂNG NHẬP"%>
-                        </p>
                         </a>
                     </div>
 
@@ -128,6 +125,16 @@
                             </ul>
                         </li>
                         <li class="menu-item"><a href="contact-us.jsp">Liên Hệ</a></li>
+
+                        <li class="menu-item menu-item-has-children dropdown">
+                            <a><%=u!=null?"TÀI KHOẢN":""%></a>
+                            <ul class="sub-menu">
+                                <li class="menu-item"><a href="ViewInfo">Xem thông tin</a></li>
+                                <li class="menu-item"><a href="Edit_InformationUser">Thay đổi thông tin</a></li>
+                                <li class="menu-item"><a href="ChangePassword">Thay đổi mật khẩu</a></li>
+                                <li class="menu-item"><a>Xem đơn hàng</a></li>
+                            </ul>
+                        </li>
                     </ul>
                 </div>
                 <div class="navigation__column right">
@@ -199,7 +206,6 @@
 <script type="text/javascript" src="js/main.js"></script>
 <script type="text/javascript" src="js/mainlogin.js"></script>
 <script type="text/javascript" src="./register/register.js"></script>
-
 
 </body>
 

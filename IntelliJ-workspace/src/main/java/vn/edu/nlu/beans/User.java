@@ -64,7 +64,15 @@ public class User {
         this.avatar = avatar;
     }
 
-
+    // dành cho chức năng thay đổi thông tin khách hàng
+    public User( String name, String phone, String email,String address,Date dob, String sex) {
+        this.address = address;
+        this.name = name;
+        this.phone = phone;
+        this.email = email;
+        this.sex = sex;
+        this.dob = dob;
+    }
 
 
     public String getUsername() {

@@ -6,15 +6,17 @@
 <html lang="en">
 
 <head>
+    <!-- Required meta tags-->
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Đăng ký</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Title Page-->
+    <title>Thực hiện thành công</title>
     <!-- Fonts-->
     <link href="https://fonts.googleapis.com/css?family=Archivo+Narrow:300,400,700%7CMontserrat:300,400,500,600,700,800,900"
           rel="stylesheet">
     <link rel="stylesheet" href="plugins/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="plugins/ps-icon/style.css">
-    <!-- CSS Library-->
+    <!-- Header Footer CSS-->
     <link rel="stylesheet" type="text/css" href="css/index.css">
     <link rel="stylesheet" href="plugins/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="plugins/owl-carousel/assets/owl.carousel.css">
@@ -26,107 +28,71 @@
     <link rel="stylesheet" href="plugins/revolution/css/settings.css">
     <link rel="stylesheet" href="plugins/revolution/css/layers.css">
     <link rel="stylesheet" href="plugins/revolution/css/navigation.css">
-    <!-- Custom-->
     <link rel="stylesheet" href="css/style.css">
-    <link href="https://use.fontawesome.com/releases/v5.0.4/css/all.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="./register/register.css">
+    <!-- Main CSS-->
+    <link href="./forget-pass/css/theme.css" rel="stylesheet" media="all">
+    <style>
+        .page-wrapper {
+            background: url('a/tc.png');
+            background-position: center center;
+            background-size: cover;
+            height: 700px;
+        }
+
+        .login-wrap {
+            max-width: 540px;
+            padding-top: 22vh;
+            margin: 0 auto;
+        }
+
+        .login-logo {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+    </style>
 </head>
-<style>
-    .page-wrapper {
-        background: url('a/tc.png');
-        background-position: center center;
-        background-size: cover;
-    }
 
-    #form {
-        background: #fff;
-        padding: 30px 30px 20px;
-        -webkit-border-radius: 2px;
-        -moz-border-radius: 2px;
-        border-radius: 5px;
-    }
-
-    .content {
-        padding: 50px;
-    }
-    .login-logo {
-        text-align: center;
-        margin-bottom: 30px;
-    }
-</style>
-<body>
+<body class="animsition">
 <jsp:include page="header.jsp"></jsp:include>
 <div class="header-services">
-    <div class="ps-services owl-slider" data-owl-auto="true" data-owl-loop="true" data-owl-speed="7000" data-owl-gap="0" data-owl-nav="true" data-owl-dots="false" data-owl-item="1" data-owl-item-xs="1" data-owl-item-sm="1" data-owl-item-md="1" data-owl-item-lg="1" data-owl-duration="1000" data-owl-mousedrag="on">
+    <div class="ps-services owl-slider" data-owl-auto="true" data-owl-loop="true" data-owl-speed="7000" data-owl-gap="0"
+         data-owl-nav="true" data-owl-dots="false" data-owl-item="1" data-owl-item-xs="1" data-owl-item-sm="1"
+         data-owl-item-md="1" data-owl-item-lg="1" data-owl-duration="1000" data-owl-mousedrag="on">
         <p class="ps-service"><i class="ps-icon-delivery"></i><strong>Giao hàng miễn phí</strong>: Nhận giao hàng
             miễn phí với mọi đơn hàng tại cửa hàng Laptop NLU</p>
         <p class="ps-service"><i class="ps-icon-delivery"></i><strong>Giao hàng miễn phí</strong>: Nhận giao hàng
             miễn phí với mọi đơn hàng tại cửa hàng Laptop NLU</p>
         <p class="ps-service"><i class="ps-icon-delivery"></i><strong>Giao hàng miễn phí</strong>: Nhận giao hàng
             miễn phí với mọi đơn hàng tại cửa hàng Laptop NLU</p>
-        
     </div>
 </div>
 <div class="page-wrapper">
-    <div class="content">
-        <div id="form">
-            <div class="login-logo">
+    <div class="page-content--bge5">
+        <div class="container">
+            <div class="login-wrap">
+                <div class="login-content">
+                    <div class="login-form">
+                        <form action="BackHomePage" method="post">
+                            <div class="form-group">
+                                <h1 style="color: #00ad5f; text-align: center" id="label">SUCCESSFULLY!</h1>
 
-                    <img src="images/logo1.png" alt="laptopnlu">
+                                <input type="submit" class="au-btn au-btn--block au-btn--green m-b-10"
+                                       style="font-weight: bold;" value="Trở về trang chủ">
 
+                            </div>
+                        </form>
+                    </div>
+                </div>
             </div>
-            <form action="DoRegister" method="post" class="registerform" onsubmit="return validForm()"  >
-                <div class="input">
-                    <input type="text" id="user" name="nameLogin">
-                    <div class="placeholder" id="place-user" >Tên đăng nhập</div>
-                </div>
-                <div class="input">
-                    <input type="password" id="pass" name="password">
-                    <div class="placeholder" id="place-pass" >Mật khẩu</div>
-                    <div class="pass fas fa-eye" id="eye"></div>
-                </div>
-                <div class="input">
-                    <input type="password" id="repass" name="rePassword">
-                    <div class="placeholder" id="place-repass" >Nhập lại mật khẩu</div>
-                </div>
-                <div class="input">
-                    <input type="text" id="name" name="yourName">
-                    <div class="placeholder" id="place-name" >Tên của bạn</div>
-                </div>
-                <div class="input">
-                    <input type="number" id="phone" name="phone">
-                    <div class="placeholder" id="place-phone" >Số điện thoại</div>
-                </div>
-                <div class="input">
-                    <input type="text" id="email" name="email">
-                    <div class="placeholder" id="place-email" >Email</div>
-                </div>
-                <div class="input">
-                    <textarea id="txtaddress" oninput="auto_grow(this)" name="address"></textarea>
-                    <div class="placeholder" id="place-txtaddress" >Địa chỉ</div>
-                </div>
-                <div class="input-group">
-                    <input id="gender-male" type="radio" name="gender" value="male"/>
-                    <label for="gender-male">Nam</label>
-                    <input id="gender-female" type="radio" name="gender" value="female"/>
-                    <label for="gender-female">Nữ</label>
-                </div>
-                <div class="input">
-                    <input type="date" id="datepicker" name="dateOfBirth">
-                    <div class="placeholder" id="place-datepicker">Ngày sinh</div>
-                </div>
-                <button id="btndk">Đăng ký</button>
-                <p class="text-center">Bạn đã có tài khoản? <a href="./login.jsp" id="linkdn">Đăng nhập</a></p>
-            </form>
         </div>
     </div>
 </div>
-
 <!-- Footer -->
-
 <jsp:include page="footer.jsp"></jsp:include>
 
-<!-- JS Library-->
+<!-- Jquery JS-->
+
 <script type="text/javascript" src="plugins/jquery/dist/jquery.min.js"></script>
 <script type="text/javascript" src="plugins/bootstrap/dist/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="plugins/jquery-bar-rating/dist/jquery.barrating.min.js"></script>
@@ -157,3 +123,4 @@
 </body>
 
 </html>
+<!-- end document-->
