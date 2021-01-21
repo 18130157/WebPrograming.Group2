@@ -108,7 +108,7 @@
                             </div>
                             <div class="form-group">
                                 <label>Mật khẩu mới:</label>
-                                <input name="newpassword" value=""  style="font-weight: bold; color: #999999" 
+                                <input name="newpassword" value=""  style="font-weight: bold; color: #999999"
                                        class="au-input au-input--full" type="password" placeholder="Nhập mật khẩu mới">
                             </div>
                             <div class="form-group">

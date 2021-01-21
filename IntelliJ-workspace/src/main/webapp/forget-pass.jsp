@@ -73,12 +73,12 @@
                             </a>
                         </div>
                         <div class="login-form">
-                            <form action="" method="post" onsubmit="return validForm()">
+                            <form action="ForgetPass" method="post" >
                                 <div class="form-group">
-                                    <label id="label">Vui lòng nhập email để tìm kiếm tài khoản</label>
+                                    <label id="label">Vui lòng nhập địa chỉ email đã đăng ký:</label>
                                     <input class="au-input au-input--full" type="text" name="email" placeholder="Email" id="email">
                                 </div>
-                                <button class="au-btn au-btn--block au-btn--green m-b-20" type="submit">Tìm kiếm</button>
+                                <button class="au-btn au-btn--block au-btn--green m-b-20" type="submit">GỬI</button>
                             </form>
                         </div>
                     </div>

@@ -51,10 +51,10 @@
                         <div class="login-form">
                             <form action="" method="post">
                                 <div class="form-group">
-                                    <label>Email Address</label>
+                                    <label>Nhập địa chỉ email:</label>
                                     <input class="au-input au-input--full" type="email" name="email" placeholder="Email">
                                 </div>
-                                <button class="au-btn au-btn--block au-btn--green m-b-20" type="submit">submit</button>
+                                <button class="au-btn au-btn--block au-btn--green m-b-20" type="submit" value="GỬI"></button>
                             </form>
                         </div>
                     </div>

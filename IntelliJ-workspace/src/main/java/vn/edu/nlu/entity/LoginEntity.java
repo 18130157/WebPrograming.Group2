@@ -11,9 +11,10 @@ import java.sql.SQLException;
 public class LoginEntity {
     // kiểm tra đăng nhập
     public static boolean checkLogin(String username, String password) {
-        String sql = "Select  * from user where Username="+"\""+ username+"\"";
+        String sql = "Select  * from user where Username=?";
         PreparedStatement pre = null;
         try {
+            pre.setString(1, username);
             pre = ConnectDB.connect(sql);
             ResultSet rs = pre.executeQuery();
             while (rs.next()) {
