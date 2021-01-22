@@ -4,12 +4,8 @@ import vn.edu.nlu.beans.User;
 import vn.edu.nlu.database.ConnectDB;
 
 
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Timestamp;
+import java.sql.*;
 import java.util.Calendar;
-import java.util.Date;
 
 public class ForgetPassEntity {
 
@@ -147,7 +143,23 @@ public class ForgetPassEntity {
             e.printStackTrace();
         }
     }
+    // cập nhật lại key
+    public void UpdateKey(String username, String emptyKey) {
+        String sql = "Update  user set `Key`=? where Username=?";
+        PreparedStatement ps = null;
+        try {
+            ps = ConnectDB.connect(sql);
+            ps.setString(1,emptyKey);
+            ps.setString(2,username);
 
+            ps.executeUpdate();
+            ps.close();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+    }
     public static void main(String[] args) {
 //        new ForgetPassEntity().insertMd5("ac", "thoangvi.it@gmail.com");
       //  System.out.println(new ForgetPassEntity().checkKey("aa5e3daa0c1f42cfa09f63d9ba405be1"));

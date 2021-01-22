@@ -32,6 +32,7 @@ public class ForgetPass_Receive extends HttpServlet {
             context.setAttribute("uname", u.getUsername());
             context.setAttribute("pass", u.getPassword());
 
+            f.UpdateKey(u.getUsername(), null);
             response.sendRedirect("ChangeForgetPass.jsp");
         }
         else{

@@ -16,55 +16,63 @@ import java.util.Date;
 
 public class FogetPassMD {
     // kiểm tra email có nằm trong database không?
-    public boolean checkEmail(String email){
+    public boolean checkEmail(String email) {
         return new ForgetPassEntity().emailInDatabase(email);
     }
+
     // Mã hóa MD5
     public String encrypt(String src) throws NoSuchAlgorithmException, UnsupportedEncodingException {
-        String result="";
+        String result = "";
 
-        MessageDigest msd= MessageDigest.getInstance("MD5");
-        byte[] srcTextBytes= src.getBytes("UTF-8");
-        byte[]  resultTextByte= msd.digest(srcTextBytes);
+        MessageDigest msd = MessageDigest.getInstance("MD5");
+        byte[] srcTextBytes = src.getBytes("UTF-8");
+        byte[] resultTextByte = msd.digest(srcTextBytes);
 
-        BigInteger big= new BigInteger(1,resultTextByte);
-        result= big.toString(16);
+        BigInteger big = new BigInteger(1, resultTextByte);
+        result = big.toString(16);
 
         return result;
 
     }
-    public User getUser(String email){
-       return new ForgetPassEntity().getUser(email);
+
+    public User getUser(String email) {
+        return new ForgetPassEntity().getUser(email);
 
     }
 
     // inser key md5 vào
     public void insertMd5(String md5, String email) {
-       new ForgetPassEntity().insertMd5(md5,email);
+        new ForgetPassEntity().insertMd5(md5, email);
     }
 
-    public void insertKeyTime( String email){
+    public void insertKeyTime(String email) {
         new ForgetPassEntity().insertKeyTime(email);
 
     }
-    public boolean checkKey(String key){
-      return  new ForgetPassEntity().checkKey(key);
+
+    public boolean checkKey(String key) {
+        return new ForgetPassEntity().checkKey(key);
     }
 
     public User getUserByKey(String key) {
-        return  new ForgetPassEntity().getUserByKey(key);
+        return new ForgetPassEntity().getUserByKey(key);
     }
 
     // kiểm tra 2 pass có giống nhau không
-    public  boolean samePass(String newPass, String rePass){
+    public boolean samePass(String newPass, String rePass) {
         return newPass.equals(rePass);
     }
 
     // cập nhật lại pass mới cho username
-    public  void changePass(String passChange, String username) {
+    public void changePass(String passChange, String username) {
         new ForgetPassEntity().UpdatePassword(passChange, username);
 
 
+    }
+
+    // cập nhật lại key
+    public void UpdateKey(String username, String emptyKey) {
+        new ForgetPassEntity().UpdateKey(username, emptyKey);
     }
 
 //    public static void main(String[] args) throws UnsupportedEncodingException, NoSuchAlgorithmException {
