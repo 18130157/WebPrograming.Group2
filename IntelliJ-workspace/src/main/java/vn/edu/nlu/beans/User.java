@@ -35,7 +35,7 @@ public class User {
         this.key = key;
         this.keyTime = keyTime;
     }
-
+    // danh cho chu nang quen mat khau
     public User(String username, String password) {
         this.username = username;
         this.password = password;
@@ -73,6 +73,7 @@ public class User {
         this.sex = sex;
         this.dob = dob;
     }
+
 
 
     public String getUsername() {

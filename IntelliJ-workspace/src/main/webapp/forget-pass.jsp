@@ -73,10 +73,11 @@
                             </a>
                         </div>
                         <div class="login-form">
-                            <form action="ForgetPass" method="post" >
+                            <form action="ForgetPass_SendID" method="post" >
                                 <div class="form-group">
                                     <label id="label">Vui lòng nhập địa chỉ email đã đăng ký:</label>
                                     <input class="au-input au-input--full" type="text" name="email" placeholder="Email" id="email">
+                                    <p style="color:red;padding-top: 3px; font-weight: bold;"><%=request.getAttribute("error")!= null?request.getAttribute("error"):""%>
                                 </div>
                                 <button class="au-btn au-btn--block au-btn--green m-b-20" type="submit">GỬI</button>
                             </form>

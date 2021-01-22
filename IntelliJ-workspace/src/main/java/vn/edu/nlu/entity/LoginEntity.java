@@ -14,8 +14,9 @@ public class LoginEntity {
         String sql = "Select  * from user where Username=?";
         PreparedStatement pre = null;
         try {
-            pre.setString(1, username);
+
             pre = ConnectDB.connect(sql);
+            pre.setString(1, username);
             ResultSet rs = pre.executeQuery();
             while (rs.next()) {
                 if (rs.getString(1).equals(username) && rs.getString(2).equals(password))

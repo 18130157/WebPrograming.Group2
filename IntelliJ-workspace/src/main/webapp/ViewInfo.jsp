@@ -169,7 +169,7 @@
 
                         </form>
                         <form action="Edit_information.jsp" method="post">
-                        <input type="submit" href="Edit_information.jsp" class="au-btn au-btn--block au-btn--blue m-b-20"  style="font-weight: bold;" value="Thay đổi thông tin"><
+                        <input type="submit" href="Edit_information.jsp" class="au-btn au-btn--block au-btn--blue m-b-20"  style="font-weight: bold;" value="Thay đổi thông tin">
                         </form>
                     </div>
                 </div>
