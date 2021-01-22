@@ -80,7 +80,7 @@
 <body class="ie8 lt-ie9 lt-ie10"><![endif]-->
 <!--[if IE 9]>
 <body class="ie9 lt-ie10"><![endif]-->
-<body class="ps-loading">
+<body>
 
 <jsp:include page="header.jsp"></jsp:include>
 
@@ -98,16 +98,16 @@
                                 <label>Tên đăng nhập:</label>
                                 <%ServletContext context0 = request.getServletContext();%>
                                 <input  name="username" style="font-weight: bold;" value="<%=context0.getAttribute("username")%>"
-                                        class="au-input au-input--full" type="username">
+                                       class="au-input au-input--full" type="username">
                             </div>
 
-                            <%--                            <div class="form-group">--%>
-                            <%--                                <label>Password:</label>--%>
-                            <%--                                <%ServletContext context00 = request.getServletContext();%>--%>
-                            <%--                                <input name="password" style="font-weight: bold;"  value="<%=context00.getAttribute("password")%>"--%>
-                            <%--                                       class="au-input au-input--full" type="text">--%>
-                            <%--                                --%>
-                            <%--                            </div>--%>
+<%--                            <div class="form-group">--%>
+<%--                                <label>Password:</label>--%>
+<%--                                <%ServletContext context00 = request.getServletContext();%>--%>
+<%--                                <input name="password" style="font-weight: bold;"  value="<%=context00.getAttribute("password")%>"--%>
+<%--                                       class="au-input au-input--full" type="text">--%>
+<%--                                --%>
+<%--                            </div>--%>
 
                             <div class="form-group">
                                 <label>Mật khẩu:</label>
@@ -169,7 +169,7 @@
 
                         </form>
                         <form action="Edit_information.jsp" method="post">
-                            <input type="submit" href="Edit_information.jsp" class="au-btn au-btn--block au-btn--blue m-b-20"  style="font-weight: bold;" value="Thay đổi thông tin"><
+                        <input type="submit" href="Edit_information.jsp" class="au-btn au-btn--block au-btn--blue m-b-20"  style="font-weight: bold;" value="Thay đổi thông tin"><
                         </form>
                     </div>
                 </div>

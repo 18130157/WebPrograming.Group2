@@ -1,17 +1,27 @@
 <%@ page import="vn.edu.nlu.beans.User" %>
+<<<<<<< HEAD
 <%@ page import="javax.swing.text.html.HTML" %>
 <%--<%@ page import="org.apache.taglibs.standard.tag.el.core.OutTag" %>--%>
+=======
+
+>>>>>>> Vi
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
-
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<<<<<<< HEAD
+=======
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <link href="apple-touch-icon.png" rel="apple-touch-icon">
+
+>>>>>>> Vi
     <title>LaptopNLU-header</title>
     <!-- Fonts-->
     <link href="https://fonts.googleapis.com/css?family=Archivo+Narrow:300,400,700%7CMontserrat:300,400,500,600,700,800,900" rel="stylesheet">
@@ -67,9 +77,14 @@
                         </a>
                     </div>
                     <div class="header__actions">
+<<<<<<< HEAD
                         <a href="login.jsp">
                             <%=u != null ? "Chào mừng " + u.getUsername() : "ĐĂNG NHẬP"%>
                             </p>
+=======
+                        <a href="login.jsp" >
+                            <%=u!=null?"Chào mừng "+ u.getUsername():"ĐĂNG NHẬP"%>
+>>>>>>> Vi
                         </a>
                     </div>
 
@@ -102,6 +117,16 @@
                             </ul>
                         </li>
                         <li class="menu-item"><a href="contact-us.jsp">Liên Hệ</a></li>
+
+                        <li class="menu-item menu-item-has-children dropdown">
+                            <a><%=u!=null?"TÀI KHOẢN":""%></a>
+                            <ul class="sub-menu">
+                                <li class="menu-item"><a href="ViewInfo">Xem thông tin</a></li>
+                                <li class="menu-item"><a href="Edit_InformationUser">Thay đổi thông tin</a></li>
+                                <li class="menu-item"><a href="ChangePassword">Thay đổi mật khẩu</a></li>
+                                <li class="menu-item"><a>Xem đơn hàng</a></li>
+                            </ul>
+                        </li>
                     </ul>
                 </div>
                 <div class="navigation__column right">

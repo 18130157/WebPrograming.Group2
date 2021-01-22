@@ -1,5 +1,7 @@
 package vn.edu.nlu.entity;
 
+
+
 import vn.edu.nlu.database.ConnectDB;
 
 import java.sql.PreparedStatement;
@@ -12,7 +14,7 @@ public class PasswordEntity {
         PreparedStatement ps = null;
         try {
             ps = ConnectDB.connect(sql);
-            ps.setString(1, passChange);
+            ps.setString(1,passChange);
             ps.setString(2, username);
             ps.executeUpdate();
             ps.close();
