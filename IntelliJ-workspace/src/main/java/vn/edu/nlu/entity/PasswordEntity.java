@@ -8,7 +8,7 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
 public class PasswordEntity {
-    // thay dodirp pass của một username trong database
+    // thay đổi pass của một username trong database
     public void UpdatePassword(String passChange, String username) {
         String sql = "Update  user set Password=? where Username=?";
         PreparedStatement ps = null;

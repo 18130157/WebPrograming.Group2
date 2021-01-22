@@ -11,10 +11,12 @@ import java.sql.SQLException;
 public class LoginEntity {
     // kiểm tra đăng nhập
     public static boolean checkLogin(String username, String password) {
-        String sql = "Select  * from user where Username="+"\""+ username+"\"";
+        String sql = "Select  * from user where Username=?";
         PreparedStatement pre = null;
         try {
+
             pre = ConnectDB.connect(sql);
+            pre.setString(1, username);
             ResultSet rs = pre.executeQuery();
             while (rs.next()) {
                 if (rs.getString(1).equals(username) && rs.getString(2).equals(password))

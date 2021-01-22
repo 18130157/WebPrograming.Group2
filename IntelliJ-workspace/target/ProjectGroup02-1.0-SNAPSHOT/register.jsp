@@ -112,6 +112,7 @@
 <script src="./login/animsition.min.js"></script>
 =======
 <!-- JS Library-->
+<<<<<<< HEAD
 <script type="text/javascript" src="plugins/jquery/dist/jquery.min.js"></script>
 <script type="text/javascript" src="plugins/bootstrap/dist/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="plugins/jquery-bar-rating/dist/jquery.barrating.min.js"></script>
@@ -139,6 +140,9 @@
 <script type="text/javascript" src="js/main.js"></script>
 <script type="text/javascript" src="js/mainlogin.js"></script>
 <script type="text/javascript" src="./register/register.js"></script>
+>>>>>>> Vi
+=======
+<!-- JS Library-->
 >>>>>>> Vi
 </body>
 
