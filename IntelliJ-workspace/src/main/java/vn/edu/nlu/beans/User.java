@@ -19,6 +19,9 @@ public class User implements Serializable {
     private String key;
     private Date keyTime;
 
+    public User(){
+    }
+
     public User(String username, String password, String address, String state, String name, String phone,
                 String email, String type, String sex, Date dob, Date createdDate, String avatar, String key, Date keyTime) {
         this.username = username;

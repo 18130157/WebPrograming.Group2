@@ -1,23 +1,14 @@
 <%@ page import="vn.edu.nlu.beans.User" %>
-
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
-<!--[if IE 7]><html class="ie ie7"><![endif]-->
-<!--[if IE 8]><html class="ie ie8"><![endif]-->
-<!--[if IE 9]><html class="ie ie9"><![endif]-->
 <html lang="en">
 
 <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="format-detection" content="telephone=no">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <link href="apple-touch-icon.png" rel="apple-touch-icon">
-
     <title>LaptopNLU-header</title>
     <!-- Fonts-->
     <link href="https://fonts.googleapis.com/css?family=Archivo+Narrow:300,400,700%7CMontserrat:300,400,500,600,700,800,900" rel="stylesheet">
@@ -53,25 +44,8 @@
     <link href="vendor/perfect-scrollbar/perfect-scrollbar.css" rel="stylesheet" media="all">
     <!-- Main CSS-->
     <link href="login/main.css" rel="stylesheet" media="all">
-    <style>
-        .page-wrapper {
-            background:  url('a/tc.png') ;
-            background-position: center center;
-            background-size: cover;
-
-        }
-        #eye{
-            position: relative;
-            transform: translate(450px,-32px);
-        }
-
-    </style>
 </head>
-<!--[if IE 7]><body class="ie7 lt-ie8 lt-ie9 lt-ie10"><![endif]-->
-<!--[if IE 8]><body class="ie8 lt-ie9 lt-ie10"><![endif]-->
-<!--[if IE 9]><body class="ie9 lt-ie10"><![endif]-->
-
-<body class="ps-loading animsition">
+<body class="ps-loading">
 <header class="header">
     <div class="header__top">
         <div class="container-fluid">
@@ -167,7 +141,7 @@
                                 <p style="color: white; font-weight: bold;">Tổng SL:<span>3</span></p>
                                 <p style="color: white; font-weight: bold;">Tổng tiền:<span>9 000 000đ</span></p>
                             </div>
-                            <div class="ps-cart__footer"><a class="ps-btn" href="cart.jsp">Thanh toán ngay<i class="ps-icon-arrow-left"></i></a></div>
+                            <div class="ps-cart__footer"><a class="ps-btn" href="cart.jsp">Giỏ hàng<i class="ps-icon-arrow-left"></i></a></div>
                         </div>
                     </div>
                     <div class="menu-toggle"><span></span></div>

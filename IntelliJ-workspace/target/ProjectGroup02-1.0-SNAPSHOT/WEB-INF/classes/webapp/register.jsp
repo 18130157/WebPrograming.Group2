@@ -4,11 +4,30 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Đăng ký</title>
+    <!-- Fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Archivo+Narrow:300,400,700%7CMontserrat:300,400,500,600,700,800,900"
+          rel="stylesheet">
+    <link rel="stylesheet" href="plugins/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="plugins/ps-icon/style.css">
+    <!-- CSS Library-->
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <link rel="stylesheet" href="plugins/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="plugins/owl-carousel/assets/owl.carousel.css">
+    <link rel="stylesheet" href="plugins/jquery-bar-rating/dist/themes/fontawesome-stars.css">
+    <link rel="stylesheet" href="plugins/slick/slick/slick.css">
+    <link rel="stylesheet" href="plugins/bootstrap-select/dist/css/bootstrap-select.min.css">
+    <link rel="stylesheet" href="plugins/Magnific-Popup/dist/magnific-popup.css">
+    <link rel="stylesheet" href="plugins/jquery-ui/jquery-ui.min.css">
+    <link rel="stylesheet" href="plugins/revolution/css/settings.css">
+    <link rel="stylesheet" href="plugins/revolution/css/layers.css">
+    <link rel="stylesheet" href="plugins/revolution/css/navigation.css">
     <!-- Custom-->
+    <link rel="stylesheet" href="css/style.css">
     <link href="https://use.fontawesome.com/releases/v5.0.4/css/all.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="./register/register.css">
 </head>
@@ -35,7 +54,7 @@
         margin-bottom: 30px;
     }
 </style>
-<body class="ps-loading">
+<body>
 <jsp:include page="header.jsp"></jsp:include>
 <div class="header-services">
     <div class="ps-services owl-slider" data-owl-auto="true" data-owl-loop="true" data-owl-speed="7000" data-owl-gap="0" data-owl-nav="true" data-owl-dots="false" data-owl-item="1" data-owl-item-xs="1" data-owl-item-sm="1" data-owl-item-md="1" data-owl-item-lg="1" data-owl-duration="1000" data-owl-mousedrag="on">
@@ -45,7 +64,7 @@
             miễn phí với mọi đơn hàng tại cửa hàng Laptop NLU</p>
         <p class="ps-service"><i class="ps-icon-delivery"></i><strong>Giao hàng miễn phí</strong>: Nhận giao hàng
             miễn phí với mọi đơn hàng tại cửa hàng Laptop NLU</p>
-
+        
     </div>
 </div>
 <div class="page-wrapper">
@@ -53,7 +72,7 @@
         <div id="form">
             <div class="login-logo">
 
-                <img src="images/logo1.png" alt="laptopnlu">
+                    <img src="images/logo1.png" alt="laptopnlu">
 
             </div>
             <form action="DoRegister" method="post" class="registerform" onsubmit="return validForm()"  >
@@ -102,13 +121,9 @@
         </div>
     </div>
 </div>
-
 <!-- Footer -->
-
 <jsp:include page="footer.jsp"></jsp:include>
 
-<!-- Custom scripts-->
-<script src="./login/animsition.min.js"></script>
 </body>
 
 </html>

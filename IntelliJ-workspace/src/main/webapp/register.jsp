@@ -121,13 +121,9 @@
         </div>
     </div>
 </div>
-
 <!-- Footer -->
-
 <jsp:include page="footer.jsp"></jsp:include>
 
-<!-- JS Library-->
-<!-- JS Library-->
 </body>
 
 </html>

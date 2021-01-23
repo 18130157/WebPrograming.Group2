@@ -1,11 +1,8 @@
 <%@ page import="vn.edu.nlu.beans.User" %>
-<%@ page import="javax.swing.text.html.HTML" %>
-<%--<%@ page import="org.apache.taglibs.standard.tag.el.core.OutTag" %>--%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -28,6 +25,8 @@
     <link rel="stylesheet" href="plugins/revolution/css/settings.css">
     <link rel="stylesheet" href="plugins/revolution/css/layers.css">
     <link rel="stylesheet" href="plugins/revolution/css/navigation.css">
+    <!-- Custom-->
+    <link rel="stylesheet" href="css/style.css">
     <!--HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries-->
     <!--WARNING: Respond.js doesn't work if you view the page via file://-->
     <!--[if lt IE 9]><script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script><script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script><![endif]-->
@@ -43,17 +42,16 @@
     <link href="vendor/slick/slick.css" rel="stylesheet" media="all">
     <link href="vendor/select2/select2.min.css" rel="stylesheet" media="all">
     <link href="vendor/perfect-scrollbar/perfect-scrollbar.css" rel="stylesheet" media="all">
-    <!-- Custom-->
-    <link rel="stylesheet" href="css/style.css">
+    <!-- Main CSS-->
+    <link href="login/main.css" rel="stylesheet" media="all">
 </head>
-
 <body class="ps-loading">
 <header class="header">
     <div class="header__top">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-6 col-md-8 col-sm-6 col-xs-12 ">
-                    <p>6 QL1A, Khu phố 1, Dĩ An, Bình Dương- Hotline: 0385190234 </p>
+                    <p>6 QL1A, Khu phố 1, Dĩ An, Bình Dương-  Hotline: 0385190234 </p>
                 </div>
                 <div class="col-lg-6 col-md-4 col-sm-6 col-xs-12 ">
                     <div class="header__actions">
@@ -62,17 +60,15 @@
                     </div>
                     <div class="header__actions">
                         <a href="DoLogout">
-                            <% User u = (User) session.getAttribute("USER");%>
-                            <%=u != null ? "Đăng Xuất" : ""%>
+                            <% User u = (User) session.getAttribute("USER") ;%>
+                            <%=u!= null?"Đăng Xuất":""%>
                         </a>
                     </div>
                     <div class="header__actions">
-                        <a href="login.jsp">
-                            <%=u != null ? "Chào mừng " + u.getUsername() : "ĐĂNG NHẬP"%>
-                            </p>
+                        <a href="login.jsp" >
+                            <%=u!=null?"Chào mừng "+ u.getUsername():"ĐĂNG NHẬP"%>
                         </a>
                     </div>
-
 
                 </div>
             </div>
@@ -80,8 +76,7 @@
         <nav class="navigation">
             <div class="container-fluid">
                 <div class="navigation__column left">
-                    <div class="header__logo"><a class="ps-logo" href="index.jsp"><img src="images/logo1.png"
-                                                                                       alt=""></a></div>
+                    <div class="header__logo"><a class="ps-logo" href="index.jsp"><img src="images/logo1.png" alt=""></a></div>
                 </div>
                 <div class="navigation__column center">
                     <ul class="main-menu menu">
@@ -89,7 +84,7 @@
                             <i class="fas fa-home"></i>
                             <a href="index.jsp">TRANG CHỦ</a>
                         </li>
-                        <li class="menu-item"><a href="about.jsp">GIỚI THIỆU</a></li>
+                        <li class="menu-item"><a href="about.jsp">GIỚI THIỆU</a> </li>
 
                         <li class="menu-item menu-item-has-children dropdown"><a href="product-listing.jsp">SẢN PHẨM</a>
                             <ul class="sub-menu">
@@ -102,6 +97,16 @@
                             </ul>
                         </li>
                         <li class="menu-item"><a href="contact-us.jsp">Liên Hệ</a></li>
+
+                        <li class="menu-item menu-item-has-children dropdown">
+                            <a><%=u!=null?"TÀI KHOẢN":""%></a>
+                            <ul class="sub-menu">
+                                <li class="menu-item"><a href="ViewInfo">Xem thông tin</a></li>
+                                <li class="menu-item"><a href="Edit_InformationUser">Thay đổi thông tin</a></li>
+                                <li class="menu-item"><a href="ChangePassword">Thay đổi mật khẩu</a></li>
+                                <li class="menu-item"><a>Xem đơn hàng</a></li>
+                            </ul>
+                        </li>
                     </ul>
                 </div>
                 <div class="navigation__column right">
@@ -113,33 +118,22 @@
                         <div class="ps-cart__listing">
                             <div class="ps-cart__content">
                                 <div class="ps-cart-item"><a class="ps-cart-item__close" href="#"></a>
-                                    <div class="ps-cart-item__thumbnail"><a href="product-detail.jsp"></a><img
-                                            src="images/cart-preview/1.jpg" alt=""></div>
-                                    <div class="ps-cart-item__content"><a class="ps-cart-item__title"
-                                                                          href="product-detail.jsp">Asus vivobook A412FA
+                                    <div class="ps-cart-item__thumbnail"><a href="product-detail.jsp"></a><img src="images/cart-preview/1.jpg" alt=""></div>
+                                    <div class="ps-cart-item__content"><a class="ps-cart-item__title" href="product-detail.jsp">Asus vivobook A412FA
                                     </a>
-                                        <p style="color: white; font-weight: bold;">
-                                            <span>SL:<i>1</i></span><span>Giá:<i>4 000 000đ</i></span></p>
+                                        <p style="color: white; font-weight: bold;" ><span>SL:<i>1</i></span><span>Giá:<i>4 000 000đ</i></span></p>
                                     </div>
                                 </div>
                                 <div class="ps-cart-item"><a class="ps-cart-item__close" href="#"></a>
-                                    <div class="ps-cart-item__thumbnail"><a href="product-detail.jsp"></a><img
-                                            src="images/cart-preview/2.jpg" alt=""></div>
-                                    <div class="ps-cart-item__content"><a class="ps-cart-item__title"
-                                                                          href="product-detail.jsp">Dell Inspiron 5584
-                                        I5 8265U</a>
-                                        <p style="color: white; font-weight: bold;">
-                                            <span>SL:<i>1</i></span><span>Giá:<i>2 000 000đ</i></span></p>
+                                    <div class="ps-cart-item__thumbnail"><a href="product-detail.jsp"></a><img src="images/cart-preview/2.jpg" alt=""></div>
+                                    <div class="ps-cart-item__content"><a class="ps-cart-item__title" href="product-detail.jsp">Dell Inspiron 5584 I5 8265U</a>
+                                        <p style="color: white; font-weight: bold;"><span>SL:<i>1</i></span><span>Giá:<i>2 000 000đ</i></span></p>
                                     </div>
                                 </div>
                                 <div class="ps-cart-item"><a class="ps-cart-item__close" href="#"></a>
-                                    <div class="ps-cart-item__thumbnail"><a href="product-detail.jsp"></a><img
-                                            src="images/cart-preview/3.jpg" alt=""></div>
-                                    <div class="ps-cart-item__content"><a class="ps-cart-item__title"
-                                                                          href="product-detail.jsp">Dell Vostro 3590 I7
-                                        10510U</a>
-                                        <p style="color: white; font-weight: bold;">
-                                            <span>SL:<i>1</i></span><span>Giá:<i>3 000 000đ</i></span></p>
+                                    <div class="ps-cart-item__thumbnail"><a href="product-detail.jsp"></a><img src="images/cart-preview/3.jpg" alt=""></div>
+                                    <div class="ps-cart-item__content"><a class="ps-cart-item__title" href="product-detail.jsp">Dell Vostro 3590 I7 10510U</a>
+                                        <p style="color: white; font-weight: bold;"><span>SL:<i>1</i></span><span>Giá:<i>3 000 000đ</i></span></p>
                                     </div>
                                 </div>
                             </div>
@@ -147,8 +141,7 @@
                                 <p style="color: white; font-weight: bold;">Tổng SL:<span>3</span></p>
                                 <p style="color: white; font-weight: bold;">Tổng tiền:<span>9 000 000đ</span></p>
                             </div>
-                            <div class="ps-cart__footer"><a class="ps-btn" href="cart.jsp">Giỏ hàng<i
-                                    class="ps-icon-arrow-left"></i></a></div>
+                            <div class="ps-cart__footer"><a class="ps-btn" href="cart.jsp">Giỏ hàng<i class="ps-icon-arrow-left"></i></a></div>
                         </div>
                     </div>
                     <div class="menu-toggle"><span></span></div>
@@ -157,6 +150,7 @@
         </nav>
     </div>
 </header>
+<!-- JS Library-->
 <script type="text/javascript" src="plugins/jquery/dist/jquery.min.js"></script>
 <script type="text/javascript" src="plugins/bootstrap/dist/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="plugins/jquery-bar-rating/dist/jquery.barrating.min.js"></script>
@@ -179,8 +173,8 @@
 <script type="text/javascript" src="plugins/revolution/js/extensions/revolution.extension.navigation.min.js"></script>
 <script type="text/javascript" src="plugins/revolution/js/extensions/revolution.extension.parallax.min.js"></script>
 <script type="text/javascript" src="plugins/revolution/js/extensions/revolution.extension.actions.min.js"></script>
-
 <!-- Custom scripts-->
+<script src="./login/animsition.min.js"></script>
 <script type="text/javascript" src="js/main.js"></script>
 <script type="text/javascript" src="js/mainlogin.js"></script>
 <script type="text/javascript" src="./register/register.js"></script>
