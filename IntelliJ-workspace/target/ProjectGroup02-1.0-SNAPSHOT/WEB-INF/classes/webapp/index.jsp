@@ -1,3 +1,5 @@
+<%@ page import="vn.edu.nlu.entity.ImageEntity" %>
+<%@ page import="vn.edu.nlu.entity.ProductEntity" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
@@ -11,7 +13,7 @@
     <title>LaptopNLU-Homepage</title>
 
     <!-- Custom-->
-<%--    <link rel="stylesheet" href="css/style.css">--%>
+    <%--    <link rel="stylesheet" href="css/style.css">--%>
     <style type="text/css">
         .rev_slider_wrapper,
         .rev_slider,
@@ -44,9 +46,10 @@
     <div class="ps-banner" style="width: 1200px; margin: auto;">
         <div class="rev_slider fullscreenbanner" id="home-banner">
             <ul>
+                <% request.setAttribute("homeSlider", ImageEntity.getHomepageImg("slider"));%>
                 <li class="ps-banner" data-index="rs-2972" data-transition="random" data-slotamount="default"
                     data-hideafterloop="0" data-hideslideonmobile="off" data-rotate="0"><img class="rev-slidebg"
-                                                                                             src="images/slider/slider01.png"
+                                                                                             src="${homeSlider.get(0).url}"
                                                                                              alt=""
                                                                                              data-bgposition="center center"
                                                                                              data-bgfit="cover"
@@ -57,9 +60,8 @@
                 </li>
                 <li class="ps-banner ps-banner--white" data-index="rs-100" data-transition="random"
                     data-slotamount="default" data-hideafterloop="0" data-hideslideonmobile="off" data-rotate="0"><img
-                        class="rev-slidebg" src="images/slider/slider02.png" alt="" data-bgposition="center center"
+                        class="rev-slidebg" src="${homeSlider.get(1).url}" alt="" data-bgposition="center center"
                         data-bgfit="cover" data-bgrepeat="no-repeat" data-bgparallax="5" data-no-retina>
-
                 </li>
             </ul>
         </div>
@@ -75,331 +77,117 @@
                      data-radio="100%">
                     <div class="ps-masonry">
                         <div class="grid-sizer"></div>
-                        <div class="grid-item kids">
-                            <div class="grid-item__content-wrapper">
-                                <div class="ps-shoe mb-30">
-                                    <div class="ps-shoe__thumbnail">
-                                        <div class="ps-badge"><span>Mới</span></div>
-                                        <div class="ps-badge ps-badge--sale ps-badge--2nd"><span>-35%</span></div>
-                                        <img src="images/shoe/acer/1.jpg" alt=""><a class="ps-shoe__overlay"
-                                                                                    href="product-detail.jsp"></a>
-                                    </div>
-                                    <br/><br/><br/>
-                                    <div class="ps-shoe__content">
-                                        <div class="ps-shoe__variants">
-                                            <div class="ps-shoe__variant normal"><img src="images/shoe/acer/1.jpg"><img
-                                                    src="images/shoe/acer/2.jpg" alt=""><img
-                                                    src="images/shoe/acer/3.jpg" alt=""><img
-                                                    src="images/shoe/acer/4.jpg" alt=""><img
-                                                    src="images/shoe/acer/5.jpg" alt=""></div>
-                                            <select class="ps-rating ps-shoe__rating">
-                                                <option value="1">1</option>
-                                                <option value="1">2</option>
-                                                <option value="1">3</option>
-                                                <option value="1">4</option>
-                                                <option value="2">5</option>
-                                            </select>
-                                        </div>
-                                        <div class="ps-shoe__detail"><a class="ps-shoe__name" href="#">Acer Nitro AN515
-                                            55 70AX i7 10750H (NH.Q7NSV.001)</a>
-                                            <p> RAM:8G-SSD:512GB<br/>
-                                                <del>40 000 000đ</del>
-                                                <strong class="price ps-product__price"> 28 000 000đ </strong></p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        <%--                        Start Single Product--%>
+                        <% request.setAttribute("listNoiBat", ProductEntity.getSPNoiBat());%>
 
-                        <div class="grid-item nike">
-                            <div class="grid-item__content-wrapper">
-                                <div class="ps-shoe mb-30">
-                                    <div class="ps-shoe__thumbnail"><img src="images/shoe/hp/1.jpg" alt=""><a
-                                            class="ps-shoe__overlay" href="product-detail.jsp"></a>
-                                    </div>
-                                    <br/><br/>
-                                    <div class="ps-shoe__content">
-                                        <div class="ps-shoe__variants">
-                                            <div class="ps-shoe__variant normal"><img src="images/shoe/hp/1.jpg"><img
-                                                    src="images/shoe/hp/2.jpg" alt=""><img src="images/shoe/hp/3.jpg"
-                                                                                           alt=""><img
-                                                    src="images/shoe/hp/4.jpg" alt=""><img src="images/shoe/hp/5.jpg"
-                                                                                           alt=""></div>
-                                            <select class="ps-rating ps-shoe__rating">
-                                                <option value="1">1</option>
-                                                <option value="1">2</option>
-                                                <option value="1">3</option>
-                                                <option value="1">4</option>
-                                                <option value="2">5</option>
-                                            </select>
+                        <c:forEach items="${listNoiBat}" var="p">
+                            <div class="grid-item kids">
+                                <div class="grid-item__content-wrapper">
+                                    <div class="ps-shoe mb-30">
+                                        <div class="ps-shoe__thumbnail">
+                                            <c:if test="${p.isNew == true}">
+                                                <div class="ps-badge"><span>Mới</span></div>
+                                            </c:if>
+                                            <c:if test="${p.soGiamGia != 0}">
+                                                <c:choose>
+                                                    <c:when test="${p.isNew == true}">
+                                                        <c:choose>
+                                                            <c:when test="${p.soGiamGia < 1}">
+                                                                <div class="ps-badge ps-badge--sale ps-badge--2nd">
+                                                        <span>
+                                                            -<fmt:formatNumber type="percent" maxIntegerDigits="2"
+                                                                               value="${p.soGiamGia}"/>
+                                                        </span>
+                                                                </div>
+                                                            </c:when>
+                                                            <c:otherwise>
+                                                                <div class="ps-badge ps-badge--sale ps-badge--2nd">
+                                                        <span>
+                                                            -<fmt:formatNumber groupingUsed="false"
+                                                                               maxFractionDigits="0"
+                                                                               value="${p.soGiamGia / 1000}"/>K
+                                                        </span>
+                                                                </div>
+                                                            </c:otherwise>
+                                                        </c:choose>
+                                                    </c:when>
+                                                    <c:otherwise>
+                                                        <c:choose>
+                                                            <c:when test="${p.soGiamGia < 1}">
+                                                                <div class="ps-badge ps-badge--sale">
+                                                        <span>
+                                                            -<fmt:formatNumber type="percent" maxIntegerDigits="2"
+                                                                               value="${p.soGiamGia}"/>
+                                                        </span>
+                                                                </div>
+                                                            </c:when>
+                                                            <c:otherwise>
+                                                                <div class="ps-badge ps-badge--sale">
+                                                        <span>
+                                                            -<fmt:formatNumber groupingUsed="false"
+                                                                               maxFractionDigits="0"
+                                                                               value="${p.soGiamGia / 1000}"/>K
+                                                        </span>
+                                                                </div>
+                                                            </c:otherwise>
+                                                        </c:choose>
+                                                    </c:otherwise>
+                                                </c:choose>
+                                            </c:if>
+                                            <img src="${p.mainImg}" alt="">
+                                            <a class="ps-shoe__overlay" href="#"></a>
                                         </div>
-                                        <div class="ps-shoe__detail"><a class="ps-shoe__name" href="#">Laptop HP 348 G7
-                                            i3 8130U (1A0Z1PA)</a>
-                                            <p> RAM:4G-SSD:512GB<br/><strong class="price ps-product__price">11 370
-                                                000đ</strong></p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                                        <br/><br/>
+                                        <div class="ps-shoe__content">
+                                            <div class="ps-shoe__variants">
+                                                <div class="ps-shoe__variant normal">
+                                                    <img src="${p.imgSlider.get(0)}" alt="">
+                                                    <img src="${p.imgSlider.get(1)}" alt="">
+                                                    <img src="${p.imgSlider.get(2)}" alt="">
+                                                    <img src="${p.imgSlider.get(3)}" alt="">
+                                                    <img src="${p.imgSlider.get(4)}" alt="">
+                                                </div>
+                                                <select class="ps-rating ps-shoe__rating">
+                                                    <option value="1" ${p.soSaoDanhGia == 1 ? "selected": ""}>1</option>
+                                                    <option value="2" ${p.soSaoDanhGia == 2 ? "selected": ""}>2</option>
+                                                    <option value="3" ${p.soSaoDanhGia == 3 ? "selected": ""}>3</option>
+                                                    <option value="4" ${p.soSaoDanhGia == 4 ? "selected": ""}>4</option>
+                                                    <option value="5" ${p.soSaoDanhGia == 5 ? "selected": ""}>5</option>
+                                                </select>
+                                            </div>
+                                            <div class="ps-shoe__detail">
+                                                <a class="ps-shoe__name" href="#">${p.ten}<br>${p.id}</a>
+                                                <p>
+                                                    RAM: ${p.ram}GB - ${p.oCung}<br/>
+                                                    <fmt:setLocale value="vi_VN"/>
+                                                    <strong class="price"><fmt:formatNumber value="${p.pricesale}"
+                                                                                            type="currency"/></strong>
 
-                        <div class="grid-item adidas">
-                            <div class="grid-item__content-wrapper">
-                                <div class="ps-shoe mb-30">
-                                    <div class="ps-shoe__thumbnail"><img src="images/shoe/dell/1.jpg" alt=""><a
-                                            class="ps-shoe__overlay" href="product-detail.jsp"></a>
-                                    </div>
-                                    <br/><br/>
-                                    <div class="ps-shoe__content">
-                                        <div class="ps-shoe__variants">
-                                            <div class="ps-shoe__variant normal"><img src="images/shoe/dell/2.jpg"
-                                                                                      alt=""><img
-                                                    src="images/shoe/dell/3.jpg" alt=""><img
-                                                    src="images/shoe/dell/4.jpg" alt=""><img
-                                                    src="images/shoe/dell/5.jpg" alt=""></div>
-                                            <select class="ps-rating ps-shoe__rating">
-                                                <option value="1">1</option>
-                                                <option value="1">2</option>
-                                                <option value="1">3</option>
-                                                <option value="1">4</option>
-                                                <option value="2">5</option>
-                                            </select>
-                                        </div>
-                                        <div class="ps-shoe__detail"><a class="ps-shoe__name" href="#">Laptop Dell
-                                            Inspiron 5593 i5 1035G1</a>
-                                            <p> RAM:8G-SSD:256GB<br/><strong class="price ps-product__price">17 890
-                                                000đ</strong></p>
+                                                    <c:if test="${p.soGiamGia != 0}">
+                                                        <del><fmt:formatNumber value="${p.price}"
+                                                                               type="currency"/></del>
+                                                    </c:if>
+                                                </p>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </c:forEach>
 
-                        <div class="grid-item kids">
-                            <div class="grid-item__content-wrapper">
-                                <div class="ps-shoe mb-30">
-                                    <div class="ps-shoe__thumbnail">
-                                        <div class="ps-badge ps-badge--sale"><span>-35%</span></div>
-                                        <img src="images/shoe/Lenovo/1.jpg" alt=""><a class="ps-shoe__overlay"
-                                                                                      href="product-detail.jsp"></a>
-                                    </div>
-                                    <br/><br/>
-                                    <div class="ps-shoe__content">
-                                        <div class="ps-shoe__variants">
-                                            <div class="ps-shoe__variant normal"><img src="images/shoe/Lenovo/2.jpg"
-                                                                                      alt=""><img
-                                                    src="images/shoe/Lenovo/3.jpg" alt=""><img
-                                                    src="images/shoe/Lenovo/4.jpg" alt=""><img
-                                                    src="images/shoe/Lenovo/5.jpg" alt=""></div>
-                                            <select class="ps-rating ps-shoe__rating">
-                                                <option value="1">1</option>
-                                                <option value="1">2</option>
-                                                <option value="1">3</option>
-                                                <option value="1">4</option>
-                                                <option value="2">5</option>
-                                            </select>
-                                        </div>
-                                        <div class="ps-shoe__detail"><a class="ps-shoe__name" href="#">Laptop Lenovo
-                                            IdeaPad S340 14IIL i5 1035G1</a>
-                                            RAM:8G-SSD:512GB<br/>
-                                            <del>18 990 000đ</del>
-                                            <strong class="price ps-product__price"> 13 390 000đ </strong>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        <%--                        End Single Product--%>
 
-
-                        <div class="grid-item men">
-                            <div class="grid-item__content-wrapper">
-                                <div class="ps-shoe mb-30">
-                                    <br/>
-                                    <div class="ps-shoe__thumbnail"><img src="images/shoe/asus/1.jpg" alt=""><a
-                                            class="ps-shoe__overlay" href="product-detail.jsp"></a>
-                                    </div>
-                                    <br/><br/>
-                                    <div class="ps-shoe__content">
-                                        <div class="ps-shoe__variants">
-                                            <div class="ps-shoe__variant normal"><img src="images/shoe/asus/2.jpg"
-                                                                                      alt=""><img
-                                                    src="images/shoe/asus/3.jpg" alt=""><img
-                                                    src="images/shoe/asus/4.jpg" alt=""><img
-                                                    src="images/shoe/asus/5.jpg" alt=""></div>
-                                            <select class="ps-rating ps-shoe__rating">
-                                                <option value="1">1</option>
-                                                <option value="1">2</option>
-                                                <option value="1">3</option>
-                                                <option value="1">4</option>
-                                                <option value="2">5</option>
-                                            </select>
-                                        </div>
-                                        <div class="ps-shoe__detail"><a class="ps-shoe__name" href="#">Laptop Asus
-                                            VivoBook A412FA i3 10110U</a>
-                                            <p> RAM:4GB-SSD:512GB<br/> <strong class="price ps-product__price"> 12 430
-                                                000đ</strong></p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-
-                        <div class="grid-item women">
-                            <div class="grid-item__content-wrapper">
-                                <div class="ps-shoe mb-30">
-                                    <br/>
-                                    <div class="ps-shoe__thumbnail"><img src="images/shoe/Macbook/1.jpg" alt=""><a
-                                            class="ps-shoe__overlay" href="product-detail.jsp"></a>
-                                    </div>
-                                    <br/><br/>
-                                    <div class="ps-shoe__content">
-                                        <div class="ps-shoe__variants">
-                                            <div class="ps-shoe__variant normal"><img src="images/shoe/Macbook/2.jpg"
-                                                                                      alt=""><img
-                                                    src="images/shoe/Macbook/3.jpg" alt=""><img
-                                                    src="images/shoe/Macbook/4.jpg" alt=""><img
-                                                    src="images/shoe/Macbook/5.jpg" alt=""></div>
-                                            <select class="ps-rating ps-shoe__rating">
-                                                <option value="1">1</option>
-                                                <option value="1">2</option>
-                                                <option value="1">3</option>
-                                                <option value="1">4</option>
-                                                <option value="2">5</option>
-                                            </select>
-                                        </div>
-                                        <div class="ps-shoe__detail"><a class="ps-shoe__name" href="#">Laptop Apple
-                                            MacBook Air 2020 i5 1.1GHz</a>
-                                            <p> RAM:8GB-SSD:256GB<br/><strong class="price ps-product__price">31 990
-                                                000đ</strong></p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="grid-item kids">
-                            <div class="grid-item__content-wrapper">
-                                <div class="ps-shoe mb-30">
-                                    <br/>
-                                    <div class="ps-shoe__thumbnail"><img src="images/shoe/hp2/1.jpg" alt=""><a
-                                            class="ps-shoe__overlay" href="product-detail.jsp"></a>
-                                    </div>
-                                    <br/><br/>
-                                    <div class="ps-shoe__content">
-                                        <div class="ps-shoe__variants">
-                                            <div class="ps-shoe__variant normal"><img src="images/shoe/hp2/2.jpg"
-                                                                                      alt=""><img
-                                                    src="images/shoe/hp2/3.jpg" alt=""><img src="images/shoe/hp2/4.jpg"
-                                                                                            alt=""><img
-                                                    src="images/shoe/hp2/5.jpg" alt=""></div>
-                                            <select class="ps-rating ps-shoe__rating">
-                                                <option value="1">1</option>
-                                                <option value="1">2</option>
-                                                <option value="1">3</option>
-                                                <option value="1">4</option>
-                                                <option value="2">5</option>
-                                            </select>
-                                        </div>
-                                        <div class="ps-shoe__detail"><a class="ps-shoe__name" href="#">Laptop HP 348 G7
-                                            i5 10210U</a>
-                                            <p> RAM:8GB-SSD:512GB<br/> <strong class="price ps-product__price">15 170
-                                                000đ</strong></p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="grid-item kids">
-                            <div class="grid-item__content-wrapper">
-                                <div class="ps-shoe mb-30">
-                                    <div class="ps-shoe__thumbnail"><img src="images/shoe/hp3/1.jpg" alt=""><a
-                                            class="ps-shoe__overlay" href="product-detail.jsp"></a>
-                                    </div>
-                                    <br/><br/>
-                                    <div class="ps-shoe__content">
-                                        <div class="ps-shoe__variants">
-                                            <div class="ps-shoe__variant normal"><img src="images/shoe/hp3/2.jpg"
-                                                                                      alt=""><img
-                                                    src="images/shoe/hp3/3.jpg" alt=""><img src="images/shoe/hp3/4.jpg"
-                                                                                            alt=""><img
-                                                    src="images/shoe/hp3/5.jpg" alt=""></div>
-                                            <select class="ps-rating ps-shoe__rating">
-                                                <option value="1">1</option>
-                                                <option value="1">2</option>
-                                                <option value="1">3</option>
-                                                <option value="1">4</option>
-                                                <option value="2">5</option>
-                                            </select>
-                                        </div>
-                                        <div class="ps-shoe__detail"><a class="ps-shoe__name" href="#">Laptop HP Envy 13
-                                            aq1057TX i7 10510U</a>
-                                            <p> RAM:8GB-SSD:512GB<br/> <strong class="price ps-product__price">29 990
-                                                000 </strong></p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
     <div class="ps-section--offer">
-        <div class="ps-column"><a class="ps-offer" href="product-listing.jsp"><img src="images/banner/banner1.png"
+        <% request.setAttribute("homeBanner", ImageEntity.getHomepageImg("banner"));%>
+        <div class="ps-column"><a class="ps-offer" href="product-listing.jsp"><img src="${homeBanner.get(0).url}"
                                                                                    alt=""></a></div>
-        <div class="ps-column"><a class="ps-offer" href="product-listing.jsp"><img src="images/banner/banner2.png"
+        <div class="ps-column"><a class="ps-offer" href="product-listing.jsp"><img src="${homeBanner.get(1).url}"
                                                                                    alt=""></a></div>
-    </div>
-    <div class="ps-section--sale-off ps-section pt-80 pb-40">
-        <div class="ps-container">
-            <div class="ps-section__header mb-50">
-                <h3 class="ps-section__title" data-mask="Sale off">- Hot Deal Today</h3>
-            </div>
-            <div class="ps-section__content">
-                <div class="row">
-                    <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 ">
-                        <div class="ps-hot-deal">
-                            <h3>Nike DUNK Max 95 OG</h3>
-                            <p class="ps-hot-deal__price">Only: <span>£155</span></p>
-                            <ul class="ps-countdown" data-time="December 13, 2017 15:37:25">
-                                <li><span class="hours"></span>
-                                    <p>Hours</p></li>
-                                <li class="divider">:</li>
-                                <li><span class="minutes"></span>
-                                    <p>minutes</p></li>
-                                <li class="divider">:</li>
-                                <li><span class="seconds"></span>
-                                    <p>Seconds</p></li>
-                            </ul>
-                            <a class="ps-btn" href="#">Order Today<i class="ps-icon-next"></i></a>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 ">
-                        <div class="ps-hotspot"><a class="point first active" href="javascript:;"><i
-                                class="fa fa-plus"></i>
-                            <div class="ps-hotspot__content">
-                                <p class="heading">JUMP TO HEADER</p>
-                                <p>Dynamic Fit Collar en la zona del tobillo que une la parte inferior de la pierna y el
-                                    pie sin reducir la libertad de movimiento.</p>
-                            </div>
-                        </a><a class="point second" href="javascript:;"><i class="fa fa-plus"></i>
-                            <div class="ps-hotspot__content">
-                                <p class="heading">JUMP TO HEADER</p>
-                                <p>Dynamic Fit Collar en la zona del tobillo que une la parte inferior de la pierna y el
-                                    pie sin reducir la libertad de movimiento.</p>
-                            </div>
-                        </a><a class="point third" href="javascript:;"><i class="fa fa-plus"></i>
-                            <div class="ps-hotspot__content">
-                                <p class="heading">JUMP TO HEADER</p>
-                                <p>Dynamic Fit Collar en la zona del tobillo que une la parte inferior de la pierna y el
-                                    pie sin reducir la libertad de movimiento.</p>
-                            </div>
-                        </a><img src="images/hot-deal.png" alt=""></div>
-                    </div>
-                </div>
-            </div>
-        </div>
     </div>
     <div class="ps-section ps-section--top-sales ps-owl-root pt-80 pb-80">
         <div class="ps-container">
@@ -419,190 +207,100 @@
                      data-owl-speed="5000" data-owl-gap="30" data-owl-nav="false" data-owl-dots="false"
                      data-owl-item="4" data-owl-item-xs="1" data-owl-item-sm="2" data-owl-item-md="3"
                      data-owl-item-lg="4" data-owl-duration="1000" data-owl-mousedrag="on">
-                    <div class="ps-shoes--carousel">
-                        <div class="ps-shoe">
-                            <div class="ps-shoe__thumbnail">
-                                <div class="ps-badge"><span>Mới</span></div>
-                                <img src="images/shoe/BanChayNhat/asus/1.jpg" alt=""><a class="ps-shoe__overlay"
-                                                                                        href="product-detail.jsp"></a>
-                            </div>
-                            <br/><br/>
-                            <div class="ps-shoe__content">
-                                <div class="ps-shoe__variants">
-                                    <div class="ps-shoe__variant normal"><img src="images/shoe/BanChayNhat/asus/1.jpg"
-                                                                              alt=""><img
-                                            src="images/shoe/BanChayNhat/asus/2.jpg" alt=""><img
-                                            src="images/shoe/BanChayNhat/asus/3.jpg" alt=""><img
-                                            src="images/shoe/BanChayNhat/asus/5.jpg" alt=""></div>
-                                    <select class="ps-rating ps-shoe__rating">
-                                        <option value="1">1</option>
-                                        <option value="1">2</option>
-                                        <option value="1">3</option>
-                                        <option value="1">4</option>
-                                        <option value="2">5</option>
-                                    </select>
+                    <%--                    Start Single Product--%>
+                    <% request.setAttribute("listBanChay", ProductEntity.getSPBanChay());%>
+                    <c:forEach items="${listBanChay}" var="p">
+                        <div class="ps-shoes--carousel">
+                            <div class="ps-shoe">
+                                <div class="ps-shoe__thumbnail">
+                                    <c:if test="${p.isNew == true}">
+                                        <div class="ps-badge"><span>Mới</span></div>
+                                    </c:if>
+                                    <c:if test="${p.soGiamGia != 0}">
+                                        <c:choose>
+                                            <c:when test="${p.isNew == true}">
+                                                <c:choose>
+                                                    <c:when test="${p.soGiamGia < 1}">
+                                                        <div class="ps-badge ps-badge--sale ps-badge--2nd">
+                                                        <span>
+                                                            -<fmt:formatNumber type="percent" maxIntegerDigits="2"
+                                                                               value="${p.soGiamGia}"/>
+                                                        </span>
+                                                        </div>
+                                                    </c:when>
+                                                    <c:otherwise>
+                                                        <div class="ps-badge ps-badge--sale ps-badge--2nd">
+                                                        <span>
+                                                            -<fmt:formatNumber groupingUsed="false"
+                                                                               maxFractionDigits="0"
+                                                                               value="${p.soGiamGia / 1000}"/>K
+                                                        </span>
+                                                        </div>
+                                                    </c:otherwise>
+                                                </c:choose>
+                                            </c:when>
+                                            <c:otherwise>
+                                                <c:choose>
+                                                    <c:when test="${p.soGiamGia < 1}">
+                                                        <div class="ps-badge ps-badge--sale">
+                                                        <span>
+                                                            -<fmt:formatNumber type="percent" maxIntegerDigits="2"
+                                                                               value="${p.soGiamGia}"/>
+                                                        </span>
+                                                        </div>
+                                                    </c:when>
+                                                    <c:otherwise>
+                                                        <div class="ps-badge ps-badge--sale">
+                                                        <span>
+                                                            -<fmt:formatNumber groupingUsed="false"
+                                                                               maxFractionDigits="0"
+                                                                               value="${p.soGiamGia / 1000}"/>K
+                                                        </span>
+                                                        </div>
+                                                    </c:otherwise>
+                                                </c:choose>
+                                            </c:otherwise>
+                                        </c:choose>
+                                    </c:if>
+                                    <img src="${p.mainImg}" alt="">
+                                    <a class="ps-shoe__overlay" href="#"></a>
                                 </div>
-                                <div class="ps-shoe__detail"><a class="ps-shoe__name" href="product-detai.jsp">Laptop
-                                    Asus VivoBook X509MA N5030</a>
-                                    <p>RAM:4GB - HDD:1000GB<br/><strong class="ps-product__price">11 090 000đ</strong>
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="ps-shoes--carousel">
-                        <div class="ps-shoe">
-                            <div class="ps-shoe__thumbnail">
-                                <div class="ps-badge"><span>Mới</span></div>
-                                <div class="ps-badge ps-badge--sale ps-badge--2nd"><span>-35%</span></div>
-                                <img src="images/shoe/BanChayNhat/hp/1.jpg" alt=""><a class="ps-shoe__overlay"
-                                                                                      href="product-detail.jsp "></a>
-                            </div>
-                            <br/><br>
-                            <div class="ps-shoe__content">
-                                <div class="ps-shoe__variants">
-                                    <div class="ps-shoe__variant normal"><img src="images/shoe/BanChayNhat/hp/1.jpg"
-                                                                              alt=""><img
-                                            src="images/shoe/BanChayNhat/hp/2.jpg" alt=""><img
-                                            src="images/shoe/BanChayNhat/hp/4.jpg" alt=""><img
-                                            src="images/shoe/BanChayNhat/hp/5.jpg" alt=""></div>
-                                    <select class="ps-rating ps-shoe__rating">
-                                        <option value="1">1</option>
-                                        <option value="1">2</option>
-                                        <option value="1">3</option>
-                                        <option value="1">4</option>
-                                        <option value="2">5</option>
-                                    </select>
-                                </div>
-                                <div class="ps-shoe__detail"><a class="ps-shoe__name" href="product-detai.jsp">Laptop HP
-                                    348 G7 i3 8130U</a>
-                                    <p>
-                                        RAM:4G-SSD:256GB<br/>
-                                        <del> 12 890 000 đ</del>
-                                        <strong class="ps-product__price"> 8 990 000 đ </strong>
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="ps-shoes--carousel">
-                        <div class="ps-shoe">
-                            <div class="ps-shoe__thumbnail"><img src="images/shoe/hp2/1.jpg" alt=""><a
-                                    class="ps-shoe__overlay" href="product-detail.jsp"></a>
-                            </div>
-                            <br/><br/>
-                            <div class="ps-shoe__content">
-                                <div class="ps-shoe__variants">
-                                    <div class="ps-shoe__variant normal"><img src="images/shoe/hp2/2.jpg" alt=""><img
-                                            src="images/shoe/hp2/3.jpg" alt=""><img src="images/shoe/hp2/4.jpg"
-                                                                                    alt=""><img
-                                            src="images/shoe/hp2/5.jpg" alt=""></div>
-                                    <select class="ps-rating ps-shoe__rating">
-                                        <option value="1">1</option>
-                                        <option value="1">2</option>
-                                        <option value="1">3</option>
-                                        <option value="1">4</option>
-                                        <option value="2">5</option>
-                                    </select>
-                                </div>
-                                <div class="ps-shoe__detail"><a class="ps-shoe__name" href="#">Laptop HP 348 G7 i5
-                                    10210U</a>
-                                    <p> RAM:8GB-SSD:512GB<br/><strong class="ps-product__price">15 170 000 đ</strong>
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="ps-shoes--carousel">
-                        <div class="ps-shoe">
-                            <div class="ps-shoe__thumbnail"><img src="images/shoe/asus/1.jpg" alt=""><a
-                                    class="ps-shoe__overlay" href="product-detail.jsp"></a>
-                            </div>
-                            <br/><br/>
-                            <div class="ps-shoe__content">
-                                <div class="ps-shoe__variants">
-                                    <div class="ps-shoe__variant normal"><img src="images/shoe/asus/2.jpg" alt=""><img
-                                            src="images/shoe/asus/3.jpg" alt=""><img src="images/shoe/asus/4.jpg"
-                                                                                     alt=""><img
-                                            src="images/shoe/asus/5.jpg" alt=""></div>
-                                    <select class="ps-rating ps-shoe__rating">
-                                        <option value="1">1</option>
-                                        <option value="1">2</option>
-                                        <option value="1">3</option>
-                                        <option value="1">4</option>
-                                        <option value="2">5</option>
-                                    </select>
-                                </div>
-                                <div class="ps-shoe__detail"><a class="ps-shoe__name" href="#">Laptop Asus VivoBook
-                                    A412FA i3 10110U</a>
-                                    <p> RAM:4GB-SSD:512GB<br/><strong class="ps-product__price">12 430 000đ</strong></p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                                <br/><br/>
+                                <div class="ps-shoe__content">
+                                    <div class="ps-shoe__variants">
+                                        <div class="ps-shoe__variant normal">
+                                            <img src="${p.imgSlider.get(0)}" alt="">
+                                            <img src="${p.imgSlider.get(1)}" alt="">
+                                            <img src="${p.imgSlider.get(2)}" alt="">
+                                            <img src="${p.imgSlider.get(3)}" alt="">
+                                            <img src="${p.imgSlider.get(4)}" alt="">
+                                        </div>
+                                        <select class="ps-rating ps-shoe__rating">
+                                            <option value="1" ${p.soSaoDanhGia == 1 ? "selected": ""}>1</option>
+                                            <option value="2" ${p.soSaoDanhGia == 2 ? "selected": ""}>2</option>
+                                            <option value="3" ${p.soSaoDanhGia == 3 ? "selected": ""}>3</option>
+                                            <option value="4" ${p.soSaoDanhGia == 4 ? "selected": ""}>4</option>
+                                            <option value="5" ${p.soSaoDanhGia == 5 ? "selected": ""}>5</option>
+                                        </select>
+                                    </div>
+                                    <div class="ps-shoe__detail">
+                                        <a class="ps-shoe__name" href="#">${p.ten}<br>${p.id}</a>
+                                        <p>
+                                            RAM: ${p.ram}GB - ${p.oCung}<br/>
+                                            <fmt:setLocale value="vi_VN"/>
+                                            <strong class="price"><fmt:formatNumber value="${p.pricesale}"
+                                                                                    type="currency"/></strong>
 
-                    <div class="ps-shoes--carousel">
-                        <div class="ps-shoe">
-                            <div class="ps-shoe__thumbnail">
-                                <div class="ps-badge"><span>Mới</span></div>
-                                <img src="images/shoe/5.jpg" alt=""><a class="ps-shoe__overlay"
-                                                                       href="product-detail.jsp"></a>
-                            </div>
-                            <br/><br/>
-                            <div class="ps-shoe__content">
-                                <div class="ps-shoe__variants">
-                                    <div class="ps-shoe__variant normal"><img src="images/shoe/2.jpg" alt=""><img
-                                            src="images/shoe/3.jpg" alt=""><img src="images/shoe/4.jpg" alt=""><img
-                                            src="images/shoe/5.jpg" alt=""></div>
-                                    <select class="ps-rating ps-shoe__rating">
-                                        <option value="1">1</option>
-                                        <option value="1">2</option>
-                                        <option value="1">3</option>
-                                        <option value="1">4</option>
-                                        <option value="2">5</option>
-                                    </select>
-                                </div>
-                                <div class="ps-shoe__detail"><a class="ps-shoe__name" href="product-detai.jsp">Laptop
-                                    ASUS VIVOBOOK A412FA</a>
-                                    <p>RAM:8GB - SSD:256GB<br/>
-                                        <del> 16 000 000 đ</del>
-                                        <strong class="ps-product__price">14 999 000đ </strong>
-                                    </p>
+                                            <c:if test="${p.soGiamGia != 0}">
+                                                <del><fmt:formatNumber value="${p.price}" type="currency"/></del>
+                                            </c:if>
+                                        </p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="ps-shoes--carousel">
-                        <div class="ps-shoe">
-                            <div class="ps-shoe__thumbnail"><img src="images/shoe/acer/1.jpg" alt=""><a
-                                    class="ps-shoe__overlay" href="product-detail.jsp"></a>
-                            </div>
-                            <br/>
-                            <br/>
-                            <div class="ps-shoe__content">
-                                <div class="ps-shoe__variants">
-                                    <div class="ps-shoe__variant normal"><img src="images/shoe/acer2/1.jpg" alt=""><img
-                                            src="images/shoe/acer/2.jpg" alt=""><img src="images/shoe/acer/3.jpg"
-                                                                                     alt=""><img
-                                            src="images/shoe/acer/4.jpg" alt=""><img src="images/shoe/acer/5.jpg"
-                                                                                     alt=""></div>
-                                    <select class="ps-rating ps-shoe__rating">
-                                        <option value="1">1</option>
-                                        <option value="1">2</option>
-                                        <option value="1">3</option>
-                                        <option value="1">4</option>
-                                        <option value="2">5</option>
-                                    </select>
-                                </div>
-                                <div class="ps-shoe__detail"><a class="ps-shoe__name" href="product-detai.jsp">Laptop
-                                    Acer Aspire 3 A315 54K 37B0 i3 8130U</a>
-                                    <p>RAM:4GB - SSD:256GB<br/>
-                                        <strong class="ps-product__price">9 990 000 đ</strong>
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    </c:forEach>
+                    <%--                    End Single Product--%>
                 </div>
             </div>
         </div>
@@ -659,8 +357,5 @@
     <jsp:include page="footer.jsp"></jsp:include>
 
 </main>
-<!-- Custom scripts-->
-<%--<script type="text/javascript" src="js/main.js"></script>--%>
 </body>
-
 </html>
