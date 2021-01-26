@@ -13,7 +13,7 @@ public class ProductEntity {
 
     public static List<Product> listPageFirst() {
         try {
-            String sql = "SELECT * FROM v_listing";
+            String sql = "SELECT * FROM v_listing LIMIT 24";
             PreparedStatement pre = ConnectDB.connect(sql);
             ResultSet rs = pre.executeQuery();
             List<Product> re = new ArrayList<>();

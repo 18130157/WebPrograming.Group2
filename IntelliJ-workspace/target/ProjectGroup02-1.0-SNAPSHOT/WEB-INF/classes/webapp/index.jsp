@@ -69,7 +69,7 @@
     <div class="ps-section--features-product ps-section masonry-root pt-100 pb-100">
         <div class="ps-container">
             <div class="ps-section__header mb-50">
-                <h3 class="ps-section__title" data-mask="NỔI BẬT NHẤT"> SẢN PHẨM NỔI BẬT</h3>
+                <h3 class="ps-section__title" data-mask="NỔI BẬT">SẢN PHẨM NỔI BẬT</h3>
             </div>
             <!-- chứa sp-->
             <div class="ps-section__content pb-50">
@@ -194,7 +194,7 @@
             <div class="ps-section__header mb-50">
                 <div class="row">
                     <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12 ">
-                        <h3 class="ps-section__title" data-mask="BÁN CHẠY NHẤT">BÁN CHẠY NHẤT</h3>
+                        <h3 class="ps-section__title" data-mask="BÁN CHẠY">SẢN PHẨM BÁN CHẠY</h3>
                     </div>
                     <div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 ">
                         <div class="ps-owl-actions"><a class="ps-prev" href="#"><i class="ps-icon-arrow-right"></i>TRƯỚC</a><a

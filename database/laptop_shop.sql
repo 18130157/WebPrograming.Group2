@@ -11,7 +11,7 @@
  Target Server Version : 100417
  File Encoding         : 65001
 
- Date: 21/01/2021 06:50:07
+ Date: 27/01/2021 05:54:31
 */
 
 SET NAMES utf8mb4;
@@ -34,6 +34,10 @@ CREATE TABLE `anh`  (
 -- ----------------------------
 -- Records of anh
 -- ----------------------------
+INSERT INTO `anh` VALUES ('banner1', NULL, 'banner_show', 'http://localhost:8080/ProjectGroup02/images/banner/banner1.png');
+INSERT INTO `anh` VALUES ('banner2', NULL, 'banner_show', 'http://localhost:8080/ProjectGroup02/images/banner/banner2.png');
+INSERT INTO `anh` VALUES ('slider01', NULL, 'slider_show', 'http://localhost:8080/ProjectGroup02/images/slider/slider01.png');
+INSERT INTO `anh` VALUES ('slider02', NULL, 'slider_show', 'http://localhost:8080/ProjectGroup02/images/slider/slider02.png');
 
 -- ----------------------------
 -- Table structure for binhluan
@@ -285,6 +289,27 @@ INSERT INTO `gia` VALUES ('6ZF24PA', 1, 12490000, '2021-01-21', NULL);
 INSERT INTO `gia` VALUES ('70175950', 1, 15990000, '2021-01-21', NULL);
 INSERT INTO `gia` VALUES ('70223127', 1, 10990000, '2021-01-21', NULL);
 INSERT INTO `gia` VALUES ('81Q9007KVN', 1, 49990000, '2021-01-21', NULL);
+INSERT INTO `gia` VALUES ('81TK007RVN', 1, 20290000, '2021-01-27', NULL);
+INSERT INTO `gia` VALUES ('81W8001XVN', 1, 30590000, '2021-01-27', NULL);
+INSERT INTO `gia` VALUES ('82AU0051VN', 1, 30590000, '2021-01-27', NULL);
+INSERT INTO `gia` VALUES ('8VK71AV', 1, 16490000, '2021-01-27', NULL);
+INSERT INTO `gia` VALUES ('AL858T', 1, 31490000, '2021-01-27', NULL);
+INSERT INTO `gia` VALUES ('BM0616R', 1, 6890000, '2021-01-27', NULL);
+INSERT INTO `gia` VALUES ('BM069T', 1, 12490000, '2021-01-27', NULL);
+INSERT INTO `gia` VALUES ('BQ497T', 1, 30590000, '2021-01-27', NULL);
+INSERT INTO `gia` VALUES ('BR271T', 1, 24590000, '2021-01-27', NULL);
+INSERT INTO `gia` VALUES ('CXGR01', 1, 29990000, '2021-01-27', NULL);
+INSERT INTO `gia` VALUES ('GRMGK2', 1, 18290000, '2021-01-27', NULL);
+INSERT INTO `gia` VALUES ('MQD32SA/A', 1, 26990000, '2021-01-27', NULL);
+INSERT INTO `gia` VALUES ('MWTJ2SA/A', 1, 26990000, '2021-01-27', NULL);
+INSERT INTO `gia` VALUES ('MWTL2SA/A', 1, 15990000, '2021-01-27', NULL);
+INSERT INTO `gia` VALUES ('N5I5591W', 1, 15990000, '2021-01-27', NULL);
+INSERT INTO `gia` VALUES ('NH.Q7NSV.001', 1, 20290000, '2021-01-27', NULL);
+INSERT INTO `gia` VALUES ('NX.GR7SV.004', 1, 24590000, '2021-01-27', NULL);
+INSERT INTO `gia` VALUES ('NX.H2ESV.001', 1, 8790000, '2021-01-27', NULL);
+INSERT INTO `gia` VALUES ('NX.H6DSV.002', 1, 18290000, '2021-01-27', NULL);
+INSERT INTO `gia` VALUES ('NX.HE3SV.00H', 1, 16490000, '2021-01-27', NULL);
+INSERT INTO `gia` VALUES ('P75F005N81A', 1, 12490000, '2021-01-27', NULL);
 
 -- ----------------------------
 -- Table structure for hedieuhanh
@@ -317,13 +342,13 @@ CREATE TABLE `khuyenmai`  (
   PRIMARY KEY (`MaKM`) USING BTREE,
   INDEX `MaSP`(`MaSP`) USING BTREE,
   CONSTRAINT `khuyenmai_ibfk_1` FOREIGN KEY (`MaSP`) REFERENCES `product` (`ID`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB AUTO_INCREMENT = 10 CHARACTER SET = utf8 COLLATE = utf8_unicode_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 33 CHARACTER SET = utf8 COLLATE = utf8_unicode_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of khuyenmai
 -- ----------------------------
-INSERT INTO `khuyenmai` VALUES (1, '0N90H1', 0, '2021-01-21', NULL);
-INSERT INTO `khuyenmai` VALUES (2, '1A1A6PA', 0, '2021-01-21', NULL);
+INSERT INTO `khuyenmai` VALUES (1, '0N90H1', 0.1, '2021-01-21', NULL);
+INSERT INTO `khuyenmai` VALUES (2, '1A1A6PA', 0.05, '2021-01-21', NULL);
 INSERT INTO `khuyenmai` VALUES (3, '20SL00MFVN', 300000, '2021-01-21', NULL);
 INSERT INTO `khuyenmai` VALUES (4, '2K0B7PA', 0, '2021-01-21', NULL);
 INSERT INTO `khuyenmai` VALUES (5, '4ME68PA', 0, '2021-01-21', NULL);
@@ -331,6 +356,27 @@ INSERT INTO `khuyenmai` VALUES (6, '6ZF24PA', 0, '2021-01-21', NULL);
 INSERT INTO `khuyenmai` VALUES (7, '70175950', 200000, '2021-01-21', NULL);
 INSERT INTO `khuyenmai` VALUES (8, '70223127', 100000, '2021-01-21', NULL);
 INSERT INTO `khuyenmai` VALUES (9, '81Q9007KVN', 0, '2021-01-21', NULL);
+INSERT INTO `khuyenmai` VALUES (10, '81TK007RVN', 0, '2021-01-27', NULL);
+INSERT INTO `khuyenmai` VALUES (11, '81W8001XVN', 0, '2021-01-27', NULL);
+INSERT INTO `khuyenmai` VALUES (12, '82AU0051VN', 0, '2021-01-27', NULL);
+INSERT INTO `khuyenmai` VALUES (13, '8VK71AV', 0, '2021-01-27', NULL);
+INSERT INTO `khuyenmai` VALUES (14, 'AL858T', 0, '2021-01-27', NULL);
+INSERT INTO `khuyenmai` VALUES (15, 'BM0616R', 0, '2021-01-27', NULL);
+INSERT INTO `khuyenmai` VALUES (16, 'BM069T', 0, '2021-01-27', NULL);
+INSERT INTO `khuyenmai` VALUES (17, 'BQ497T', 0, '2021-01-27', NULL);
+INSERT INTO `khuyenmai` VALUES (18, 'BR271T', 0, '2021-01-27', NULL);
+INSERT INTO `khuyenmai` VALUES (19, 'CXGR01', 0, '2021-01-27', NULL);
+INSERT INTO `khuyenmai` VALUES (20, 'GRMGK2', 0, '2021-01-27', NULL);
+INSERT INTO `khuyenmai` VALUES (21, 'MQD32SA/A', 0, '2021-01-27', NULL);
+INSERT INTO `khuyenmai` VALUES (22, 'MWTJ2SA/A', 0, '2021-01-27', NULL);
+INSERT INTO `khuyenmai` VALUES (23, 'MWTL2SA/A', 0, '2021-01-27', NULL);
+INSERT INTO `khuyenmai` VALUES (24, 'N5I5591W', 0, '2021-01-27', NULL);
+INSERT INTO `khuyenmai` VALUES (25, 'NH.Q7NSV.001', 0, '2021-01-27', NULL);
+INSERT INTO `khuyenmai` VALUES (26, 'NX.GR7SV.004', 0, '2021-01-27', NULL);
+INSERT INTO `khuyenmai` VALUES (27, 'NX.H2ESV.001', 0, '2021-01-27', NULL);
+INSERT INTO `khuyenmai` VALUES (28, 'NX.H6DSV.002', 0, '2021-01-27', NULL);
+INSERT INTO `khuyenmai` VALUES (29, 'NX.HE3SV.00H', 0, '2021-01-27', NULL);
+INSERT INTO `khuyenmai` VALUES (30, 'P75F005N81A', 0, '2021-01-27', NULL);
 
 -- ----------------------------
 -- Table structure for kichthuoc
@@ -484,36 +530,36 @@ CREATE TABLE `product`  (
 -- ----------------------------
 -- Records of product
 -- ----------------------------
-INSERT INTO `product` VALUES ('0N90H1', 'New; NoiBat', 'Dell XPS 13 9300 i7 1065G7', 'Laptop Dell XPS 13 9300 i7 (0N90H1) chắc chắn là một sự đột phá của Dell về thiết kế lẫn hiệu năng. Với một thiết kế gọn nhẹ, hiệu năng mạnh mẽ với chip Intel Core i7 và RAM 16 GB, Dell XPS 13 9300 tự tin đáp ứng tốt các nhu cầu làm việc và giải trí.', 99, 0, 'Dell', '2020', '2021-01-27', 12, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 'http://localhost:8080/ProjectGroup02/images/shoe/dell/0N90H1/main.jpg');
-INSERT INTO `product` VALUES ('1A1A6PA', 'DKD', 'HP ProBook 445 G7 R5 4500U', 'Laptop HP ProBook 445 G7 (1A1A6PA) là chiếc laptop với giá thành tầm trung cấu hình mạnh mẽ AMD Ryzen 5 sẽ đáp ứng hầu hết các nhu cầu văn phòng và giải trí thông thường. Thiết kế sang trọng tinh tế cùng với SSD siêu nhanh giúp bạn sẵn sàng xử lý công việ', 99, 0, 'HP', '2020', NULL, 12, 0, 4, 2, 2, 2, 2, 2, 2, 2, 2, 'http://localhost:8080/ProjectGroup02/images/shoe/hp/1A1A6PA/main.jpg');
-INSERT INTO `product` VALUES ('20SL00MFVN', 'DKD', 'Lenovo ThinkBook 14IIL i5 1035G1', 'Laptop Lenovo ThinkBook 14 IIL i5 (20SL00MFVN) phù hợp với doanh nhân, người làm văn phòng cần một chiếc máy tính mỏng nhẹ nhưng vẫn có cấu hình mạnh mẽ và khả năng bảo mật an toàn.', 99, 0, 'Lenovo', '2020', NULL, 12, 0, 4, 3, 3, 3, 3, 3, 3, 2, 3, 'http://localhost:8080/ProjectGroup02/images/shoe/Lenovo/20SL00MFVN/main.jpg');
-INSERT INTO `product` VALUES ('2K0B7PA', 'DKD', 'HP Envy 13 ba1031TU i7 1165G7', 'Laptop HP Envy 13-ba1031TU i7 1165G7 (2K0B7PA) là chiếc laptop mới ra mắt năm 2020 có cấu hình mạnh mẽ với chip Intel Core i7 thế hệ thứ 11. Mẫu laptop mỏng nhẹ, thời trang này hứa hẹn sẽ đáp ứng tốt nhu cầu sử dụng laptop cho dân văn phòng nhờ thiết kế n', 99, 0, 'HP', '2020', NULL, 12, 0, 4, 4, 4, 4, 4, 4, 4, 4, 2, 'http://localhost:8080/ProjectGroup02/images/shoe/hp/2K0B7PA/main.jpg');
-INSERT INTO `product` VALUES ('4ME68PA', 'DKD', 'HP 15 da0054TU i3 7020U', 'Laptop HP 15 da0054TU là phiên bản máy tính xách tay với cấu hình được trang bị vi xử lý chip Intel Core i3 Kabylake thế hệ 7 đem đến hiệu năng ổn định khi thao tác các tác vụ cơ bản, phù hợp cho công việc văn phòng, học tập.', 99, 0, 'HP', '2019', NULL, 12, 33, 3, 5, 5, 5, 5, 5, 5, 2, 2, 'http://localhost:8080/ProjectGroup02/images/shoe/hp/4ME68PA/main.jpg');
-INSERT INTO `product` VALUES ('6ZF24PA', 'DKD', 'HP Pavilion x360 dh0103TU i3 8145U', 'Laptop HP Pavilion x360 dh0103TU có cấu hình không quá mạnh tuy nhiên nó mang lại hiệu năng ổn định, xử lý tốt các nhu cầu học tập và công việc văn phòng thường ngày. Thiết kế gập hơn 180 độ, màn hình cảm ứng đa điểm là lợi thế của chiếc laptop này bởi bạ', 99, 0, 'HP', '2019', NULL, 12, 12, 2, 6, 6, 6, 6, 6, 6, 2, 2, 'http://localhost:8080/ProjectGroup02/images/shoe/hp/6ZF24PA/main.jpg');
-INSERT INTO `product` VALUES ('70175950', 'DKD', 'Dell Vostro 5581 i5 8265U', 'Dell Vostro 5581- 93S1GT2 là chiếc máy tính văn phòng đáng sở hữu với mức giá tốt. Máy sở hữu thiết kế đơn giản nhưng không kém phần sang trọng cùng một cấu hình mạnh mẽ đáp ứng tốt nhu cầu văn phòng và giải trí thường ngày.', 99, 0, 'Dell', '2018', NULL, 12, 11, 1, 7, 7, 7, 7, 7, 7, 1, 2, 'http://localhost:8080/ProjectGroup02/images/shoe/dell/70175950/main.jpg');
-INSERT INTO `product` VALUES ('70223127', 'DKD', 'Dell Vostro 3491 i3 1005G1', 'Laptop Dell Vostro 3491 i3 (70223127) là chiếc máy tính xách tay văn phòng được thiết kế nhỏ gọn, dễ dịch chuyển, cấu hình máy không mạnh nhưng đủ đáp ứng nhu cầu học tập, văn phòng cơ bản, trình duyệt web và làm việc đa nhiệm.', 99, 0, 'Dell', '2020', NULL, 12, 0, 4, 8, 8, 8, 8, 8, 8, 2, 2, 'http://localhost:8080/ProjectGroup02/images/shoe/dell/70223127/main.jpg');
-INSERT INTO `product` VALUES ('81Q9007KVN', 'DKD', 'Lenovo Yoga C940 14IIL i7 1065G7', 'Laptop Lenovo Yoga C940 14IIL i7 (81Q9007KVN) là phiên bản laptop doanh nhân cao cấp sang trọng. Máy có cấu hình khỏe với chip Core i7 thế hệ 10, ổ cứng SSD 1024 GB cực ấn tượng cùng một thiết kế siêu mỏng nhẹ tiện dụng.', 99, 0, 'Lenovo', '2019', NULL, 12, 0, 4, 1, 9, 9, 9, 9, 9, 2, 1, 'http://localhost:8080/ProjectGroup02/images/shoe/Lenovo/81Q9007KVN/main.jpg');
-INSERT INTO `product` VALUES ('81TK007RVN', 'DKD', 'Lenovo IdeaPad C340 14IML i5 10210U', NULL, 99, 0, 'Lenovo', 'Đang cập nhật', NULL, 12, 0, 4, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'http://localhost:8080/ProjectGroup02/images/shoe/Lenovo/81TK007RVN/main.jpg');
-INSERT INTO `product` VALUES ('81W8001XVN', 'DKD', 'Lenovo IdeaPad S145 15IIL i3 1005G1', NULL, 99, 0, 'Lenovo', 'Đang cập nhật', NULL, 12, 0, 4, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'http://localhost:8080/ProjectGroup02/images/shoe/Lenovo/81W8001XVN/main.jpg');
-INSERT INTO `product` VALUES ('82AU0051VN', 'DKD', 'Lenovo Legion 5 15IMH05 i7 10750H', NULL, 99, 0, 'Lenovo', 'Đang cập nhật', NULL, 12, 0, 4, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'http://localhost:8080/ProjectGroup02/images/shoe/Lenovo/82AU0051VN/main.jpg');
-INSERT INTO `product` VALUES ('8VK71AV', 'DKD', 'HP Zbook Firefly 14 G7 i7 10510U', NULL, 99, 0, 'HP', 'Đang cập nhật', NULL, 12, 0, 4, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'http://localhost:8080/ProjectGroup02/images/shoe/hp/8VK71AV/main.jpg');
-INSERT INTO `product` VALUES ('AL858T', 'DKD', 'Asus VivoBook Gaming F571GT i7 9750H', NULL, 99, 0, 'Asus', 'Đang cập nhật', NULL, 24, 0, 4, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'http://localhost:8080/ProjectGroup02/images/shoe/asus/AL858T/main.jpg');
-INSERT INTO `product` VALUES ('BM0616R', 'DKD', 'Asus ExpertBook B9450F i7 10510U', NULL, 99, 0, 'Asus', 'Đang cập nhật', NULL, 24, 0, 4, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'http://localhost:8080/ProjectGroup02/images/shoe/asus/BM0616R/main.jpg');
-INSERT INTO `product` VALUES ('BM069T', 'DKD', 'Asus ZenBook UX425EA i5 1135G7', NULL, 99, 0, 'Asus', 'Đang cập nhật', NULL, 24, 0, 4, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'http://localhost:8080/ProjectGroup02/images/shoe/asus/BM069T/main.jpg');
-INSERT INTO `product` VALUES ('BQ497T', 'DKD', 'Asus VivoBook A515EA i3 1115G4', NULL, 99, 0, 'Asus', 'Đang cập nhật', NULL, 24, 0, 4, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'http://localhost:8080/ProjectGroup02/images/shoe/asus/BQ497T/main.jpg');
-INSERT INTO `product` VALUES ('BR271T', 'DKD', 'Asus VivoBook X509MA N4020', NULL, 99, 0, 'Asus', 'Đang cập nhật', NULL, 24, 0, 4, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'http://localhost:8080/ProjectGroup02/images/shoe/asus/BR271T/main.jpg');
-INSERT INTO `product` VALUES ('CXGR01', 'DKD', 'Dell Inspiron 5584 i5 8265U', NULL, 99, 0, 'Dell', 'Đang cập nhật', NULL, 12, 0, 4, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'http://localhost:8080/ProjectGroup02/images/shoe/dell/CXGR01/main.jpg');
-INSERT INTO `product` VALUES ('GRMGK2', 'DKD', 'Dell Vostro 3590 i7 10510U', NULL, 99, 0, 'Dell', 'Đang cập nhật', NULL, 12, 0, 4, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'http://localhost:8080/ProjectGroup02/images/shoe/dell/GRMGK2/main.jpg');
-INSERT INTO `product` VALUES ('MQD32SA/A', 'DKD', 'Apple MacBook Air 2017 i5 1.8GHz', NULL, 99, 0, 'Apple', 'Đang cập nhật', NULL, 12, 0, 4, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'http://localhost:8080/ProjectGroup02/images/shoe/macbook/MQD32SA-A/main.jpg');
-INSERT INTO `product` VALUES ('MWTJ2SA/A', 'DKD', 'Apple MacBook Air 2020 i3 1.1GHz', NULL, 99, 0, 'Apple', 'Đang cập nhật', NULL, 12, 0, 4, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'http://localhost:8080/ProjectGroup02/images/shoe/macbook/MWTJ2SA-A/main.jpg');
-INSERT INTO `product` VALUES ('MWTL2SA/A', 'DKD', 'Apple MacBook Air 2020 i3 1.1GHz', NULL, 99, 0, 'Apple', 'Đang cập nhật', NULL, 12, 0, 4, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'http://localhost:8080/ProjectGroup02/images/shoe/macbook/MWTL2SA-A/main.jpg');
-INSERT INTO `product` VALUES ('N5I5591W', 'DKD', 'Dell Inspiron 7591 i5 9300H', NULL, 99, 0, 'Dell', 'Đang cập nhật', NULL, 12, 0, 4, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'http://localhost:8080/ProjectGroup02/images/shoe/dell/N5I5591W/main.jpg');
-INSERT INTO `product` VALUES ('NH.Q7NSV.001', 'DKD', 'Acer Nitro AN515 55 70AX i7 10750H', NULL, 99, 0, 'Acer', 'Đang cập nhật', NULL, 12, 0, 4, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'http://localhost:8080/ProjectGroup02/images/shoe/acer/NH.Q7NSV.001/main.jpg');
-INSERT INTO `product` VALUES ('NX.GR7SV.004', 'DKD', 'Acer Spin SP513 52N 556V i5 8250U', NULL, 99, 0, 'Acer', 'Đang cập nhật', NULL, 12, 0, 4, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'http://localhost:8080/ProjectGroup02/images/shoe/acer/NX.GR7SV.004/main.jpg');
-INSERT INTO `product` VALUES ('NX.H2ESV.001', 'DKD', 'Acer Aspire E5 576G 88EP i7 8550U', NULL, 99, 0, 'Acer', 'Đang cập nhật', NULL, 12, 0, 4, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'http://localhost:8080/ProjectGroup02/images/shoe/acer/NX.H2ESV.001/main.jpg');
-INSERT INTO `product` VALUES ('NX.H6DSV.002', 'DKD', 'Acer Aspire A515 53 5112 i5 8265U', NULL, 99, 0, 'Acer', 'Đang cập nhật', NULL, 12, 0, 4, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'http://localhost:8080/ProjectGroup02/images/shoe/acer/NX.H6DSV.002/main.jpg');
-INSERT INTO `product` VALUES ('NX.HE3SV.00H', 'DKD', 'Acer Aspire 3 A315 34 P26U N5030', NULL, 99, 0, 'Acer', 'Đang cập nhật', NULL, 12, 0, 4, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'http://localhost:8080/ProjectGroup02/images/shoe/acer/NX.HE3SV.00H/main.jpg');
-INSERT INTO `product` VALUES ('P75F005N81A', 'DKD', 'Dell Inspiron 3581 i3 7020U', NULL, 99, 0, 'Dell', 'Đang cập nhật', NULL, 12, 0, 4, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'http://localhost:8080/ProjectGroup02/images/shoe/dell/P75F005N81A/main.jpg');
+INSERT INTO `product` VALUES ('0N90H1', 'New; NoiBat', 'Dell XPS 13 9300 i7 1065G7', 'Laptop Dell XPS 13 9300 i7 (0N90H1) chắc chắn là một sự đột phá của Dell về thiết kế lẫn hiệu năng. Với một thiết kế gọn nhẹ, hiệu năng mạnh mẽ với chip Intel Core i7 và RAM 16 GB, Dell XPS 13 9300 tự tin đáp ứng tốt các nhu cầu làm việc và giải trí.', 99, 90, 'Dell', '2020', '2021-01-27', 12, 0, 5, 1, 1, 1, 1, 1, 1, 1, 1, 'http://localhost:8080/ProjectGroup02/images/shoe/dell/0N90H1/main.jpg');
+INSERT INTO `product` VALUES ('1A1A6PA', 'New; NoiBat', 'HP ProBook 445 G7 R5 4500U', 'Laptop HP ProBook 445 G7 (1A1A6PA) là chiếc laptop với giá thành tầm trung cấu hình mạnh mẽ AMD Ryzen 5 sẽ đáp ứng hầu hết các nhu cầu văn phòng và giải trí thông thường. Thiết kế sang trọng tinh tế cùng với SSD siêu nhanh giúp bạn sẵn sàng xử lý công việ', 99, 80, 'HP', '2020', NULL, 12, 0, 4, 2, 2, 2, 2, 2, 2, 2, 2, 'http://localhost:8080/ProjectGroup02/images/shoe/hp/1A1A6PA/main.jpg');
+INSERT INTO `product` VALUES ('20SL00MFVN', 'New', 'Lenovo ThinkBook 14IIL i5 1035G1', 'Laptop Lenovo ThinkBook 14 IIL i5 (20SL00MFVN) phù hợp với doanh nhân, người làm văn phòng cần một chiếc máy tính mỏng nhẹ nhưng vẫn có cấu hình mạnh mẽ và khả năng bảo mật an toàn.', 99, 79, 'Lenovo', '2020', NULL, 12, 0, 4, 3, 3, 3, 3, 3, 3, 2, 3, 'http://localhost:8080/ProjectGroup02/images/shoe/Lenovo/20SL00MFVN/main.jpg');
+INSERT INTO `product` VALUES ('2K0B7PA', 'NoiBat', 'HP Envy 13 ba1031TU i7 1165G7', 'Laptop HP Envy 13-ba1031TU i7 1165G7 (2K0B7PA) là chiếc laptop mới ra mắt năm 2020 có cấu hình mạnh mẽ với chip Intel Core i7 thế hệ thứ 11. Mẫu laptop mỏng nhẹ, thời trang này hứa hẹn sẽ đáp ứng tốt nhu cầu sử dụng laptop cho dân văn phòng nhờ thiết kế n', 99, 50, 'HP', '2020', NULL, 12, 0, 4, 4, 4, 4, 4, 4, 4, 4, 2, 'http://localhost:8080/ProjectGroup02/images/shoe/hp/2K0B7PA/main.jpg');
+INSERT INTO `product` VALUES ('4ME68PA', 'DKD', 'HP 15 da0054TU i3 7020U', 'Laptop HP 15 da0054TU là phiên bản máy tính xách tay với cấu hình được trang bị vi xử lý chip Intel Core i3 Kabylake thế hệ 7 đem đến hiệu năng ổn định khi thao tác các tác vụ cơ bản, phù hợp cho công việc văn phòng, học tập.', 99, 5, 'HP', '2019', NULL, 12, 33, 3, 5, 5, 5, 5, 5, 5, 2, 2, 'http://localhost:8080/ProjectGroup02/images/shoe/hp/4ME68PA/main.jpg');
+INSERT INTO `product` VALUES ('6ZF24PA', 'DKD', 'HP Pavilion x360 dh0103TU i3 8145U', 'Laptop HP Pavilion x360 dh0103TU có cấu hình không quá mạnh tuy nhiên nó mang lại hiệu năng ổn định, xử lý tốt các nhu cầu học tập và công việc văn phòng thường ngày. Thiết kế gập hơn 180 độ, màn hình cảm ứng đa điểm là lợi thế của chiếc laptop này bởi bạ', 99, 40, 'HP', '2019', NULL, 12, 12, 2, 6, 6, 6, 6, 6, 6, 2, 2, 'http://localhost:8080/ProjectGroup02/images/shoe/hp/6ZF24PA/main.jpg');
+INSERT INTO `product` VALUES ('70175950', 'DKD', 'Dell Vostro 5581 i5 8265U', 'Dell Vostro 5581- 93S1GT2 là chiếc máy tính văn phòng đáng sở hữu với mức giá tốt. Máy sở hữu thiết kế đơn giản nhưng không kém phần sang trọng cùng một cấu hình mạnh mẽ đáp ứng tốt nhu cầu văn phòng và giải trí thường ngày.', 99, 30, 'Dell', '2018', NULL, 12, 11, 2, 7, 7, 7, 7, 7, 7, 1, 2, 'http://localhost:8080/ProjectGroup02/images/shoe/dell/70175950/main.jpg');
+INSERT INTO `product` VALUES ('70223127', 'New', 'Dell Vostro 3491 i3 1005G1', 'Laptop Dell Vostro 3491 i3 (70223127) là chiếc máy tính xách tay văn phòng được thiết kế nhỏ gọn, dễ dịch chuyển, cấu hình máy không mạnh nhưng đủ đáp ứng nhu cầu học tập, văn phòng cơ bản, trình duyệt web và làm việc đa nhiệm.', 99, 20, 'Dell', '2020', NULL, 12, 0, 2, 8, 8, 8, 8, 8, 8, 2, 2, 'http://localhost:8080/ProjectGroup02/images/shoe/dell/70223127/main.jpg');
+INSERT INTO `product` VALUES ('81Q9007KVN', 'New', 'Lenovo Yoga C940 14IIL i7 1065G7', 'Laptop Lenovo Yoga C940 14IIL i7 (81Q9007KVN) là phiên bản laptop doanh nhân cao cấp sang trọng. Máy có cấu hình khỏe với chip Core i7 thế hệ 10, ổ cứng SSD 1024 GB cực ấn tượng cùng một thiết kế siêu mỏng nhẹ tiện dụng.', 99, 10, 'Lenovo', '2019', NULL, 12, 0, 5, 1, 9, 9, 9, 9, 9, 2, 1, 'http://localhost:8080/ProjectGroup02/images/shoe/Lenovo/81Q9007KVN/main.jpg');
+INSERT INTO `product` VALUES ('81TK007RVN', 'DKD', 'Lenovo IdeaPad C340 14IML i5 10210U', NULL, 99, 5, 'Lenovo', 'Đang cập nhật', NULL, 12, 0, 4, 2, 1, NULL, NULL, NULL, NULL, NULL, NULL, 'http://localhost:8080/ProjectGroup02/images/shoe/Lenovo/81TK007RVN/main.jpg');
+INSERT INTO `product` VALUES ('81W8001XVN', 'DKD', 'Lenovo IdeaPad S145 15IIL i3 1005G1', NULL, 99, 24, 'Lenovo', 'Đang cập nhật', NULL, 12, 0, 2, 3, 2, NULL, NULL, NULL, NULL, NULL, NULL, 'http://localhost:8080/ProjectGroup02/images/shoe/Lenovo/81W8001XVN/main.jpg');
+INSERT INTO `product` VALUES ('82AU0051VN', 'DKD', 'Lenovo Legion 5 15IMH05 i7 10750H', NULL, 99, 33, 'Lenovo', 'Đang cập nhật', NULL, 12, 0, 5, 4, 3, NULL, NULL, NULL, NULL, NULL, NULL, 'http://localhost:8080/ProjectGroup02/images/shoe/Lenovo/82AU0051VN/main.jpg');
+INSERT INTO `product` VALUES ('8VK71AV', 'New', 'HP Zbook Firefly 14 G7 i7 10510U', NULL, 99, 37, 'HP', 'Đang cập nhật', NULL, 12, 0, 4, 5, 4, NULL, NULL, NULL, NULL, NULL, NULL, 'http://localhost:8080/ProjectGroup02/images/shoe/hp/8VK71AV/main.jpg');
+INSERT INTO `product` VALUES ('AL858T', 'DKD', 'Asus VivoBook Gaming F571GT i7 9750H', NULL, 99, 76, 'Asus', 'Đang cập nhật', NULL, 24, 0, 4, 6, 5, NULL, NULL, NULL, NULL, NULL, NULL, 'http://localhost:8080/ProjectGroup02/images/shoe/asus/AL858T/main.jpg');
+INSERT INTO `product` VALUES ('BM0616R', 'New', 'Asus ExpertBook B9450F i7 10510U', NULL, 99, 23, 'Asus', 'Đang cập nhật', NULL, 24, 0, 4, 7, 6, NULL, NULL, NULL, NULL, NULL, NULL, 'http://localhost:8080/ProjectGroup02/images/shoe/asus/BM0616R/main.jpg');
+INSERT INTO `product` VALUES ('BM069T', 'DKD', 'Asus ZenBook UX425EA i5 1135G7', NULL, 99, 32, 'Asus', 'Đang cập nhật', NULL, 24, 0, 4, 8, 7, NULL, NULL, NULL, NULL, NULL, NULL, 'http://localhost:8080/ProjectGroup02/images/shoe/asus/BM069T/main.jpg');
+INSERT INTO `product` VALUES ('BQ497T', 'DKD', 'Asus VivoBook A515EA i3 1115G4', NULL, 99, 45, 'Asus', 'Đang cập nhật', NULL, 24, 0, 4, 1, 8, NULL, NULL, NULL, NULL, NULL, NULL, 'http://localhost:8080/ProjectGroup02/images/shoe/asus/BQ497T/main.jpg');
+INSERT INTO `product` VALUES ('BR271T', 'DKD', 'Asus VivoBook X509MA N4020', NULL, 99, 12, 'Asus', 'Đang cập nhật', NULL, 24, 0, 4, 2, 9, NULL, NULL, NULL, NULL, NULL, NULL, 'http://localhost:8080/ProjectGroup02/images/shoe/asus/BR271T/main.jpg');
+INSERT INTO `product` VALUES ('CXGR01', 'DKD', 'Dell Inspiron 5584 i5 8265U', NULL, 99, 84, 'Dell', 'Đang cập nhật', NULL, 12, 0, 3, 3, 1, NULL, NULL, NULL, NULL, NULL, NULL, 'http://localhost:8080/ProjectGroup02/images/shoe/dell/CXGR01/main.jpg');
+INSERT INTO `product` VALUES ('GRMGK2', 'DKD', 'Dell Vostro 3590 i7 10510U', NULL, 99, 45, 'Dell', 'Đang cập nhật', NULL, 12, 0, 4, 4, 2, NULL, NULL, NULL, NULL, NULL, NULL, 'http://localhost:8080/ProjectGroup02/images/shoe/dell/GRMGK2/main.jpg');
+INSERT INTO `product` VALUES ('MQD32SA/A', 'NoiBat', 'Apple MacBook Air 2017 i5 1.8GHz', NULL, 99, 69, 'Apple', 'Đang cập nhật', NULL, 12, 0, 3, 5, 3, NULL, NULL, NULL, NULL, NULL, NULL, 'http://localhost:8080/ProjectGroup02/images/shoe/Macbook/MQD32SA-A/main.jpg');
+INSERT INTO `product` VALUES ('MWTJ2SA/A', 'New; NoiBat', 'Apple MacBook Air 2020 i3 1.1GHz', NULL, 99, 15, 'Apple', 'Đang cập nhật', NULL, 12, 0, 4, 6, 4, NULL, NULL, NULL, NULL, NULL, NULL, 'http://localhost:8080/ProjectGroup02/images/shoe/Macbook/MWTJ2SA-A/main.jpg');
+INSERT INTO `product` VALUES ('MWTL2SA/A', 'New; NoiBat', 'Apple MacBook Air 2020 i3 1.1GHz', NULL, 99, 78, 'Apple', 'Đang cập nhật', NULL, 12, 0, 4, 7, 5, NULL, NULL, NULL, NULL, NULL, NULL, 'http://localhost:8080/ProjectGroup02/images/shoe/Macbook/MWTL2SA-A/main.jpg');
+INSERT INTO `product` VALUES ('N5I5591W', 'DKD', 'Dell Inspiron 7591 i5 9300H', NULL, 99, 34, 'Dell', 'Đang cập nhật', NULL, 12, 0, 4, 8, 6, NULL, NULL, NULL, NULL, NULL, NULL, 'http://localhost:8080/ProjectGroup02/images/shoe/dell/N5I5591W/main.jpg');
+INSERT INTO `product` VALUES ('NH.Q7NSV.001', 'NoiBat', 'Acer Nitro AN515 55 70AX i7 10750H', NULL, 99, 54, 'Acer', 'Đang cập nhật', NULL, 12, 0, 3, 1, 7, NULL, NULL, NULL, NULL, NULL, NULL, 'http://localhost:8080/ProjectGroup02/images/shoe/acer/NH.Q7NSV.001/main.jpg');
+INSERT INTO `product` VALUES ('NX.GR7SV.004', 'DKD', 'Acer Spin SP513 52N 556V i5 8250U', NULL, 99, 23, 'Acer', 'Đang cập nhật', NULL, 12, 0, 4, 2, 8, NULL, NULL, NULL, NULL, NULL, NULL, 'http://localhost:8080/ProjectGroup02/images/shoe/acer/NX.GR7SV.004/main.jpg');
+INSERT INTO `product` VALUES ('NX.H2ESV.001', 'NoiBat', 'Acer Aspire E5 576G 88EP i7 8550U', NULL, 99, 12, 'Acer', 'Đang cập nhật', NULL, 12, 0, 4, 3, 9, NULL, NULL, NULL, NULL, NULL, NULL, 'http://localhost:8080/ProjectGroup02/images/shoe/acer/NX.H2ESV.001/main.jpg');
+INSERT INTO `product` VALUES ('NX.H6DSV.002', 'DKD', 'Acer Aspire A515 53 5112 i5 8265U', NULL, 99, 47, 'Acer', 'Đang cập nhật', NULL, 12, 0, 3, 4, 1, NULL, NULL, NULL, NULL, NULL, NULL, 'http://localhost:8080/ProjectGroup02/images/shoe/acer/NX.H6DSV.002/main.jpg');
+INSERT INTO `product` VALUES ('NX.HE3SV.00H', 'DKD', 'Acer Aspire 3 A315 34 P26U N5030', NULL, 99, 75, 'Acer', 'Đang cập nhật', NULL, 12, 0, 4, 5, 2, NULL, NULL, NULL, NULL, NULL, NULL, 'http://localhost:8080/ProjectGroup02/images/shoe/acer/NX.HE3SV.00H/main.jpg');
+INSERT INTO `product` VALUES ('P75F005N81A', 'DKD', 'Dell Inspiron 3581 i3 7020U', NULL, 99, 23, 'Dell', 'Đang cập nhật', NULL, 12, 0, 1, 6, 3, NULL, NULL, NULL, NULL, NULL, NULL, 'http://localhost:8080/ProjectGroup02/images/shoe/dell/P75F005N81A/main.jpg');
 
 -- ----------------------------
 -- Table structure for user
@@ -540,6 +586,7 @@ CREATE TABLE `user`  (
 -- ----------------------------
 -- Records of user
 -- ----------------------------
+INSERT INTO `user` VALUES ('ti', '123456', NULL, 'active', NULL, NULL, NULL, 'Customer', NULL, NULL, '2021-01-22', NULL, NULL, NULL);
 
 -- ----------------------------
 -- View structure for v_gia
@@ -576,20 +623,30 @@ FROM
 -- ----------------------------
 DROP VIEW IF EXISTS `v_listing`;
 CREATE ALGORITHM = UNDEFINED SQL SECURITY DEFINER VIEW `v_listing` AS SELECT
-	product.ID,
-	product.Ten,
-	product.SoSaoDanhGia,
-	product.MainImg,
-	bonho.RAM,
-	bonho.OCung,
-	v_khuyenmai.MucGiamGia,
-	v_gia.Gia,
-	product.TrangThai 
+	product.ID, 
+	product.Ten, 
+	product.SoSaoDanhGia, 
+	product.MainImg, 
+	bonho.RAM, 
+	bonho.OCung, 
+	v_khuyenmai.MucGiamGia, 
+	v_gia.Gia, 
+	product.TrangThai, 
+	product.SLDaBan
 FROM
 	product
-	INNER JOIN bonho ON product.MaBoNho = bonho.ID
-	INNER JOIN v_khuyenmai ON product.ID = v_khuyenmai.MaSP
-	INNER JOIN v_gia ON product.ID = v_gia.MaSP ;
+	INNER JOIN
+	bonho
+	ON 
+		product.MaBoNho = bonho.ID
+	INNER JOIN
+	v_khuyenmai
+	ON 
+		product.ID = v_khuyenmai.MaSP
+	INNER JOIN
+	v_gia
+	ON 
+		product.ID = v_gia.MaSP ;
 
 -- ----------------------------
 -- View structure for v_maxmakm
