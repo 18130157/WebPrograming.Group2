@@ -292,8 +292,8 @@ System.out.println(result.size());
 
 
             s = ConnectDB.connect(sql);
-            s.setInt(1,Integer.parseInt(priceHigh));
-            s.setInt(2,Integer.parseInt(priceLow));
+            s.setInt(1,Integer.parseInt(priceHigh+"000000"));
+            s.setInt(2,Integer.parseInt(priceLow+"000000"));
             System.out.println(sql);
             ResultSet rs = s.executeQuery();
             Product p;
@@ -570,11 +570,13 @@ System.out.println(result.size());
     //funtion to pagatation
     public  static List<Product> pagination(List<Product> list, int start, int total){
         List<Product> result = new ArrayList<>();
-        if(list!=null&&start+total<list.size())
-        for (int i = start; i <start+total ; i++) {
-            if(i>list.size())
+        if(list!=null&& start<list.size())
+        for (int i = start-1; i <start+total-1; i++) {
+            if(i<=list.size()-1)
+                result.add(list.get(i));
+            else
                 break;
-            result.add(list.get(i));
+
         }
         return result;
     }
