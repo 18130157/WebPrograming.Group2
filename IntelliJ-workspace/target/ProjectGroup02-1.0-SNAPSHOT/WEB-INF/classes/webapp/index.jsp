@@ -135,7 +135,7 @@
                                                 </c:choose>
                                             </c:if>
                                             <img src="${p.mainImg}" alt="">
-                                            <a class="ps-shoe__overlay" href="#"></a>
+                                            <a class="ps-shoe__overlay" href="detail?id=${p.id}"></a>
                                         </div>
                                         <br/><br/>
                                         <div class="ps-shoe__content">
@@ -156,7 +156,7 @@
                                                 </select>
                                             </div>
                                             <div class="ps-shoe__detail">
-                                                <a class="ps-shoe__name" href="#">${p.ten}<br>${p.id}</a>
+                                                <a class="ps-shoe__name" href="detail?id=${p.id}">${p.ten}<br>${p.id}</a>
                                                 <p>
                                                     RAM: ${p.ram}GB - ${p.oCung}<br/>
                                                     <fmt:setLocale value="vi_VN"/>
@@ -263,7 +263,7 @@
                                         </c:choose>
                                     </c:if>
                                     <img src="${p.mainImg}" alt="">
-                                    <a class="ps-shoe__overlay" href="#"></a>
+                                    <a class="ps-shoe__overlay" href="detail?id=${p.id}"></a>
                                 </div>
                                 <br/><br/>
                                 <div class="ps-shoe__content">
@@ -284,7 +284,7 @@
                                         </select>
                                     </div>
                                     <div class="ps-shoe__detail">
-                                        <a class="ps-shoe__name" href="#">${p.ten}<br>${p.id}</a>
+                                        <a class="ps-shoe__name" href="detail?id=${p.id}">${p.ten}<br>${p.id}</a>
                                         <p>
                                             RAM: ${p.ram}GB - ${p.oCung}<br/>
                                             <fmt:setLocale value="vi_VN"/>

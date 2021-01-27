@@ -1,4 +1,5 @@
 <%@ page import="vn.edu.nlu.beans.User" %>
+<%@ page import="vn.edu.nlu.model.Cart" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
@@ -11,7 +12,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LaptopNLU-header</title>
     <!-- Fonts-->
-    <link href="https://fonts.googleapis.com/css?family=Archivo+Narrow:300,400,700%7CMontserrat:300,400,500,600,700,800,900" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Archivo+Narrow:300,400,700%7CMontserrat:300,400,500,600,700,800,900"
+          rel="stylesheet">
     <link rel="stylesheet" href="plugins/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="plugins/ps-icon/style.css">
     <!-- CSS Library-->
@@ -29,7 +31,9 @@
     <link rel="stylesheet" href="css/style.css">
     <!--HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries-->
     <!--WARNING: Respond.js doesn't work if you view the page via file://-->
-    <!--[if lt IE 9]><script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script><script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script><![endif]-->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script><![endif]-->
     <!-- Fontfaces CSS-->
     <link href="vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
     <link href="vendor/font-awesome-5/css/fontawesome-all.min.css" rel="stylesheet" media="all">
@@ -51,7 +55,7 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-6 col-md-8 col-sm-6 col-xs-12 ">
-                    <p>6 QL1A, Khu phố 1, Dĩ An, Bình Dương-  Hotline: 0385190234 </p>
+                    <p>6 QL1A, Khu phố 1, Dĩ An, Bình Dương- Hotline: 0385190234 </p>
                 </div>
                 <div class="col-lg-6 col-md-4 col-sm-6 col-xs-12 ">
                     <div class="header__actions">
@@ -60,13 +64,13 @@
                     </div>
                     <div class="header__actions">
                         <a href="DoLogout">
-                            <% User u = (User) session.getAttribute("USER") ;%>
-                            <%=u!= null?"Đăng Xuất":""%>
+                            <% User u = (User) session.getAttribute("USER");%>
+                            <%=u != null ? "Đăng Xuất" : ""%>
                         </a>
                     </div>
                     <div class="header__actions">
-                        <a href="login.jsp" >
-                            <%=u!=null?"Chào mừng "+ u.getUsername():"ĐĂNG NHẬP"%>
+                        <a href="login.jsp">
+                            <%=u != null ? "Chào mừng " + u.getUsername() : "ĐĂNG NHẬP"%>
                         </a>
                     </div>
 
@@ -76,7 +80,8 @@
         <nav class="navigation">
             <div class="container-fluid">
                 <div class="navigation__column left">
-                    <div class="header__logo"><a class="ps-logo" href="index.jsp"><img src="images/logo1.png" alt=""></a></div>
+                    <div class="header__logo"><a class="ps-logo" href="index.jsp"><img src="images/logo1.png"
+                                                                                       alt=""></a></div>
                 </div>
                 <div class="navigation__column center">
                     <ul class="main-menu menu">
@@ -84,22 +89,23 @@
                             <i class="fas fa-home"></i>
                             <a href="index.jsp">TRANG CHỦ</a>
                         </li>
-                        <li class="menu-item"><a href="about.jsp">GIỚI THIỆU</a> </li>
+                        <li class="menu-item"><a href="about.jsp">GIỚI THIỆU</a></li>
 
-                        <li class="menu-item menu-item-has-children dropdown"><a href="product-listing.jsp">SẢN PHẨM</a>
+                        <li class="menu-item menu-item-has-children dropdown"><a href="productList?page=1">SẢN PHẨM</a>
                             <ul class="sub-menu">
-                                <li class="menu-item"><a href="acer-list.jsp">Acer</a></li>
-                                <li class="menu-item"><a>Asus</a></li>
-                                <li class="menu-item"><a>Lenovo</a></li>
-                                <li class="menu-item"><a>Dell</a></li>
-                                <li class="menu-item"><a>HP</a></li>
-                                <li class="menu-item"><a>Macbook</a></li>
+                                <li class="menu-item"><a href="productList?page=1&brand=Acer">Acer</a></li>
+                                <li class="menu-item"><a href="productList?page=1&brand=Asus">Asus</a></li>
+                                <li class="menu-item"><a href="productList?page=1&brand=Lenovo">Lenovo</a></li>
+                                <li class="menu-item"><a href="productList?page=1&brand=Dell">Dell</a></li>
+                                <li class="menu-item"><a href="productList?page=1&brand=HP">HP</a></li>
+                                <li class="menu-item"><a href="productList?page=1&brand=Apple">Macbook</a></li>
                             </ul>
                         </li>
                         <li class="menu-item"><a href="contact-us.jsp">Liên Hệ</a></li>
 
                         <li class="menu-item menu-item-has-children dropdown">
-                            <a><%=u!=null?"TÀI KHOẢN":""%></a>
+                            <a><%=u != null ? "TÀI KHOẢN" : ""%>
+                            </a>
                             <ul class="sub-menu">
                                 <li class="menu-item"><a href="ViewInfo">Xem thông tin</a></li>
                                 <li class="menu-item"><a href="Edit_InformationUser">Thay đổi thông tin</a></li>
@@ -114,34 +120,36 @@
                         <input class="form-control" type="text" placeholder="Tìm kiếm sản phẩm...">
                         <button><i class="ps-icon-search"></i></button>
                     </form>
-                    <div class="ps-cart"><a class="ps-cart__toggle" href="cart.jsp"><i class="ps-icon-shopping-cart"></i></a>
+                    <div class="ps-cart"><a class="ps-cart__toggle" href="cart.jsp"><i
+                            class="ps-icon-shopping-cart"></i></a>
+                        <% Cart cart = Cart.getCart(session); %>
+                        <% request.setAttribute("listCart", cart.list());%>
                         <div class="ps-cart__listing">
                             <div class="ps-cart__content">
-                                <div class="ps-cart-item"><a class="ps-cart-item__close" href="#"></a>
-                                    <div class="ps-cart-item__thumbnail"><a href="product-detail.jsp"></a><img src="images/cart-preview/1.jpg" alt=""></div>
-                                    <div class="ps-cart-item__content"><a class="ps-cart-item__title" href="product-detail.jsp">Asus vivobook A412FA
-                                    </a>
-                                        <p style="color: white; font-weight: bold;" ><span>SL:<i>1</i></span><span>Giá:<i>4 000 000đ</i></span></p>
+                                <%--                                Start Single Item--%>
+                                <c:forEach items="${listCart}" var="p">
+                                    <div class="ps-cart-item">
+                                        <a class="ps-cart-item__close" href="RemoveCart?id=${p.id}"></a>
+                                        <div class="ps-cart-item__thumbnail">
+                                            <a href="detail?id=${p.id}">
+                                            </a><img src="${p.mainImg}" alt="">
+                                        </div>
+                                        <div class="ps-cart-item__content">
+                                            <a class="ps-cart-item__title" href="detail?id=${p.id}">${p.ten}</a>
+                                            <p style="color: white; font-weight: bold;"><span>SL:<i>${p.quantityInCart}</i></span><span>Giá:<i>${p.pricesale}</i></span></p>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="ps-cart-item"><a class="ps-cart-item__close" href="#"></a>
-                                    <div class="ps-cart-item__thumbnail"><a href="product-detail.jsp"></a><img src="images/cart-preview/2.jpg" alt=""></div>
-                                    <div class="ps-cart-item__content"><a class="ps-cart-item__title" href="product-detail.jsp">Dell Inspiron 5584 I5 8265U</a>
-                                        <p style="color: white; font-weight: bold;"><span>SL:<i>1</i></span><span>Giá:<i>2 000 000đ</i></span></p>
-                                    </div>
-                                </div>
-                                <div class="ps-cart-item"><a class="ps-cart-item__close" href="#"></a>
-                                    <div class="ps-cart-item__thumbnail"><a href="product-detail.jsp"></a><img src="images/cart-preview/3.jpg" alt=""></div>
-                                    <div class="ps-cart-item__content"><a class="ps-cart-item__title" href="product-detail.jsp">Dell Vostro 3590 I7 10510U</a>
-                                        <p style="color: white; font-weight: bold;"><span>SL:<i>1</i></span><span>Giá:<i>3 000 000đ</i></span></p>
-                                    </div>
-                                </div>
+                                </c:forEach>
+                                <%--                                End Single Item--%>
                             </div>
                             <div class="ps-cart__total">
-                                <p style="color: white; font-weight: bold;">Tổng SL:<span>3</span></p>
-                                <p style="color: white; font-weight: bold;">Tổng tiền:<span>9 000 000đ</span></p>
+                                <p style="color: white; font-weight: bold;">Tổng SL:<span><%= cart.quantity()%></span>
+                                </p>
+                                <p style="color: white; font-weight: bold;">Tổng tiền:<span><%= cart.total()%></span>
+                                </p>
                             </div>
-                            <div class="ps-cart__footer"><a class="ps-btn" href="cart.jsp">Giỏ hàng<i class="ps-icon-arrow-left"></i></a></div>
+                            <div class="ps-cart__footer"><a class="ps-btn" href="cart.jsp">Giỏ hàng<i
+                                    class="ps-icon-arrow-left"></i></a></div>
                         </div>
                     </div>
                     <div class="menu-toggle"><span></span></div>
@@ -164,12 +172,14 @@
 <script type="text/javascript" src="plugins/elevatezoom/jquery.elevatezoom.js"></script>
 <script type="text/javascript" src="plugins/Magnific-Popup/dist/jquery.magnific-popup.min.js"></script>
 <script type="text/javascript" src="plugins/jquery-ui/jquery-ui.min.js"></script>
-<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAx39JFH5nhxze1ZydH-Kl8xXM3OK4fvcg&amp;region=GB"></script>
+<script type="text/javascript"
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAx39JFH5nhxze1ZydH-Kl8xXM3OK4fvcg&amp;region=GB"></script>
 <script type="text/javascript" src="plugins/revolution/js/jquery.themepunch.tools.min.js"></script>
 <script type="text/javascript" src="plugins/revolution/js/jquery.themepunch.revolution.min.js"></script>
 <script type="text/javascript" src="plugins/revolution/js/extensions/revolution.extension.video.min.js"></script>
 <script type="text/javascript" src="plugins/revolution/js/extensions/revolution.extension.slideanims.min.js"></script>
-<script type="text/javascript" src="plugins/revolution/js/extensions/revolution.extension.layeranimation.min.js"></script>
+<script type="text/javascript"
+        src="plugins/revolution/js/extensions/revolution.extension.layeranimation.min.js"></script>
 <script type="text/javascript" src="plugins/revolution/js/extensions/revolution.extension.navigation.min.js"></script>
 <script type="text/javascript" src="plugins/revolution/js/extensions/revolution.extension.parallax.min.js"></script>
 <script type="text/javascript" src="plugins/revolution/js/extensions/revolution.extension.actions.min.js"></script>

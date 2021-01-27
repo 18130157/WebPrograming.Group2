@@ -95,4 +95,35 @@ public class ProductEntity {
             return new ArrayList<Product>();
         }
     }
+
+    public static Product getById(String id) {
+        PreparedStatement s = null;
+        try {
+            String sql = "select * from v_listing where id = ?";
+            s = ConnectDB.connect(sql);
+            s.setString(1, id);
+            ResultSet rs = s.executeQuery();
+            Product p = null;
+            if (rs.next()) {
+                p = new Product(rs.getString("ID"),
+                        rs.getString("TrangThai"),
+                        rs.getString("Ten"),
+                        rs.getInt("SoSaoDanhGia"),
+                        rs.getLong("Gia"),
+                        rs.getString("MainImg"),
+                        rs.getDouble("MucGiamGia"),
+                        rs.getInt("RAM"),
+                        rs.getString("OCung")
+                );
+            }
+            rs.close();
+            s.close();
+            return p;
+
+        } catch (ClassNotFoundException | SQLException e) {
+            e.printStackTrace();
+            return null;
+        }
+
+    }
 }

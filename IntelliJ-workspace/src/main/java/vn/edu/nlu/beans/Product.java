@@ -24,6 +24,8 @@ public class Product implements Serializable {
     private boolean isNew;
     private double soGiamGia;
 
+    private int quantityInCart;
+
     private String congNgheCPU;
     private String loaiCPU;
     private double tocDoCPU;
@@ -102,9 +104,34 @@ public class Product implements Serializable {
 
     }
 
+    // constructor for cart
+    public Product(String id, String ten, long price, String mainImg, double soGiamGia, int quantityInCart) {
+        this.id = id;
+        this.ten = ten;
+        this.price = price;
+        this.mainImg = mainImg;
+        this.soGiamGia = soGiamGia;
+        this.quantityInCart = quantityInCart;
+
+        if (soGiamGia <= 0)
+            pricesale = price;
+        else if (soGiamGia < 1)
+            pricesale = (long) (price - ((price + 10000) * soGiamGia));
+        else
+            pricesale = (long) (price - soGiamGia);
+    }
+
     public void initImgSlider() {
         for (int i = 1; i <= 5; i++)
             imgSlider.add(mainImg.replaceAll("main", Integer.toString(i)));
+    }
+
+    public void add(){
+        this.quantityInCart++;
+    }
+
+    public long thanhTien(){
+        return this.quantityInCart * this.pricesale;
     }
 
 
@@ -482,5 +509,13 @@ public class Product implements Serializable {
 
     public void setThongTinPin(String thongTinPin) {
         this.thongTinPin = thongTinPin;
+    }
+
+    public int getQuantityInCart() {
+        return quantityInCart;
+    }
+
+    public void setQuantityInCart(int quantityInCart) {
+        this.quantityInCart = quantityInCart;
     }
 }

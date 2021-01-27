@@ -1,3 +1,4 @@
+<%@ page import="vn.edu.nlu.model.Cart" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
@@ -8,6 +9,24 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LaptopNLU - Cart</title>
+    <style>
+        .btn-update{
+            display: inline-block;
+            height: 40px;
+            width: 80px;
+            border: none;
+            background-color: #000;
+            font-family: "Montserrat", sans-serif;
+            color: #fff;
+            font-size: 14px;
+            -webkit-transition: all 0.4s ease;
+            -moz-transition: all 0.4s ease;
+            transition: all 0.4s ease;
+        }
+        .btn-update:hover{
+            background-color: #50CF96;
+        }
+    </style>
 </head>
 <body class="ps-loading">
 <jsp:include page="header.jsp"></jsp:include>
@@ -38,72 +57,48 @@
                     </tr>
                     </thead>
                     <tbody>
-                    <tr class="product1" id="product1">
-                        <td><a class="ps-product__preview" href="product-detail.jsp"><img class="mr-15"
-                                                                                          src="images/cart-preview/1.jpg"
-                                                                                          alt=""> Laptop ASUS VivoBook
-                            A412FA i5 </a></td>
-                        <td class="price1">4000000</td>
-                        <td>
-                            <div class="form-group--number">
-                                <button class="minus"><span>-</span></button>
-                                <input class="form-control input" type="text" value="1">
-                                <button class="plus"><span>+</span></button>
-                            </div>
-                        </td>
-                        <td class="price">4000000</td>
-                        <td>
-                            <div class="ps-remove 1"></div>
-                        </td>
-                    </tr>
-                    <tr class="product2">
-                        <td><a class="ps-product__preview" href="product-detail.jsp"><img class="mr-15"
-                                                                                          src="images/cart-preview/2.jpg"
-                                                                                          alt=""> Dell Inspiron 5584 i5
-                            8265U</a></td>
-                        <td class="price1">2000000</td>
-                        <td>
-                            <div class="form-group--number">
-                                <button class="minus"><span>-</span></button>
-                                <input class="form-control input" type="text" value="1">
-                                <button class="plus"><span>+</span></button>
-                            </div>
-                        </td>
-                        <td class="price">2000000</td>
-                        <td>
-                            <div class="ps-remove 2"></div>
-                        </td>
-                    </tr>
-                    <tr class="product3">
-                        <td><a class="ps-product__preview" href="product-detail.jsp"><img class="mr-15"
-                                                                                          src="images/cart-preview/3.jpg"
-                                                                                          alt="">Dell Vostro 3590 i7
-                            10510U</a></td>
-                        <td class="price1">3000000</td>
-                        <td>
-                            <div class="form-group--number">
-                                <button class="minus"><span>-</span></button>
-                                <input class="form-control input" type="text" value="1">
-                                <button class="plus"><span>+</span></button>
-                            </div>
-                        </td>
-                        <td class="price">3000000</td>
-                        <td>
-                            <div class="ps-remove 3"></div>
-                        </td>
-                    </tr>
+                    <% Cart cart = Cart.getCart(session); %>
+                    <% request.setAttribute("listCart", cart.list());%>
+                    <%--                    Start Single Product--%>
+                    <c:forEach items="${listCart}" var="p">
+                        <tr>
+                            <td>
+                                <a class="ps-product__preview" href="detail?id=${p.id}">
+                                    <img class="mr-15" src="${p.mainImg}" alt="" style="width: 100px; height: 100px">
+                                        ${p.ten}
+                                </a>
+                            </td>
+                            <td >${p.pricesale}</td>
+                            <td>
+                                <form method="post" action="UpdateCart">
+                                    <div class="form-group--number">
+                                        <button class="minus"><span>-</span></button>
+                                        <input type="hidden" name="id" value="${p.id}">
+                                        <input class="form-control input" type="text" name="SL" value="${p.quantityInCart}">
+                                        <button class="plus"><span>+</span></button>
+                                    </div>
+                                    <button class="btn-update">Cập nhật</button>
+                                </form>
+                            </td>
+                            <td class="price">${p.thanhTien()}</td>
+                            <td>
+                                <a href="RemoveCart?id=${p.id}"><div class="ps-remove"></div></a>
+                            </td>
+                        </tr>
+                    </c:forEach>
+                    <%--                    End Single Product--%>
                     </tbody>
                 </table>
                 <div class="ps-cart__actions">
                     <div class="ps-cart__promotion">
                         <div class="form-group">
-                            <button onclick="window.location.href='product-listing.jsp'" class="ps-btn ps-btn--gray">
+                            <button onclick="window.location.href='productList?page=1'" class="ps-btn ps-btn--gray">
                                 Tiếp tục mua sắm
                             </button>
                         </div>
                     </div>
                     <div class="ps-cart__total">
-                        <h3>Tổng cộng: <span id="total"> 9,000,000</span></h3><a class="ps-btn" href="checkout.jsp">Thanh
+                        <h3>Tổng cộng: <span id="total"><%=cart.total()%></span></h3><a class="ps-btn" href="checkout.jsp">Thanh
                         toán<i class="ps-icon-next"></i></a>
                     </div>
                 </div>
@@ -126,37 +121,34 @@
         }
         return x1 + x2;
     }
-
-    function totalPrice() {
+    function totalPrice(){
         var totalPrice = document.getElementsByClassName("price")
-        var total = 0;
-        for (var i = 0; i < totalPrice.length; i += 1) {
+        var total =0;
+        for (var i=0;i<totalPrice.length;i+=1){
             var price = parseInt(totalPrice[i].innerHTML, 10)
-            total += price
+            total+=price
         }
-        document.getElementById("total").innerHTML = formatNumber(total, ',', '.')
+        document.getElementById("total").innerHTML=formatNumber(total,'.',',')
     }
 </script>
 <script>
-
-    $(document).ready(function () {
-        $('.plus').click(function () {
+    $(document).ready(function() {
+        $('.plus').click(function() {
             var i = $(this).parent().find('.input').val()
             var c = parseInt(i, 10)
             $(this).parent().find('.input').val(c + 1)
             var u = $(this).parent().parent().parent().find('.price1').text()
             var u1 = parseInt(u, 10)
-            $(this).parent().parent().parent().find('.price').text(u1 * (c + 1))
+            $(this).parent().parent().parent().find('.price').text(u1*(c+1))
             totalPrice()
         });
-
-        $('.minus').on('click', function () {
+        $('.minus').on('click', function() {
             var i = $(this).parent().find('.input').val()
             var count = parseInt(i, 10)
             if (count - 1 >= 1) $(this).parent().find('.input').val(count - 1)
             var u = $(this).parent().parent().parent().find('.price1').text()
             var price1 = parseInt(u, 10)
-            if (count - 1 >= 1) $(this).parent().parent().parent().find('.price').text(price1 * (count - 1))
+            if (count - 1 >= 1) $(this).parent().parent().parent().find('.price').text( price1*(count-1))
             totalPrice()
         });
     });

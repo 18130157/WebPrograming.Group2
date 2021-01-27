@@ -1,5 +1,7 @@
 package vn.edu.nlu.controller;
 
+import vn.edu.nlu.model.Cart;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -17,6 +19,8 @@ public class DoLogout extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         HttpSession session= request.getSession();
+        Cart c = Cart.getCart(session);
+        c.save();
         session.invalidate();
         response.sendRedirect("index.jsp");
     }
