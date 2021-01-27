@@ -11,7 +11,7 @@
  Target Server Version : 100417
  File Encoding         : 65001
 
- Date: 27/01/2021 10:33:57
+ Date: 27/01/2021 13:57:45
 */
 
 SET NAMES utf8mb4;
@@ -861,7 +861,7 @@ CREATE TABLE `user`  (
   `CreatedDate` date NULL DEFAULT curdate COMMENT 'Ngày tạo',
   `Avatar` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL COMMENT 'Link ảnh đại diện',
   `Key` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NULL DEFAULT NULL,
-  `KeyTime` datetime(0) NULL DEFAULT NULL,
+  `KeyTime` timestamp(0) NULL DEFAULT NULL,
   PRIMARY KEY (`Username`) USING BTREE
 ) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_unicode_ci ROW_FORMAT = Dynamic;
 
