@@ -114,7 +114,7 @@
                         <input class="form-control" type="text" placeholder="Tìm kiếm sản phẩm...">
                         <button><i class="ps-icon-search"></i></button>
                     </form>
-                    <div class="ps-cart"><a class="ps-cart__toggle" href="#"><i class="ps-icon-shopping-cart"></i></a>
+                    <div class="ps-cart"><a class="ps-cart__toggle" href="cart.jsp"><i class="ps-icon-shopping-cart"></i></a>
                         <div class="ps-cart__listing">
                             <div class="ps-cart__content">
                                 <div class="ps-cart-item"><a class="ps-cart-item__close" href="#"></a>
