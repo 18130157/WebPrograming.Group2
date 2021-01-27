@@ -307,7 +307,9 @@ public class Product implements Serializable {
                 ", sound=" + sound +
                 '}';
     }
-
+    public void add() {
+        this.quantity++;
+    }
     public static void main(String[] args) {
         System.out.println(priceToString(0));
 

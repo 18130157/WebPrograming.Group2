@@ -36,7 +36,7 @@ public class ProductList extends HttpServlet {
         String spageid1 = request.getParameter("page");
         int pageid = Integer.parseInt(spageid);
         int pageid1 = Integer.parseInt(spageid1);
-        int total = 3;
+        int total = 24;
         if (pageid == 1) {
         } else {
             pageid = pageid - 1;

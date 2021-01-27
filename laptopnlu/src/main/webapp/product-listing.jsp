@@ -64,56 +64,67 @@
 
             if (c1 == pageCurrent1)
                 $('#li3').addClass("active")
-
+                <% String p =(String) request.getAttribute("path");
+                                 String q= ProductListEntity.getQuery(request.getQueryString());
+                                 if(q!="")q="&"+q;
+                                %>
+            //Kiểm tra số nút có vượt qua tổng trang ví dụ có 2 trang nhung có 3 nut.
+            if (c1 > quantityPage1 ){
+                $('#loadpage').hide();
+                $('#unloadpage').hide();
+                $('#li3').hide();
+                $('#pre').hide();
+                $('#next').hide();
+            }
+            if (b1 > quantityPage1 ){
+                $('#loadpage').hide();
+                $('#unloadpage').hide();
+                $('#li2').hide();
+                $('#pre').hide();
+                $('#next').hide();
+            }
             //kiểm tra hiển thị nut ... lúc đầu load trang
-            var ipage1begin = $('#btn1').text();
-            var i1begin = parseInt(ipage1begin, 10);
 
-            if (i1begin == 1) {
+            if (a1 == 1&& quantityPage1>2) {//có 2 trang
                 $('#loadpage').show();
                 $('#unloadpage').hide();
             }
-            var ipage3begin = $('#btn3').text();
-            var i3begin = parseInt(ipage3begin, 10);
-            if (i3begin == quantityPage1) {
+
+            if (c1 == quantityPage1&& quantityPage1>2) {
                 $('#loadpage').hide();
                 $('#unloadpage').show()
             }
-            if (i1begin == 1 && i3begin == quantityPage1) {
+            if (a1 == 1 && c1 == quantityPage1) {
                 $('#loadpage').hide();
                 $('#unloadpage').hide();
             }
             $('#loadpage').click(function () {
-
 
                 var i1 = parseInt($('#btn1').text(), 10);
                 var i2 = parseInt($('#btn2').text(), 10);
                 var i3 = parseInt($('#btn3').text(), 10);
 
                 var quantityPage =<%=totalPage1%>
-                 <% String p =(String) request.getAttribute("path");
-                 String q= ProductListEntity.getQuery(request.getQueryString());
-                 if(q!="")q="&"+q;
-                %>;
+
                 //Ví dụ đang là 28 29 30 và có 31 trang thì nhấn ... -> 29 30 31
                 if (quantityPage - i3 == 2 || quantityPage - i3 == 1) {
                     $('#loadpage').show();
                     $('#unloadpage').show();
                     $('#btn1').text(quantityPage - 2);
-                    $('#btn1').attr("href", "<%=p%>?page=" + (quantityPage - 2)+<%=request.getQueryString()==null?"":q%>)
+                    $('#btn1').attr("href", "<%=p%>?page=" + (quantityPage - 2)+"<%=request.getQueryString()==null?"":q%>")
                     $('#btn2').text(quantityPage - 1);
-                    $('#btn2').attr("href", "<%=p%>?page=" + (quantityPage - 1)+<%=request.getQueryString()==null?"":q%>)
+                    $('#btn2').attr("href", "<%=p%>?page=" + (quantityPage - 1)+"<%=request.getQueryString()==null?"":q%>")
                     $('#btn3').text(quantityPage);
-                    $('#btn3').attr("href", "<%=p%>?page=" + quantityPage +<%=request.getQueryString()==null?"":q%>)
+                    $('#btn3').attr("href", "<%=p%>?page=" + quantityPage +"<%=request.getQueryString()==null?"":q%>")
                 } else {
                     $('#loadpage').show();
                     $('#unloadpage').show();
                     $('#btn1').text(i1 + 3);
-                    $('#btn1').attr("href", "<%=p%>?page=" + (i1+3)+<%=request.getQueryString()==null?"":q%>)
+                    $('#btn1').attr("href", "<%=p%>?page=" + (i1+3)+"<%=request.getQueryString()==null?"":q%>")
                     $('#btn2').text(i1 + 4);
-                    $('#btn2').attr("href","<%=p%>?page=" + (i1+4)+<%=request.getQueryString()==null?"":q%>)
+                    $('#btn2').attr("href","<%=p%>?page=" + (i1+4)+"<%=request.getQueryString()==null?"":q%>")
                     $('#btn3').text(i1 + 5);
-                    $('#btn3').attr("href", "<%=p%>?page=" + (i1+5)+<%=request.getQueryString()==null?"":q%>)
+                    $('#btn3').attr("href", "<%=p%>?page=" + (i1+5)+"<%=request.getQueryString()==null?"":q%>")
                 }
                 //lấy giá trị của ô thứ 3 sau thay đỏi dể xét cps hieent thị 3 chấm hay ko
                 var i1a = parseInt($('#btn1').text(), 10);
@@ -124,7 +135,7 @@
                     $('#unloadpage').show();
                 }
 
-                //CHọn nut active
+                //Xóa class active khi di chuyển
 
                 if (i1a == pageCurrent1)
                     $('#li1').addClass("active")
@@ -141,7 +152,6 @@
                 else
                     $('#li3').removeClass()
             });
-
             $('#unloadpage').click(function () {
 
                 var ipage = $('#btn1').text();
@@ -159,11 +169,11 @@
                     $('#unloadpage').show();
                     $('#loadpage').show();
                     $('#btn1').text(i1 - 3);
-                    $('#btn1').attr("href", "<%=p%>?page=" + (i1 - 3) +<%=request.getQueryString()==null?"":q%>)
+                    $('#btn1').attr("href", "<%=p%>?page=" + (i1 - 3) +"<%=request.getQueryString()==null?"":q%>")
                     $('#btn2').text(i1 - 2);
-                    $('#btn2').attr("href", "<%=p%>?page=" + (i1 - 2) +<%=request.getQueryString()==null?"":q%>)
+                    $('#btn2').attr("href", "<%=p%>?page=" + (i1 - 2) +"<%=request.getQueryString()==null?"":q%>")
                     $('#btn3').text(i1 - 1);
-                    $('#btn3').attr("href", "<%=p%>?page=" + (i1 - 1) +<%=request.getQueryString()==null?"":q%>)
+                    $('#btn3').attr("href", "<%=p%>?page=" + (i1 - 1) +"<%=request.getQueryString()==null?"":q%>")
                 }
 
                 var i1b = parseInt($('#btn1').text(), 10);
@@ -192,6 +202,8 @@
                 else
                     $('#li3').removeClass()
             });
+
+
 
 
         });
@@ -244,10 +256,28 @@
         <div class="ps-products" data-mh="product-listing">
             <div class="ps-product-action">
                 <div class="ps-product__filter">
+                    <%
+                        String pathSo = "";
+                        String pathSort = (String) request.getAttribute("path");
+                        ArrayList<String> liS = (ArrayList<String>) para.clone();
+                        if (path.contains("sort=2"))
+                            liS.remove("sort=2");
+                        if (path.contains("sort=3"))
+                            liS.remove("sort=3");
+
+                        for (int j = 0; j < liS.size(); j++) {
+                            if (j == liS.size() - 1) pathSo += liS.get(j);
+                            else pathSo += liS.get(j) + "&";
+                        }
+                        if (pathSo!="")
+                            pathSort += "?" + pathSo + "&";
+                    %>
                     <select  class="ps-select selectpicker "  onchange="location = this.value;">
                         <option  >Sắp xếp</option>
-                        <option value="<%=path%>sort=2">Giá cao đến thấp</option>
-                        <option value="<%=path%>sort=3">Giá thấp đến cao</option>
+
+
+                        <option value="<%=pathSort%>sort=2">Giá cao đến thấp</option>
+                        <option value="<%=pathSort%>sort=3">Giá thấp đến cao</option>
                     </select>
                 </div>
                 <div class="ps-pagination">
@@ -261,7 +291,7 @@
                             } else {
                                 back = pages - 1;//Neu pages tu 2 tro len thi back tru 1
                             }
-                            if (pages % 3 == 0 || pages == totalPage1) {
+                            if (pages % 3 == 0 || (pages == totalPage1&&pages<totalPage1)) {//khi page =1--> lỗi
                                 i = pages - 2;
                             } else if (pages % 3 == 2) {
                                 i = pages - 1;
@@ -452,7 +482,7 @@
                         <li><a href="<%=pathMoni%>monitor=13-14">Khoảng 13 inch</a></li>
                         <li><a href="<%=pathMoni%>monitor=15-20">Cảm ứng</a></li>
                     </ul>
-                    <a class="ac-slider__filter ps-btn" href="#" style="line-height: 0px; font-size: 12px;">Lọc</a>
+
                 </div>
             </aside>
             <aside class="ps-widget--sidebar ps-widget--category">

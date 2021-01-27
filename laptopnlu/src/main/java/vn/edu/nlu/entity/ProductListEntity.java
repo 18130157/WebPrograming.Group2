@@ -607,7 +607,7 @@ System.out.println(result.size());
                 }
             });
             System.out.println("Sort complete 2");
-        }else if (id=="3"){
+        }else if (id.equals("3")){
             Collections.sort(arr, new Comparator<Product>() {
                 @Override
                 public int compare(Product o1, Product o2) {
